@@ -292,4 +292,7 @@ var amountToGenerate = document.getElementById("amountToGenerate").value;
         
         document.getElementById("result").innerHTML = result;
     }
-generateNames();
+
+    if (gen == "fantasyname") {
+        generateNames();
+    }

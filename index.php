@@ -1,8 +1,10 @@
 <?php $gen = $_GET["gen"]?>
+<script> var gen = "<?php echo $gen; ?>" </script>
 
 <head>
     <title>Babipoki's Generators</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    
     
 </head>
 <body>
@@ -21,4 +23,3 @@
     <?php include "./footer.html"; ?>
 </body>
 
-<script type="text/javascript" src="namegen.js"></script>

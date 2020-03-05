@@ -1,0 +1,20 @@
+<div class="generator">
+    This generator uses existing settlement names from my setting. It doesn't actually create any non-existant ones.<br>
+    <label for="nation">Nation:</label>
+        <select id="nation">
+            <option value="feretti">Feretti Kingdom</option>
+            <option value="ekkionlor">Ekkionlor</option>
+            <option value="junjian">Junjian Empire</option>
+        </select>
+    
+    <label for="amountToGenerate">Generate:</label>
+        <select id="amountToGenerate">
+            <option value=1>1</option>
+            <option value=5>5</option>
+            <option value=10>10</option>
+        </select>
+        <div class="generatedContent">
+            <div id="result"></div>
+        </div>
+    <button onclick="generateSettlements()">Generate</button>
+    </div>
