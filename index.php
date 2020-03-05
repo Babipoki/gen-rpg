@@ -3,6 +3,7 @@
 <head>
     <title>Babipoki's Generators</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    
 </head>
 <body>
     <?php include "./header.html"; ?>
@@ -19,3 +20,5 @@
     
     <?php include "./footer.html"; ?>
 </body>
+
+<script type="text/javascript" src="namegen.js"></script>
