@@ -1,0 +1,78 @@
+<script>
+    var amountToGenerate = document.getElementById("amountToGenerate").value;
+    function MathRInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    function generateName() {
+        var gender = document.getElementById("gender").value;
+        var race = document.getElementById("race").value;
+        var name1 = [];
+        var name2 = [];
+        if (gender == "male") {
+                if (race == "human") {
+                    name1 = ["Gary", "Riko", "Osten"];
+                    name2 = ["Saltwater", "Drumswitch", "Fivio"];
+                }
+                if (race == "youdel") {
+                    name1 = ["SAF", "afawf"];
+                    name2 = ["asfaw", "gkawjawg", "awjfajw"]
+                }
+        } else if (gender == "female") {
+            if (race == "human") {
+                    name1 = ["Tatyana", "ASFKa", "FWAajwfawj"];
+                    name2 = ["Saltwater", "Drumswitch", "Fivio"];
+                }
+                if (race == "youdel") {
+                    name1 = ["SasfafsF", "afasfafsawf"];
+                    name2 = ["asasfafsfaw", "gkfasasfawjawg", "fasafsawjfajw"]
+                }
+        }
+
+
+        var name = capitalize(name1[MathRInt(0, name1.length)]) + ' ' + capitalize(name2[MathRInt(0, name2.length)]);
+        return name;
+    }
+
+    function generateNames() {
+        var amount = document.getElementById("amountToGenerate").value;
+        var result = "<p>";
+        for (i = 0; i < amount; i++) {
+            if (i != amount) {
+                result += generateName() + "<br>";
+            } else {
+                result += generateName() + "</p>";
+            }
+            
+        }
+        
+        document.getElementById("result").innerHTML = result;
+    }
+generateNames();
+</script>
+<div class="generator">
+<label for="gender">Gender:</label>
+    <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+
+<label for="race">Race:</label>
+    <select id="race">
+        <option value="human">Human</option>
+        <option value="youdel">Youdel</option>
+    </select>
+
+<label for="amountToGenerate">Generate:</label>
+    <select id="amountToGenerate">
+        <option value=1>1</option>
+        <option value=5>5</option>
+        <option value=10>10</option>
+    </select>
+    <div class="generatedContent">
+        <div id="result"></div>
+    </div>
+<button onclick="generateNames()">Generate</button>
+</div>
