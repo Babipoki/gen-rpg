@@ -46,6 +46,7 @@
         } else if (race == "youdel") {
             raceID = 1;
         }
+        childhoodAge = childhoodAges[raceID];
         maturityAge = maturityAges[raceID];
         retirementAge = retirementAges[raceID];
         lifeSpan = lifeSpans[raceID];
@@ -97,7 +98,7 @@
             if (age < maturityAge && age >= childhoodAge) {
                 result += "In school, " + pronoun.toLowerCase() + " is regarded to as " + indefinite_article(studentType) + " " + studentType + ". ";
             } else if (age >= maturityAge && age < retirementAge) {
-                result += "When " + pronoun.toLowerCase() + " was in school," + pronoun.toLowerCase() + " was mostly regarded as " + indefinite_article(studentType) + " " + studentType + ". ";
+                result += "When " + pronoun.toLowerCase() + " was in school, " + pronoun.toLowerCase() + " was mostly regarded as " + indefinite_article(studentType) + " " + studentType + ". ";
             } else if (age >= retirementAge) {
                 result += pronoun + " clearly remembers how back in the school days, " + characterName + " was the name associated with the " + studentType + " of the class. ";
             }
