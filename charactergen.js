@@ -15,11 +15,12 @@
         var birthNationName = ""; // full name of the nation
 
         if (birthNation == null || birthNation == "random") {
-            birthNation = nations[MathRInt(0, nations.length)];
-            if (birthNation == "feretti") birthNationName = "Feretti Kingdom";
-            if (birthNation == "ekkionlor") birthNationName = "Ekkionlor";
-            if (birthNation == "junjian") birthNationName = "Junjian Empire";
+            birthNation = nations[MathRInt(0, nations.length)]; 
         }
+        
+        if (birthNation == "feretti") birthNationName = "Feretti Kingdom";
+        if (birthNation == "ekkionlor") birthNationName = "Ekkionlor";
+        if (birthNation == "junjian") birthNationName = "Junjian Empire";
         if (race == null || race == "random") {
             race = races[MathRInt(0, races.length)]; 
         }
