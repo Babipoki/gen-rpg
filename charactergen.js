@@ -9,8 +9,9 @@
         var secondaryPersonalityTrait = "";
         var toddlerOccupations = ["toddler", "urchin"];
         var childhoodOccupations = ["private school student", "public school student", "privately mentored student", "adventurer", "urchin"];
-        var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid"]
-        var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "shoemaker", "balloon shopkeeper"];
+        var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid", "well-mannered kid", "kid who loved balloons"];
+        var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "shoemaker", "balloon shopkeeper", "mercenary", "assassin", "shinobi", "innkeeper", 
+            "tanner", "leatherworker", "mayor", "school teacher", "pawn shop owner", "butcher", "breeder", "farmer", "homeless person"];
         var retiredOccupations = ["retiree", "military commander", "writer"];
         var childhoodOccupation = "";
         var adultOccupation = "";
@@ -55,15 +56,17 @@
          // Generate occupations.
         if (age < childhoodAge) {
             currentOccupation = toddlerOccupations[MathRInt(0, toddlerOccupations.length)];
+            childhoodOccupation = "nothing lol";
         } else if (age < maturityAge) {
             currentOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
+            childhoodOccupation = currentOccupation;
         } else if (age < retirementAge) {
             currentOccupation = adultOccupations[MathRInt(0, adultOccupations.length)];
-            childhoodOccupation = childhoodOccupations[MathRInt(0, adultOccupations.length)];
+            childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
         } else {
             currentOccupation = retiredOccupations[MathRInt(0, retiredOccupations.length)];
             adultOccupation = adultOccupations[MathRInt(0, adultOccupations.length)];
-            childhoodOccupation = childhoodOccupations[MathRInt(0, adultOccupations.length)];
+            childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
         }
         // Generate student type.
         studentType = studentTypes[MathRInt(0, studentTypes.length)];
