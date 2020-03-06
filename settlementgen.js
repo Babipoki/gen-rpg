@@ -1,4 +1,5 @@
-var amountToGenerate = document.getElementById("amountToGenerate").value;
+if (gen == "settlementname") {var amountToGenerate = document.getElementById("amountToGenerate").value; }
+else {amountToGenerate = 1}
     function MathRInt(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
