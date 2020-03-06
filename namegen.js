@@ -6,12 +6,24 @@ var amountToGenerate = document.getElementById("amountToGenerate").value;
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     function generateName(gender = null, race = null) {
-        if (gender == null) {
+		var genders = ["male", "female"];
+		var races = ["human", "youdel"];
+
+		if (gender == null) {
             gender = document.getElementById("gender").value;
         }
         if (race == null) {
             race = document.getElementById("race").value;
-        }
+		}
+		
+		if (gender == "random") {
+			gender = genders[MathRInt(0, genders.length)];
+		}
+
+		if (race == "random") {
+			race = races[MathRInt(0, races.length)];
+		}
+
         var name1 = [];
         var name2 = [];
         if (gender == "male") {
