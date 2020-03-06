@@ -4,7 +4,7 @@
 <head>
     <title>Babipoki's Generators</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Abel|Fjalla+One&display=swap" rel="stylesheet">
     
 </head>
 <body>
