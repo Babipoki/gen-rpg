@@ -19,6 +19,32 @@
         <div id="result"></div>
     </div>
 
-    <button onclick="generateCharacter(document.getElementById('nation').value, document.getElementById('race').value)">Generate another...</button>
+    <button id="myBtn" onclick="generateCharacter(document.getElementById('nation').value, document.getElementById('race').value);checkMouse();">Generate another...</button>
+
+    <script>
+        var mouseDown = 0;
+        var firstTime = 1;
+        var input = document.getElementById("myBtn");
+        document.body.addEventListener("keyup", function(event) {
+            if (event.which == 13 || event.keyCode == 13) {
+                if (firstTime == 1) {
+                    input.click();
+                }
+                return false;
+            }
+            return true;
+        });
+        document.body.onmousedown = function() {
+            ++mouseDown;
+        }
+        document.body.onmousedown = function() {
+            --mouseDown;
+        }
+        function checkMouse() {
+            if (mouseDown) {
+                firstTime = 0;
+            }
+        }
+    </script>
 
 </div>
