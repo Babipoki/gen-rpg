@@ -9,8 +9,9 @@ var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "
     "herbalist", "doctor", "healer", "alchemist", "baker", "orphanage caretaker", "necromancer", "elementalist", "shaman", "warlock", "mage", "bouncer", "detective",
     "spy", "scout", "cleric", "cultist", "sea captain", "caravaneer", "navigator", "pilgrim", "housewife", "bounty hunter", "gambler", "exile", "tomb raider"];
 var retiredOccupations = ["retiree", "military commander", "writer", "refugee", "beggar"];
-var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty"];
-var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless"];
+var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty", "generous", "creepy", "perverted"];
+var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist"];
+var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
 var races = ["human", "youdel", "lafahl"];
 var nations = ["feretti", "ekkionlor", "junjian"]
@@ -22,6 +23,7 @@ var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan",
 function generateCharacter(birthNation = null, race = null) {
     var primaryPersonalityTrait = "";
     var secondaryPersonalityTrait = "";
+    var physicalTrait = "";
     var languagesSpoken = 0;
     var childhoodOccupation = "";
     var adultOccupation = "";
@@ -83,9 +85,10 @@ function generateCharacter(birthNation = null, race = null) {
     // Generate student type.
     studentType = studentTypes[MathRInt(0, studentTypes.length)];
 
-    // Generate personality traits.
+    // Generate personality traits and stuff...
     primaryPersonalityTrait = primaryPersonalityTraits[MathRInt(0, primaryPersonalityTraits.length)];
     secondaryPersonalityTrait = secondaryPersonalityTraits[MathRInt(0, secondaryPersonalityTraits.length)];
+    physicalTrait = physicalTraits[MathRInt(0, physicalTraits.length)];
 
     var birthCity = generateSettlement(birthNation);
     var gender = genders[MathRInt(0, genders.length)];
@@ -98,7 +101,7 @@ function generateCharacter(birthNation = null, race = null) {
         currentOccupation = characterName.split(" the ")[1].toLowerCase();
     }
 
-    result = "<b>" + characterName + "</b> is a " + age + " year old " + gender + " " + race + ", born in " + birthCity + ", " + birthNationName + ". ";
+    result = "<b>" + characterName + "</b> is " + indefinite_article(physicalTrait) + " " + physicalTrait + " " + age + " year old " + gender + " " + race + ", born in " + birthCity + ", " + birthNationName + ". ";
     result += pronoun + " is " + indefinite_article(primaryPersonalityTrait) +" " + primaryPersonalityTrait + " and " + secondaryPersonalityTrait + " " + currentOccupation + ". ";
     // Add childhood or adult occupations based on age into text:
     
