@@ -295,7 +295,7 @@
 		if (race != "lafahl") {
 			name = capitalize(name1[MathRInt(0, name1.length)]) + ' ' + name2[MathRInt(0, name2.length)];
 		} else {
-			name = generateLafahlName;
+			name = generatedLafahlName;
 		}
         return name;
 	}
