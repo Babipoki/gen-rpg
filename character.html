@@ -15,12 +15,28 @@
             <option value="youdel">Youdel</option>
             <option value="lafahl">Lafahl</option>
         </select>
+    
+    <label for="age">Age:</label>
+        <select id="age">
+            <option value="random">Random</option>
+            <option value="toddler">Toddler</option>
+            <option value="child">Child</option>
+            <option value="adult">Adult</option>
+            <option value="elder">Elder</option>
+        </select>
+
+    <label for="genderPref">Gender:</label>
+        <select id="genderPref">
+            <option value="random">Random</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
         <br>
     <div class="generatedContent character">
         <div id="result"></div>
     </div>
 
-    <button id="myBtn" onclick="generateCharacter(document.getElementById('nation').value, document.getElementById('race').value);checkMouse();">Generate another...</button>
+    <button id="myBtn" onclick="generateCharacter(document.getElementById('nation').value, document.getElementById('race').value, document.getElementById('age').value, document.getElementById('genderPref').value);checkMouse();">Generate another...</button>
 
     <script>
         var mouseDown = 0;

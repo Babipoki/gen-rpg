@@ -1,6 +1,7 @@
 body {
     background: url("./bg.jpg");
     color: white;
+    margin: 0;
 }
 
 .header {

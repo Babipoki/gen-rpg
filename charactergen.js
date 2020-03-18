@@ -1,7 +1,9 @@
 // Generator stuff...
 var toddlerOccupations = ["toddler", "urchin"];
-var childhoodOccupations = ["private school student", "public school student", "privately mentored student", "adventurer", "urchin"];
-var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid", "well-mannered kid", "kid who loved balloons"];
+var childhoodOccupations = ["private school student", "public school student", "privately mentored student", "adventurer", "urchin", "travelling musician", "travelling circus performer",
+    "little squire"];
+var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid", "well-mannered kid", "balloon enthusiast", "explosives expert", "school merchant",
+    "dancer", "artist", "friend of all the teachers", "religious kid", "rebel"];
 var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "shoemaker", "balloon shopkeeper", "mercenary", "assassin", "shinobi", "innkeeper", 
     "tanner", "leatherworker", "mayor", "school teacher", "pawn shop owner", "butcher", "breeder", "farmer", "homeless person", "hunter", "trapper", "woodcutter", "acrobat" ,
     "musician", "painter", "piper", "writer", "actor", "banker", "guild master", "merchant", "collector", "translator", "courier", "bladesmith", "jeweler", "tanner", "woodcarver",
@@ -20,10 +22,11 @@ var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan",
 
 
 // Character Generation
-function generateCharacter(birthNation = null, race = null) {
+function generateCharacter(birthNation = null, race = null, agePref = null, genderPref = null) {
     var primaryPersonalityTrait = "";
     var secondaryPersonalityTrait = "";
     var physicalTrait = "";
+    var gender = "";
     var languagesSpoken = 0;
     var childhoodOccupation = "";
     var adultOccupation = "";
@@ -43,6 +46,7 @@ function generateCharacter(birthNation = null, race = null) {
     var birthNationName = ""; // full name of the nation
     var pronoun = "";
 
+    // Birth Nation
     if (birthNation == null || birthNation == "random") {
         birthNation = nations[MathRInt(0, nations.length)]; 
     }
@@ -54,6 +58,7 @@ function generateCharacter(birthNation = null, race = null) {
         race = races[MathRInt(0, races.length)]; 
     }
 
+    // Race
     if (race == "human") {
         raceID = 0;
     } else if (race == "youdel") {
@@ -65,7 +70,18 @@ function generateCharacter(birthNation = null, race = null) {
     maturityAge = maturityAges[raceID];
     retirementAge = retirementAges[raceID];
     lifeSpan = lifeSpans[raceID];
-    age = MathRInt(0, lifeSpan);
+    
+    if (agePref == "random" || agePref == null) {
+        age = MathRInt(0, lifeSpan);
+    } else if (agePref == "toddler") {
+        age = MathRInt(0, childhoodAge);
+    } else if (agePref == "child") {
+        age = MathRInt(childhoodAge, maturityAge);
+    } else if (agePref == "adult") {
+        age = MathRInt(maturityAge, retirementAge);
+    } else {
+        age = MathRInt(retirementAge, lifeSpan);
+    }
 
         // Generate occupations.
     if (age < childhoodAge) {
@@ -91,7 +107,13 @@ function generateCharacter(birthNation = null, race = null) {
     physicalTrait = physicalTraits[MathRInt(0, physicalTraits.length)];
 
     var birthCity = generateSettlement(birthNation);
-    var gender = genders[MathRInt(0, genders.length)];
+    if (genderPref == "random" || genderPref == null) {
+        gender = genders[MathRInt(0, genders.length)];
+    } else if (genderPref == "male") {
+        gender = "male";
+    } else {
+        gender = "female";
+    }
     if (gender == "male") pronoun = "He";
     if (gender == "female") pronoun = "She";
     var characterName = generateName(gender, race);
