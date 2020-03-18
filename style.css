@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-    position: absolute;
+    position: static;
     margin: auto;
     width: 100%;
     text-align: center;
@@ -54,6 +54,9 @@ select {
 
 button {
     margin: 5px;
+    width: 25%;
+    height: 50px;
+
 }
 
 .generatedContent p {
@@ -77,4 +80,33 @@ button {
     left: 20px;
     top: 30%;
     background: hsla(0, 0%, 99%, 0.096)
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 25px;
+    }
+
+    .generator {
+        width: 98%;
+    }
+
+    button {
+        width: 35%;
+        height: 80px;
+        font-size: 25px;
+    }
+
+    @media screen and (max-width: 350px) {
+    
+        .generator {
+            width: 98%;
+        }
+
+        button {
+            font-size: 15px;
+        }
+    }
+
 }
