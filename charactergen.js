@@ -11,14 +11,17 @@ var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "
     "herbalist", "doctor", "healer", "alchemist", "baker", "orphanage caretaker", "necromancer", "elementalist", "shaman", "warlock", "mage", "bouncer", "detective",
     "spy", "scout", "cleric", "cultist", "sea captain", "caravaneer", "navigator", "pilgrim", "housewife", "bounty hunter", "gambler", "exile", "tomb raider"];
 var retiredOccupations = ["retiree", "military commander", "writer", "refugee", "beggar"];
-var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty", "generous", "creepy", "perverted"];
-var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist"];
+var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty", "generous", "creepy", "perverted", "absent-minded", "naive", "calm", "organized"];
+var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable"];
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
 var races = ["human", "youdel", "lafahl"];
 var nations = ["feretti", "ekkionlor", "junjian"]
 var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
+
+// Events
+var childhoodEventCategories = ["betrayal", "injury", "discovery", "lost toy", "loss of relatives", "sickness", "paranormal/magical sighting", "commited crime"]
 
 
 // Character Generation
