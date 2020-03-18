@@ -4,29 +4,38 @@ body {
 }
 
 .header {
+    position: absolute;
     margin: auto;
-    left: auto;
-    width: 50%;
+    width: 100%;
     text-align: center;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
 }
 
 .footer {
     margin: auto;
-    left: auto;
     text-align: center;
-    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    width: 99%;
 }
 
 a {
-    color: hsl(180, 50%, 50%);
+    color: hsl(184, 75%, 48%);
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .generatedContent {
     text-align: center;
-    border-radius: 5%;
-    border-width: 2px;
-    border-style: solid;
-    margin: 0 auto;
+    border-radius: 0%;
+    border-width: 3px;
+    border-style: dotted;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .generator {
@@ -34,6 +43,7 @@ a {
     text-align: center;
     margin: 0 auto;
     padding: 5px;
+    margin-top: 10px;
 }
 
 select {
@@ -53,4 +63,17 @@ button {
     font-size: 16px;
     padding: 10px;
     font-family: 'Abel', sans-serif;
+}
+
+.genlinks {
+    padding: 5px;
+    background: rgba(247, 70, 26, 0.664);
+    font-family: 'Lato', sans-serif;
+}
+
+.ads_left, .adsbygoogle {
+    position: absolute;
+    left: 20px;
+    top: 30%;
+    background: hsla(0, 0%, 99%, 0.096)
 }
