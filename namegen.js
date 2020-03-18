@@ -8,7 +8,7 @@
     }
     function generateName(gender = null, race = null) {
 		var genders = ["male", "female"];
-		var races = ["human", "youdel"];
+		var races = ["human", "youdel", "lafahl"];
 
 		if (gender == null) {
             gender = document.getElementById("gender").value;
@@ -284,12 +284,43 @@
 	"the Mage",
 	"the Rogue"
 ];
-        }
+		}
 
-
-        var name = capitalize(name1[MathRInt(0, name1.length)]) + ' ' + name2[MathRInt(0, name2.length)];
+		var generatedLafahlName = "";
+		// FILLLL THISSSSS
+		if (race == "lafahl") {
+			generatedLafahlName = generateLafahlName(gender);
+		}
+			var name = "";
+		if (race != "lafahl") {
+			name = capitalize(name1[MathRInt(0, name1.length)]) + ' ' + name2[MathRInt(0, name2.length)];
+		} else {
+			name = generateLafahlName;
+		}
         return name;
-    }
+	}
+	
+	function generateLafahlName (theGender) {
+		var lf_male_first_name_prefixes = ["Fufu", "Hihe", "Po", "E", "No", "Ba", "Da", "Le", "Su", "Nunu", "Bo", "Lu", "Pu", "Du", "Ze", "Se", "Re", "Bu", "Babi", "Suti", "Po",
+		"Suti", "Po", "Popo", "Baba", "Dada", "Ge", "Rere", "Ruru", "Papa", "Nene", "Jaja", "Chu", "Yuyu", "Ga", "Te", "Pu"]
+		var lf_male_last_name_prefixes = ["Kiki", "Niko", "Ke", "Tapi", "Wiwi", "Citu", "Ququ", "Jishu", "Bupi", "Petu", "Bu", "Jeti", "Zumi", "Fasi", "Pori", "Sanu", "Peto", "Veru",
+		"Wylo", "Yohu", "Selo", "To", "Go", "Mu", "Pa", "Lulu", "Odu", "Zaza", "Dala", "Du", "Gu", "Za", "Na", "Rom", "Yu", "Poto", "Ra", "Ma", "Buli", "Rala", "Lala", "Ke"]
+		var lf_female_first_and_last_name_prefixes = ["Cece", "Gecu", "Filu", "Rati", "Didi", "Kaco", "Safu", "Sofi", "Tutu", "Tatu", "Popu", "Papu", "Wagu", "Wagi", "Dama",
+		"Pala", "Mi", "Ni", "Hiki", "Pomo", "Tosa", "Moza", "Nono", "Nono", "Tusha", "Ruro", "Poze", "Sela", "Zefu", "Qune", "Qure", "Zuze", "Yoyo", "Diba", "Dalo", "Pene", "Milu",
+		"Hiyo", "Poki", "Yuwa", "Leyo", "Dize", "Soku", "Seno", "Jani", "Kushu", "Moto", "Wamu", "Yofu", "Puza", "Jifu", "Bipu", "Bupo", "Jito"];
+		var lf_female_suffixes = ["sa", "li", "fu", "pa", "lu", "pi", "si", "di", "du", "mio", "runa", "nisha"];
+		var lf_male_suffixes = ["ha", "woha", "wichis", "de", "rapu", "muko", "chapa", "nuku", "poki", "pom", "tari", "fom", "deli", "kki", "bala", "mada", "ori", "dori", "tapu",
+		"dapi", "shan", "nasu", "meda", "zeda", "wazu", "ragi", "mehi", "baru", "kuta", "chuto", "yoma", "neko", "lno", "lado", "mani", "lugi", "zai", "nan", "ral", "tan"];
+		if (theGender == "male") {
+			var suffix = lf_male_suffixes[MathRInt(0, lf_male_suffixes.length)];
+			return lf_male_first_name_prefixes[MathRInt(0, lf_male_first_name_prefixes.length)] + suffix + " " 
+			+ lf_male_last_name_prefixes[MathRInt(0, lf_male_last_name_prefixes.length)] + suffix;
+		} else {
+			var suffix = lf_female_suffixes[MathRInt(0, lf_female_suffixes.length)];
+			var prefix = lf_female_first_and_last_name_prefixes[MathRInt(0, lf_female_first_and_last_name_prefixes.length)];
+			return prefix + suffix + " " + prefix;
+		}
+	}
 
     function generateNames() {
         var amount = document.getElementById("amountToGenerate").value;
