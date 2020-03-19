@@ -22,7 +22,8 @@ var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan",
 var sexualities = ["straight", "gay", "bisexual"];
 var bodyParts = ["left leg", "right leg", "left foot", "right foot", "spine", "left arm", "right arm", "forehead", "groin"];
 var balloonColors = ["red", "pink", "blue", "green", "yellow", "white", "black", "yellow smiley", "pink bunny-shaped"];
-
+// Events
+var childhoodEventCategories = ["betrayal", "injury", "discovery", "lost toy", "loss of relatives", "sickness", "paranormal/magical sighting", "commited crime"];
 
 // Defaults
 var archnemesis = "";
@@ -142,8 +143,8 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     }
 
     // Generate PEOPLE
-    archnemesis = generateName();
-    bestFriend = generateName();
+    archnemesis = generateName("random", "random");
+    bestFriend = generateName("random", "random");
 
     if (getPartner(pronoun, sexuality) == "boyfriend") romanticPartner = generateName("male");
     else romanticPartner = generateName("female");
@@ -182,8 +183,7 @@ if (gen == "character") {
     generateCharacter();
 }
 
-// Events
-var childhoodEventCategories = ["betrayal", "injury", "discovery", "lost toy", "loss of relatives", "sickness", "paranormal/magical sighting", "commited crime"]
+
 
 // Generate Events
 
@@ -219,7 +219,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         var randomRoll = MathRInt(0, 3);
         if (randomRoll == 0) result += "Back when " + pronoun.toLowerCase() + " was " + ageOfEvent + " years old, ";
         else if (randomRoll == 1) result += "At the time when " + pronoun.toLowerCase() + " was " + ageOfEvent + " years old, ";
-        else if (randomRoll == 2) result += "During childhood, when " + pronoun.toLowerCase() + " was " + ageOfEvent + " years old, ";
+        else if (randomRoll == 2) result += "As one of more memorable childhood events " + pronoun.toLowerCase() + " remembers, at the age of " + ageOfEvent + ", ";
         else if (randomRoll == 3) result += "During the times when " + pronoun.toLowerCase() + " was " + ageOfEvent + " years old, ";
     }
 
@@ -227,7 +227,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
     if (eventCategory == "betrayal") {
         var randomRoll = MathRInt(0, 3);
         if (randomRoll == 0) {result += whose + " best friend " + bestFriend + " betrayed " + whom + ", driving back the trust of the society as a whole.";
-                    bestFriend = generateName();
+                    bestFriend = generateName("random", "random");
                     result += " " + bestFriend + " then became " + whose + " best friend."
     }
         else if (randomRoll == 1) result += whose + " parents betrayed " + whom + ", leaving him in the streets for " + whom + "self.";
@@ -244,7 +244,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         var randomRoll = MathRInt(0, 2);
         if (randomRoll == 0) result += pronoun.toLowerCase() + " discovered a terrible secret of one of " + whose + " parents. He kept it for " + whom + "self ever since.";
         else if (randomRoll == 1) {
-            result += pronoun.toLowerCase() + " discovered that " + whose + " friend " + generateName() +" was gay.";
+            result += pronoun.toLowerCase() + " discovered that " + whose + " friend " + generateName("random", "random") +" was gay.";
             if (sexuality == "gay" || sexuality == "bisexual") {
                 result += " It made " + characterName + " a more confident person, as " + pronoun.toLowerCase() + " was also " + sexuality + ".";
             } else {
