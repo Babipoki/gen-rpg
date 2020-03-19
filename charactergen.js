@@ -299,7 +299,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             result += pronoun.toLowerCase() + " lost " + whose + " father, who died after " + causeofDeath + ".";
             dadAlive = false;
         } else if (randomRoll == 1) {
-            result += pronoun.toLowerCase() + " lost " + whose + " mother, who died after " + causesOfDeath + ".";
+            result += pronoun.toLowerCase() + " lost " + whose + " mother, who died after " + causeOfDeath + ".";
         } else {
             result += pronoun.toLowerCase() + " lost a distant relative. " + pronoun + " remembers not wanting to go to the funeral and also missing " + bestFriend + "'s, his best friend's birthday.";
         }
