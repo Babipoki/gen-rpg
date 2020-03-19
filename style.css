@@ -90,6 +90,8 @@ button {
     margin: 20px auto;
     background: rgba(0, 0, 0, 0.3);
     width: 50%;  
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 #statsOutput {
@@ -121,6 +123,11 @@ button {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 5px;
+}
+
+h2 {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 @media screen and (max-width: 1111px) {

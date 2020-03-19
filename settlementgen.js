@@ -7,7 +7,7 @@ else {amountToGenerate = 1}
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     function generateSettlement(nation = null) {
-        var nations = ["feretti", "ekkionlor", "junjian"];
+        var nations = ["feretti", "ekkionlor", "junjian", "toras"];
         if (nation == null) {
             nation = document.getElementById("nation").value;
         }
@@ -24,6 +24,8 @@ else {amountToGenerate = 1}
                name1 = ["Gnesalim", "Girdeta", "Noro", "Nyudai", "Kinba", "Cahyra", "Hisana", "Huo", "Savita", "Kartis", "Kushiho", "Pluskel", "Sariho", "Nato", "Kawasa", "Karivia", "Shinda", "Frilta", "Shon", "Umi"];
         } else if (nation == "junjian") {
                name1 = ["Yenadevil", "Desudo", "Bogolmo", "Rauni", "Mirabima", "Hampo", "Fashu", "Ara", "Anpo", "Touyako"];
+        } else if (nation == "toras") {
+               name1 = ["Wulopi", "Samino", "Kirna", "Dunwich", "Tohamu", "Felnerzog", "Ziglon", "Temblelas", "Rabalon", "Satareku City", "Esembejas", "Sashi", "Upiaba", "Stedt", "Bronzetown", "Boru", "Oshi", "Feligen"]
         }
 
 
