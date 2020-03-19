@@ -161,6 +161,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     } else {
         wisdom += 3;
         dexterity -= 4;
+        charisma -= 3;
     }
 
         // Generate occupations.
@@ -185,6 +186,92 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     primaryPersonalityTrait = primaryPersonalityTraits[MathRInt(0, primaryPersonalityTraits.length)];
     secondaryPersonalityTrait = secondaryPersonalityTraits[MathRInt(0, secondaryPersonalityTraits.length)];
     physicalTrait = physicalTraits[MathRInt(0, physicalTraits.length)];
+
+    // Primary trait's stats:
+    if (primaryPersonalityTrait == "naughty") {
+        charisma += 2;
+        wisdom -= 1;
+    } else if (primaryPersonalityTrait == "kind") {
+        charisma += 3;
+        wisdom += 2;
+    } else if (primaryPersonalityTrait == "optimistic") {
+        wisdom -= 1;
+        constitution += 1;
+        intelligence += 1;
+    } else if (primaryPersonalityTrait == "pessimistic") {
+        wisdom -= 1;
+        charisma -= 1;
+        intelligence -= 1;
+    } else if (primaryPersonalityTrait == "sweaty") {
+        charisma -= 3;
+        intelligence -= 1;
+    } else if (primaryPersonalityTrait == "generous") {
+        charisma += 3;
+        wisdom += 1;
+        intelligence += 1;
+    } else if (primaryPersonalityTrait == "creepy" || primaryPersonalityTrait == "perverted") {
+        charisma -= 1;
+        wisdom -= 3;
+    } else if (primaryPersonalityTrait == "absent-minded") {
+        wisdom -= 2;
+        intelligence -= 3;
+    } else if (primaryPersonalityTrait == "naive") {
+        charisma -= 2;
+    } else if (primaryPersonalityTrait == "calm") {
+        intelligence += 3;
+        charisma += 1;
+    } else if (primaryPersonalityTrait == "organized"){
+        intelligence += 3;
+        wisdom += 2;
+    }
+
+    // Secondary trait's stats:
+    if (secondaryPersonalityTrait == "smart") {
+        intelligence += 4;
+        wisdom += 2;
+    } else if (secondaryPersonalityTrait == "cruel") {
+        charisma -= 1;
+        strength += 2;
+        constitution += 2;
+        intelligence -= 1;
+    } else if (secondaryPersonalityTrait == "brave") {
+        constitution += 2;
+        strength += 2;
+    } else if (secondaryPersonalityTrait == "cowardly") {
+        constitution -= 2;
+        strength -= 3;
+        dexterity += 1;
+    } else if (secondaryPersonalityTrait == "careless") {
+        wisdom -= 2;
+        intelligence -= 2;
+        dexterity += 1;
+    } else if (secondaryPersonalityTrait == "alcoholic") {
+        intelligence -= 1;
+        wisdom -= 1;
+        constitution -= 2;
+        strength -= 1;
+        charisma -= 1;
+    } else if (secondaryPersonalityTrait == "racist") {
+        charisma -= 1;
+        intelligence -= 1;
+        wisdom -= 2;
+    } else if (secondaryPersonalityTrait == "shy") {
+        charisma -= 3;
+    } else if (secondaryPersonalityTrait == "fearful") {
+        wisdom -= 2;
+        constitution -= 2;
+    } else if (secondaryPersonalityTrait == "nervous") {
+        charisma -= 1;
+    } else if (secondaryPersonalityTrait == "proud") {
+        strength += 1;
+        constitution += 1;
+    } else if (secondaryPersonalityTrait == "unstable") {
+        strength -= 2;
+        dexterity -= 2;
+        intelligence -= 4;
+        constitution -= 4;
+        charisma -= 3;
+    }
 
     var birthCity = generateSettlement(birthNation);
     if (genderPref == "random" || genderPref == null) {
