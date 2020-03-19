@@ -111,6 +111,7 @@ button {
 
 .statProperty {
     top: 5px;
+    padding-top: 10px;
     font-weight: bold;
 }
 

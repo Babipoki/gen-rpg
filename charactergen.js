@@ -100,19 +100,40 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (race == null || race == "random") {
         race = races[MathRInt(0, races.length)]; 
     }
+    // Assign nation stats
+    if (birthNationName == "Feretti Kingdom") {
+        intelligence += 2;
+        constitution -= 1;
+    } else if (birthNationName == "Ekkionlor") {
+        dexterity += 3;
+        intelligence -= 2;
+    } else if (birthNationName == "Junjian Empire") {
+        strength += 1;
+        charisma += 1;
+        constitution += 1;
+        wisdom -= 1;
+    }
 
-    // Race
+    // Race & their stats
     if (race == "human") {
         raceID = 0;
+        strength += 1;
+
     } else if (race == "youdel") {
         raceID = 1;
+        dexterity += 1;
+        constitution += 2;
+        intelligence -= 2;
     } else if (race == "lafahl") {
         raceID = 2;
+        intelligence += 2;
+        charisma += 1;
     }
     childhoodAge = childhoodAges[raceID];
     maturityAge = maturityAges[raceID];
     retirementAge = retirementAges[raceID];
     lifeSpan = lifeSpans[raceID];
+
     
     if (agePref == "random" || agePref == null) {
         age = MathRInt(0, lifeSpan);
@@ -124,6 +145,22 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         age = MathRInt(maturityAge, retirementAge);
     } else {
         age = MathRInt(retirementAge, lifeSpan);
+    }
+
+        // Assign age stats;
+    if (age / childhoodAge < 1) {
+        wisdom -= 4;
+        intelligence -= 3;
+        dexterity += 1;
+    } else if (age / maturityAge < 1) {
+        wisdom -= 2;
+        intelligence -= 1;
+        dexterity += 3;
+    } else if (age / retirementAge < 1) {
+        wisdom += 1;
+    } else {
+        wisdom += 3;
+        dexterity -= 4;
     }
 
         // Generate occupations.
@@ -160,6 +197,17 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (gender == "male") pronoun = "He";
     if (gender == "female") pronoun = "She";
     var characterName = generateName(gender, race);
+
+
+    // Generate gender stats
+    if (gender == "male") {
+        strength += 2;
+        constitution += 1;
+    } else {
+        intelligence += 1;
+        dexterity += 1;
+        charisma += 1;
+    }
 
     // Check if yordle name contains a profession
     if (characterName.includes(" the ") && !characterName.includes("Unknown")) {
