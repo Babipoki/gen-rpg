@@ -194,7 +194,7 @@ if (gen == "character") {
 
 function generateChildhoodEvent(pronoun, characterName, birthNationName, race, age, maturityAge, childhoodAge, sexuality) {
     var result = "";
-    var ageOfEvent = MathRInt(childhoodAge, age);
+    var ageOfEvent = MathRInt(childhoodAge, maturityAge);
     var whose = "his";
     if (pronoun == "He") whose = "his";
         else whose = "her";
@@ -343,7 +343,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             "gave " + archnemesis + ", " + whose + " archnemesis, a wedgie"
         ];
         var crime = crimes[MathRInt(0, crimes.length)];
-        result += pronoun.toLowerCase() + " " + crimes + ".";
+        result += pronoun.toLowerCase() + " " + crime + ".";
     }
 
     return result;
