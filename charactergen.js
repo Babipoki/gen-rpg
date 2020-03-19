@@ -143,7 +143,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     var characterName = generateName(gender, race);
 
     // Check if yordle name contains a profession
-    if (characterName.includes(" the ")) {
+    if (characterName.includes(" the ") && !characterName.includes("Unknown")) {
         currentOccupation = characterName.split(" the ")[1].toLowerCase();
     }
 
