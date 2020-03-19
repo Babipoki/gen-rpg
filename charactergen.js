@@ -179,8 +179,79 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         adultOccupation = adultOccupations[MathRInt(0, adultOccupations.length)];
         childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
     }
+
+
     // Generate student type.
     studentType = studentTypes[MathRInt(0, studentTypes.length)];
+
+    // Childhood occupation's stats:
+    if (age > childhoodAge) {
+        if (childhoodOccupation == "private school student" || childhoodOccupation == "public school student") {
+            intelligence += 3;
+            // get student type stats:
+            ////////// FILL ME IN
+            if (studentType == "bully" || studentType == "rebel") {
+                charisma += 2;
+                strength += 2;
+                intelligence -= 2;
+                wisdom -= 1;
+            } else if (studentType == "class clown") {
+                charisma -= 1;
+            } else if (studentType == "teachers' friend" || studentType == "quiet kid" || studentType == "friend of all the teachers") {
+                charisma -= 1;
+                wisdom += 1;
+            } else if (studentType == "nerd" || studentType == "explosives expert") {
+                constitution += 2;
+                intelligence += 4;
+            } else if (studentType == "well-mannered kid") {
+                charisma += 1;
+                intelligence += 1;
+                wisdom += 2;
+            } else if (studentType == "balloon enthusiast") {
+                constitution -= 1;
+            } else if (studentType == "school merchant") {
+                wisdom += 3;
+                charisma += 3;
+            } else if (studentType == "dancer") {
+                dexterity += 2;
+            } else if (studentType == "artist") {
+                wisdom += 2;
+            } else if (studentType == "religious kid") {
+                wisdom += 2;
+                charisma += 1;
+            }
+        } else if (childhoodOccupation == "privately mentored student") {
+            intelligence += 2;
+        } else if (childhoodOccupation == "adventurer") {
+            dexterity += 3;
+            constitution += 2;
+            wisdom += 1;
+            charisma += 1;
+        } else if (childhoodOccupation == "urchin") {
+            dexterity += 1;
+            constitution += 2;
+        } else if (childhoodOccupation == "travelling musician") {
+            charisma += 4;
+        } else if (childhoodOccupation == "travelling circus performer") {
+            dexterity += 3;
+            charisma += 1;
+        } else if (childhoodOccupation == "little squire") {
+            strength += 1;
+            dexterity += 1;
+            intelligence += 1;
+            wisdom += 1;
+            charisma += 1;
+            constitution += 1;
+        } else if (childhoodOccupation == "newspaper kid") {
+            intelligence += 3;
+            dexterity += 1;
+        } else if (childhoodOccupation == "orphan") {
+            charisma -= 1;
+            dexterity += 1;
+            constitution += 1;
+            wisdom -= 1;
+        }
+    }
 
     // Generate personality traits and stuff...
     primaryPersonalityTrait = primaryPersonalityTraits[MathRInt(0, primaryPersonalityTraits.length)];
@@ -535,7 +606,7 @@ function displayStats() {
             else if (i == 4) result += "WIS";
             else if (i == 5) result += "CHA";
         result += '</div><div class="statValue">';
-        if (i == 0) result += strength;
+        if (i == 0) result += plusMinus(strength);
             else if (i == 1) result += plusMinus(dexterity);
             else if (i == 2) result += plusMinus(constitution);
             else if (i == 3) result += plusMinus(intelligence);
