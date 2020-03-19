@@ -62,6 +62,11 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     var pronoun = "";
     var sexuality = "";
 
+    // Reset values
+    brokeUp = false;
+    dadAlive = true;
+    momAlive = true;
+
     // Sexuality
     sexuality = sexualities[MathRInt(0, sexualities.length)];
 
