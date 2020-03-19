@@ -1,7 +1,7 @@
 // Generator stuff...
-var toddlerOccupations = ["toddler", "urchin"];
+var toddlerOccupations = ["toddler", "urchin", "orphan"];
 var childhoodOccupations = ["private school student", "public school student", "privately mentored student", "adventurer", "urchin", "travelling musician", "travelling circus performer",
-    "little squire"];
+    "little squire", "newspaper kid", "orphan"];
 var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid", "well-mannered kid", "balloon enthusiast", "explosives expert", "school merchant",
     "dancer", "artist", "friend of all the teachers", "religious kid", "rebel"];
 var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "shoemaker", "balloon shopkeeper", "mercenary", "assassin", "shinobi", "innkeeper", 
@@ -32,6 +32,16 @@ var romanticPartner = "";
 var brokeUp = false;
 var dadAlive = true;
 var momAlive = true;
+
+// Stats
+var intelligence = 0;
+var charisma = 0;
+var constitution = 0;
+var strength = 0;
+var wisdom = 0;
+var dexterity = 0;
+
+var totalStats = 6;
 
 
 
@@ -66,6 +76,15 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     brokeUp = false;
     dadAlive = true;
     momAlive = true;
+
+    // reset stats
+    intelligence = 0;
+    charisma = 0;
+    constitution = 0;
+    strength = 0;
+    wisdom = 0;
+    dexterity = 0;
+        
 
     // Sexuality
     sexuality = sexualities[MathRInt(0, sexualities.length)];
@@ -148,8 +167,8 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     }
 
     // Generate PEOPLE
-    archnemesis = generateName("random", "random");
-    bestFriend = generateName("random", "random");
+    archnemesis = generateName("random", "random").replace;
+    bestFriend = generateName("random", "random").replace;
 
     if (getPartner(pronoun, sexuality) == "boyfriend") romanticPartner = generateName("male");
     else romanticPartner = generateName("female");
@@ -180,7 +199,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (age > childhoodAge) {
         result += generateChildhoodEvent(pronoun, characterName, birthNationName, race, age, maturityAge, childhoodAge, sexuality);
     }
-
+    displayStats();
     document.getElementById("result").innerHTML = result;
 }
 
@@ -251,7 +270,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomRoll == 1) {
             result += pronoun.toLowerCase() + " discovered that " + whose + " friend " + generateName("random", "random") +" was gay.";
             if (sexuality == "gay" || sexuality == "bisexual") {
-                result += " It made " + characterName + " a more confident person, as " + pronoun.toLowerCase() + " was also " + sexuality + ".";
+                result += " It made " + getFirstWord(characterName) + " a more confident person, as " + pronoun.toLowerCase() + " was also " + sexuality + ".";
             } else {
                 var reaction = MathRInt(0, 1);
                 if (reaction == 0) result += " This angered " + getFirstWord(characterName) + " as " + pronoun.toLowerCase() + " grew up in a very homophobic environment.";
@@ -294,9 +313,9 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
     } else if (eventCategory == "loss of relatives") {
         var randomRoll = MathRInt(0, 2)
         var causesOfDeath = ["sickness", "accident at work", "being assassinated"];
-        var causeofDeath = causesOfDeath[MathRInt(0, causesOfDeath.length)];
+        var causeOfDeath = causesOfDeath[MathRInt(0, causesOfDeath.length)];
         if (randomRoll == 0) {
-            result += pronoun.toLowerCase() + " lost " + whose + " father, who died after " + causeofDeath + ".";
+            result += pronoun.toLowerCase() + " lost " + whose + " father, who died after " + causeOfDeath + ".";
             dadAlive = false;
         } else if (randomRoll == 1) {
             result += pronoun.toLowerCase() + " lost " + whose + " mother, who died after " + causeOfDeath + ".";
@@ -368,4 +387,32 @@ function getPartner(pronoun, sexuality) {
 function getFirstWord(sentence) {
     let spaceIndex = sentence.indexOf(' ');
     return spaceIndex === -1 ? sentence : sentence.substr(0, spaceIndex);
+}
+
+function displayStats() {
+    var result = "";
+    for (i = 0; i < totalStats; i++) {
+        result += '<div class="stat"><div class="statProperty">';
+        if (i == 0) result += "STR"
+            else if (i == 1) result += "DEX";
+            else if (i == 2) result += "CON";
+            else if (i == 3) result += "INT";
+            else if (i == 4) result += "WIS";
+            else if (i == 5) result += "CHA";
+        result += '</div><div class="statValue">';
+        if (i == 0) result += strength;
+            else if (i == 1) result += plusMinus(dexterity);
+            else if (i == 2) result += plusMinus(constitution);
+            else if (i == 3) result += plusMinus(intelligence);
+            else if (i == 4) result += plusMinus(wisdom);
+            else if (i == 5) result += plusMinus(charisma);
+        result += '</div></div>'
+    }
+
+    document.getElementById("statsOutput").innerHTML = result;
+}
+
+function plusMinus(stat) {
+    if (stat <= 0) return  stat;
+    else if (stat > 0) return "+" + stat;
 }

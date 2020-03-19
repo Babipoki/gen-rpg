@@ -32,9 +32,9 @@ a {
 
 h1 {
     margin-top: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     padding-top: 2px;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }
 
 .generatedContent {
@@ -45,6 +45,8 @@ h1 {
     margin: 20px auto;
     background: rgba(0, 0, 0, 0.3);
 }
+
+
 
 .generator {
     width: 50%;
@@ -82,6 +84,45 @@ button {
     font-family: 'Lato', sans-serif;
 }
 
+.stats {
+    text-align: center;
+    border-radius: 0%;
+    border-width: 3px;
+    border-style: dotted;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.3);
+    width: 50%;  
+}
+
+#statsOutput {
+    display: flex;
+    justify-content: center;
+}
+
+.stat {
+    width: 55px;
+    height: 70px;
+    border-radius: 25%;
+    border-width: 0;
+    background: rgba(0, 0, 0, 0.589);
+    position: relative;
+    margin: 5px;
+}
+
+.statProperty {
+    top: 5px;
+    font-weight: bold;
+}
+
+.statValue {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
 
 @media screen and (max-width: 600px) {
     body {
