@@ -238,7 +238,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomRoll == 1) result += whose + " parents betrayed " + whom + ", leaving him in the streets for " + whom + "self.";
         else if (randomRoll == 2) {result += whose + " " + partner + " " + romanticPartner +" betrayed " + whom + ", cheating their way into another kid's heart.";
                     romanticPartner = generateName(getPartner(pronoun, sexuality) == "boyfriend" ? "male" : "female") } // assign new romantic partner, since this one is lost.
-        else if (randomRoll == 3) result += whose + " friend betrayed " + whom + ", as they joined " + characterName + "'s archnemesis - <b>" + archnemesis + "</b>.";
+        else if (randomRoll == 3) result += whose + " friend betrayed " + whom + ", as they joined " + getFirstWord(characterName) + "'s archnemesis - <b>" + archnemesis + "</b>.";
     } else if (eventCategory == "injury") {
         var randomRoll = MathRInt(0, 2); 
         var randomBodyPart = bodyParts[MathRInt(0, bodyParts.length)];
@@ -254,8 +254,8 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
                 result += " It made " + characterName + " a more confident person, as " + pronoun.toLowerCase() + " was also " + sexuality + ".";
             } else {
                 var reaction = MathRInt(0, 1);
-                if (reaction == 0) result += " This angered " + characterName + " as " + pronoun.toLowerCase() + " grew up in a very homophobic environment.";
-                if (reaction == 1) result += " " + characterName + " didn't seem to mind.";
+                if (reaction == 0) result += " This angered " + getFirstWord(characterName) + " as " + pronoun.toLowerCase() + " grew up in a very homophobic environment.";
+                if (reaction == 1) result += " " + getFirstWord(characterName) + " didn't seem to mind.";
             }
         }
         else if (randomRoll == 2) result += pronoun.toLowerCase() + " made a scientific discovery. Not something of spectacular scope. But for " + whom + " it was a big deal.";
@@ -272,7 +272,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
                 var poppingTool = poppingTools[MathRInt(0, poppingTools.length)];
                 result += characterName + " was walking around the " + randomLocation + " with " + whose + " " + randomColor + " helium balloon, ";
                 result += " when suddenly " + whose + " archnemesis, " + archnemesis + " appeared, and pulled out the " + poppingTool + " and struck it into the poor balloon, ";
-                result += " making it pop into many different pieces. This event was one of the saddest in " + characterName + "'s life.";
+                result += " making it pop into many different pieces. This event was one of the saddest in " + getFirstWord(characterName) + "'s life.";
             }
             else if (randomRoll == 1) {
                 result += characterName + " was walking around the " + randomLocation + " with " + whose + " " + randomColor + " helium balloon, ";
@@ -280,7 +280,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
                 result += "fly away gracefully, still remembering its disappearing dot in the skies to this day.";
             } else if (randomRoll == 2) {
                 result += characterName + " was walking around the " + randomLocation + " with " + whose + " " + randomColor + " helium balloon, ";
-                result += " when suddenly " + whose + " archnemesis, " + archnemesis + " appeared, snatching the balloon from " + characterName + "'s hand and running away.";
+                result += " when suddenly " + whose + " archnemesis, " + archnemesis + " appeared, snatching the balloon from " + getFirstWord(characterName) + "'s hand and running away.";
             }
             
         }
@@ -363,4 +363,9 @@ function getPartner(pronoun, sexuality) {
         else partner = "girlfriend";
     }
     return partner;
+}
+
+function getFirstWord(sentence) {
+    let spaceIndex = sentence.indexOf(' ');
+    return spaceIndex === -1 ? sentence : sentence.substr(0, spaceIndex);
 }
