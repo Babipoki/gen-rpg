@@ -263,6 +263,29 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     secondaryPersonalityTrait = secondaryPersonalityTraits[MathRInt(0, secondaryPersonalityTraits.length)];
     physicalTrait = physicalTraits[MathRInt(0, physicalTraits.length)];
 
+    // Physical trait's stats:
+    if (physicalTrait == "fat" || physicalTrait == "obese" || physicalTrait == "overweight") {
+        strength += 1;
+        dexterity -= 2;
+        intelligence -= 1; // lose weight if ur that smart, dumbass
+        charisma -= 2;
+        constitution -= 1;
+    } else if (physicalTrait == "good-looking") {
+        charisma += 2;
+    } else if (physicalTrait == "athletic") {
+        dexterity += 3;
+        strength += 1;
+        constitution += 2;
+    } else if (physicalTrait == "buff" || physicalTrait == "muscular") {
+        strength += 4;
+    } else if (physicalTrait == "slender" || physicalTrait == "slim" || physicalTrait == "skinny") {
+        dexterity += 1;
+    } else if (physicalTrait == "short") {
+        dexterity += 2;
+    } else if (physicalTrait == "tall") {
+        charisma += 1;
+    }
+
     // Primary trait's stats:
     if (primaryPersonalityTrait == "naughty") {
         charisma += 2;
