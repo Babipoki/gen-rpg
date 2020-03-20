@@ -401,8 +401,8 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     }
 
     // Generate PEOPLE
-    archnemesis = generateName("random", "random").replace;
-    bestFriend = generateName("random", "random").replace;
+    archnemesis = generateName("random", "random");
+    bestFriend = generateName("random", "random");
 
     if (getPartner(pronoun, sexuality) == "boyfriend") romanticPartner = generateName("male");
     else romanticPartner = generateName("female");

@@ -59,11 +59,17 @@ select {
     margin-top: 5px;
 }
 
-button {
+#myBtn {
     margin: 5px;
     width: 25%;
     height: 50px;
-
+    background: rgba(247, 70, 26, 0.664);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    border: 0;
+    border-radius: 1.625rem;
+    color: white;
+    font-weight: 900;
 }
 
 .generatedContent p {
@@ -129,6 +135,7 @@ h2 {
     margin-top: 0;
     padding-top: 0;
 }
+
 
 @media screen and (max-width: 1111px) {
     .statProperty {
