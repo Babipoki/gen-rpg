@@ -19,13 +19,17 @@ else {amountToGenerate = 1}
         
         var name1 = [];
         if (nation == "feretti") {
-               name1 = ["Pratilhon", "Filita", "Leda Wells", "Blue Field", "Wircossia", "Shinbuchi", "Vensur", "Hupiapal", "Wigston", "Erast", "Ilafari", "Dragon Coast", "Usegu", "Holsenwort", "Horches", "Pofen", "Kowa", "Arith", "Oln", "Kokushiro", "Daikige", "Naka", "Ledon", "Shin", "Fort Cirette"];
+                name1 = ["Pratilhon", "Filita", "Leda Wells", "Blue Field", "Wircossia", "Shinbuchi", "Vensur", "Hupiapal", "Wigston", "Erast", "Ilafari", "Dragon Coast", "Usegu", "Holsenwort", "Horches", "Pofen", "Kowa", "Arith", "Oln", "Kokushiro", "Daikige", "Naka", "Ledon", "Shin", "Fort Cirette"];
         } else if (nation == "ekkionlor") {
-               name1 = ["Gnesalim", "Girdeta", "Noro", "Nyudai", "Kinba", "Cahyra", "Hisana", "Huo", "Savita", "Kartis", "Kushiho", "Pluskel", "Sariho", "Nato", "Kawasa", "Karivia", "Shinda", "Frilta", "Shon", "Umi"];
+                name1 = ["Gnesalim", "Girdeta", "Noro", "Nyudai", "Kinba", "Cahyra", "Hisana", "Huo", "Savita", "Kartis", "Kushiho", "Pluskel", "Sariho", "Nato", "Kawasa", "Karivia", "Shinda", "Frilta", "Shon", "Umi"];
         } else if (nation == "junjian") {
-               name1 = ["Yenadevil", "Desudo", "Bogolmo", "Rauni", "Mirabima", "Hampo", "Fashu", "Ara", "Anpo", "Touyako"];
+                name1 = ["Yenadevil", "Desudo", "Bogolmo", "Rauni", "Mirabima", "Hampo", "Fashu", "Ara", "Anpo", "Touyako"];
         } else if (nation == "toras") {
-               name1 = ["Wulopi", "Samino", "Kirna", "Dunwich", "Tohamu", "Felnerzog", "Ziglon", "Temblelas", "Rabalon", "Satareku City", "Esembejas", "Sashi", "Upiaba", "Stedt", "Bronzetown", "Boru", "Oshi", "Feligen"]
+                name1 = ["Wulopi", "Samino", "Kirna", "Dunwich", "Tohamu", "Felnerzog", "Ziglon", "Temblelas", "Rabalon", "Satareku City", "Esembejas", "Sashi", "Upiaba", "Stedt", "Bronzetown", "Boru", "Oshi", "Feligen"]
+        } else if (nation == "besizottia") {
+                name1 = ["Pioz", "Allocen", "Ely", "Argala"];
+        } else if (nation == "rotali") {
+                name1 = ["Stavilion", "Fera", "Falumi", "Grantisa", "Redu", "Esbartue", "Poki", "Bela", "Mina", "Sangi", "Blue Fort", "Eledor", "Cireli", "Miza", "Martruta", "Misa", "Lala Town", "Rielma", "Pamo", "Alta", "Elhondo", "Kiretu", "Poku", "Agangost", "Tagagi", "Falcon's Beak", "Etal", "Steethorp", "Gudmisetr"]
         }
 
 

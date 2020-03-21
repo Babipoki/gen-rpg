@@ -16,7 +16,7 @@ var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "carele
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
 var races = ["human", "youdel", "lafahl"];
-var nations = ["feretti", "ekkionlor", "junjian", "toras"]
+var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali"]
 var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
 var sexualities = ["straight", "gay", "bisexual"];
@@ -98,6 +98,8 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (birthNation == "ekkionlor") birthNationName = "Ekkionlor";
     if (birthNation == "junjian") birthNationName = "Junjian Empire";
     if (birthNation == "toras") birthNationName = "Republic of Toras";
+    if (birthNation == "besizottia") birthNationName = "Republic of Besizottia";
+    if (birthNation == "rotali") birthNationName = "Rotali Sultanate";
     if (race == null || race == "random") {
         race = races[MathRInt(0, races.length)]; 
     }
