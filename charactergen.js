@@ -9,8 +9,8 @@ var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "
     "musician", "painter", "piper", "writer", "actor", "banker", "guild master", "merchant", "collector", "translator", "courier", "bladesmith", "jeweler", "tanner", "woodcarver",
     "goldsmith", "potter", "bandit", "pirate", "burglar", "thief", "outlaw", "kidnapper", "mathematician", "sorcerer", "wizard", "squire", "courtier", "chancellor", "diplomat",
     "herbalist", "doctor", "healer", "alchemist", "baker", "orphanage caretaker", "necromancer", "elementalist", "shaman", "warlock", "mage", "bouncer", "detective",
-    "spy", "scout", "cleric", "cultist", "sea captain", "caravaneer", "navigator", "pilgrim", "housewife", "bounty hunter", "gambler", "exile", "tomb raider"];
-var retiredOccupations = ["retiree", "military commander", "writer", "refugee", "beggar"];
+    "spy", "scout", "cleric", "cultist", "sea captain", "caravaneer", "navigator", "pilgrim", "housewife", "bounty hunter", "gambler", "exile", "tomb raider", "warrior"];
+var retiredOccupations = ["retiree", "military commander", "writer", "refugee", "beggar", "wizard"];
 var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty", "generous", "creepy", "perverted", "absent-minded", "naive", "calm", "organized"];
 var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable"];
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
@@ -493,11 +493,12 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
                     romanticPartner = generateName(getPartner(pronoun, sexuality) == "boyfriend" ? "male" : "female") } // assign new romantic partner, since this one is lost.
         else if (randomRoll == 3) result += whose + " friend betrayed " + whom + ", as they joined " + getFirstWord(characterName) + "'s archnemesis - <b>" + archnemesis + "</b>.";
     } else if (eventCategory == "injury") {
-        var randomRoll = MathRInt(0, 2); 
+        var randomRoll = MathRInt(0, 3); 
         var randomBodyPart = bodyParts[MathRInt(0, bodyParts.length)];
         if (randomRoll == 0) result += pronoun.toLowerCase() + " fell into the well, injuring " + whose + " " + randomBodyPart + " in the process.";
         else if (randomRoll == 1) result += pronoun.toLowerCase() + " was beaten up by other kids, injuring " + whose + " " + randomBodyPart + " heavily.";
         else if (randomRoll == 2) result += pronoun.toLowerCase() + " tried to punch a boulder, injuring the right hand in the process.";
+        else if (randomRoll == 3) result += pronoun.toLowerCase() + " lost an eye after falling in the ruins."
     } else if (eventCategory == "discovery") {
         var randomRoll = MathRInt(0, 2);
         if (randomRoll == 0) result += pronoun.toLowerCase() + " discovered a terrible secret of one of " + whose + " parents. He kept it for " + whom + "self ever since.";
@@ -513,7 +514,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         }
         else if (randomRoll == 2) result += pronoun.toLowerCase() + " made a scientific discovery. Not something of spectacular scope. But for " + whom + " it was a big deal.";
     } else if (eventCategory == "lost toy") {
-        var toys = ["balloon", "teddy bear", "doll"]
+        var toys = ["balloon", "teddy bear", "doll", "wooden sword"]
         var randomToy = toys[MathRInt(0, toys.length)];
         if (randomToy == "balloon") {
             var randomRoll = MathRInt(0, 2);
@@ -541,20 +542,30 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             var randomRoll = MathRInt(0, 1);
             var lostLocations = ["bedroom", "garden", "living room", "school"]
             var lostLocation = lostLocations[MathRInt(0, lostLocations.length)];
-            if (randomRoll == 0) result += pronoun.toLowerCase() + "lost " + whose + " teddy bear somewhere in the " + lostLocation + ", never to be found again.";
-            if (randomRoll == 1) result += pronoun.toLowerCase() + "had " + whose + " teddy bear stolen by none other but " + whose + " archnemesis - " + archnemesis + ".";
+            if (randomRoll == 0) result += pronoun.toLowerCase() + " lost " + whose + " teddy bear somewhere in the " + lostLocation + ", never to be found again.";
+            if (randomRoll == 1) result += pronoun.toLowerCase() + " had " + whose + " teddy bear stolen by none other but " + whose + " archnemesis - " + archnemesis + ".";
+        } else if (randomToy == "doll") {
+            result += pronoun.toLowerCase() + " had " + whose + " doll stolen by " + whose + " archnemesis, " + archnemesis + ".";
+        } else if (randomToy == "wooden sword") {
+            var randomRoll = MathRInt(0, 1);
+            if (randomRoll == 0) result += pronoun.toLowerCase() + " lost " + whose + " wooden sword, after it got confiscated by the guards.";
+            else if (randomRoll == 1) result += pronoun.toLowerCase() + " lost " + whose + " wooden sword, after a the long childish duel with his archnemesis, " + archnemesis + ", who struck the sword and broke it into two pieces.";
         }
     } else if (eventCategory == "loss of relatives") {
-        var randomRoll = MathRInt(0, 2)
-        var causesOfDeath = ["sickness", "accident at work", "being assassinated"];
+        var randomRoll = MathRInt(0, 3)
+        var causesOfDeath = ["sickness", "accident at work", "being assassinated", "being run over by a horse", "unsuccessful scientific experiments"];
         var causeOfDeath = causesOfDeath[MathRInt(0, causesOfDeath.length)];
+        var randomRelatives = ["grandma", "grandpa", "brother", "sister", "cousin"];
+        var randomRelative = randomRelatives[MathRInt(0, randomRelatives.length)];
         if (randomRoll == 0) {
             result += pronoun.toLowerCase() + " lost " + whose + " father, who died after " + causeOfDeath + ".";
             dadAlive = false;
         } else if (randomRoll == 1) {
             result += pronoun.toLowerCase() + " lost " + whose + " mother, who died after " + causeOfDeath + ".";
-        } else {
-            result += pronoun.toLowerCase() + " lost a distant relative. " + pronoun + " remembers not wanting to go to the funeral and also missing " + bestFriend + "'s, his best friend's birthday.";
+        } else if (randomRoll == 2){
+            result += pronoun.toLowerCase() + " lost a " + randomRelative + ". " + pronoun + " remembers not wanting to go to the funeral and also missing " + bestFriend + "'s, his best friend's birthday.";
+        } else if (randomRoll == 3) {
+            result += pronoun.toLowerCase() + " lost a " + randomRelative + ". " + pronoun + " remembers how much " + pronoun.toLowerCase() + " loved them and how greatly it affected " + whose + " emotional state.";
         }
     } else if (eventCategory == "sickness") {
         var diseases = ["red rot, after direct contact with red ooze, where " + whose + " flesh began to slowly rot away",
@@ -570,18 +581,23 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
          "sewer rat flu",
          "brain fever, from proximity to Underdark denizens",
          "carrion fever, which caused migraines and an intense craving of raw meat",
-         "desert fever, where skin took on a red tinge, fever and bouts of cold sweat"
+         "desert fever, where skin took on a red tinge, fever and bouts of cold sweat",
+         "demon ears, where " + pronoun.toLowerCase() + " could only hear what demons tell" + whom,
+         "magic allergy, which caused mild allergic reaction to anything that was even slightly magical"
             ]; // Source: http://dndspeak.com/2018/04/100-diseases/   I should add more later.
         var disease = diseases[MathRInt(0, diseases.length)];
         result += pronoun.toLowerCase() + " caught " + disease + "."
     } else if (eventCategory == "paranormal/magical sighting") {
+        var magicalAnimals = ["dog", "cat", "tiger", "owl", "penguin", "giraffe", "lion", "puma", "fennec fox", "hamster", "mouse", "rat", "platypus", "monkey", "crow", "parrot", "elephant", "alligator", "crocodile", "bear", "hedgehog", "turtle", "armadillo", "otter", "goat", "sheep", "zebra", "wolf"];
+        var magicalAnimal = magicalAnimals[MathRInt(0, magicalAnimals.length)];
         var magicalEvents = [
             "came across a wizard's book",
             "met a wizard and became his apprentice",
             "met an evil hog and got kidnapped, but managed to escape in the end",
             "met a talking balloon, who taught " + whom + " how to treat all the balloons in the world",
             "saw an extraplanar creature during the night",
-            "found a magical treasure chest, containing secrets of the other world"
+            "found a magical treasure chest, containing secrets of the other world",
+            "encountered a magical " + magicalAnimal + " who could talk to " + whom + " and accompanied " + whom + " ever since"
         ];
         var magicalEvent = magicalEvents[MathRInt(0, magicalEvents.length)];
         result += pronoun.toLowerCase() + " " + magicalEvent + ".";
