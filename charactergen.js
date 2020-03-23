@@ -1,7 +1,7 @@
 // Generator stuff...
 var toddlerOccupations = ["toddler", "urchin", "orphan"];
 var childhoodOccupations = ["private school student", "public school student", "privately mentored student", "adventurer", "urchin", "travelling musician", "travelling circus performer",
-    "little squire", "newspaper kid", "orphan"];
+    "little squire", "newspaper kid", "orphan", "magician's apprentice", "wizard's apprentice"];
 var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid", "well-mannered kid", "balloon enthusiast", "explosives expert", "school merchant",
     "dancer", "artist", "friend of all the teachers", "religious kid", "rebel"];
 var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "shoemaker", "balloon shopkeeper", "mercenary", "assassin", "shinobi", "innkeeper", 
@@ -9,15 +9,15 @@ var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "
     "musician", "painter", "piper", "writer", "actor", "banker", "guild master", "merchant", "collector", "translator", "courier", "bladesmith", "jeweler", "tanner", "woodcarver",
     "goldsmith", "potter", "bandit", "pirate", "burglar", "thief", "outlaw", "kidnapper", "mathematician", "sorcerer", "wizard", "squire", "courtier", "chancellor", "diplomat",
     "herbalist", "doctor", "healer", "alchemist", "baker", "orphanage caretaker", "necromancer", "elementalist", "shaman", "warlock", "mage", "bouncer", "detective",
-    "spy", "scout", "cleric", "cultist", "sea captain", "caravaneer", "navigator", "pilgrim", "housewife", "bounty hunter", "gambler", "exile", "tomb raider", "warrior"];
+    "spy", "scout", "cleric", "cultist", "sea captain", "caravaneer", "navigator", "pilgrim", "housekeeper", "bounty hunter", "gambler", "exile", "tomb raider", "warrior", "town guard", "red mage", "explorer", "loan shark", "banker", "entrepreneur", "engineer", "architect", "sailor", "programmer", "electrician", "magician", "lawyer", "rogue", "janitor", "hotel manager", "bartender", "beekeeper"];
 var retiredOccupations = ["retiree", "military commander", "writer", "refugee", "beggar", "wizard"];
-var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty", "generous", "creepy", "perverted", "absent-minded", "naive", "calm", "organized"];
-var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable"];
+var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", "sweaty", "generous", "creepy", "perverted", "absent-minded", "naive", "calm", "organized", "clueless"];
+var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable", "observant", "artistic", "creative"];
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
 var races = ["human", "youdel", "lafahl"];
-var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali"]
-var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
+var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali"];
+var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian", "Salimian", "Santenian", "Pentigan", "Abian", "Borbonian", "Corian", "Eglenathian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
 var sexualities = ["straight", "gay", "bisexual"];
 var bodyParts = ["left leg", "right leg", "left foot", "right foot", "spine", "left arm", "right arm", "forehead", "groin"];
@@ -100,6 +100,10 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (birthNation == "toras") birthNationName = "Republic of Toras";
     if (birthNation == "besizottia") birthNationName = "Republic of Besizottia";
     if (birthNation == "rotali") birthNationName = "Rotali Sultanate";
+    if (birthNation == "pentiga") birthNationName = "Republic of Pentiga";
+    if (birthNation == "santeno") birthNationName = "Republic of Santeno";
+    if (birthNation == "abrax") birthNationName = "Kingdom of Abrax";
+
     if (race == null || race == "random") {
         race = races[MathRInt(0, races.length)]; 
     }
@@ -119,6 +123,20 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         constitution += 1;
         strength += 2;
         charisma += 2;
+    } else if (birthNationName == "Republic of Besizottia") {
+        intelligence += 3;
+        wisdom += 2;
+        strength -= 1;
+    } else if (birthNationName == "Rotali Sultanate") {
+        intelligence += 3;
+    } else if (birthNationName == "Republic of Pentiga") {
+        intelligence += 2;
+    } else if (birthNationName == "Republic of Santeno") {
+        intelligence += 1;
+        constitution += 2;
+    } else if (birthNationName == "Kingdom of Abrax") {
+        wisdom += 1;
+        charisma += 1;
     }
 
     // Race & their stats
@@ -185,6 +203,20 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         currentOccupation = retiredOccupations[MathRInt(0, retiredOccupations.length)];
         adultOccupation = adultOccupations[MathRInt(0, adultOccupations.length)];
         childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
+    }
+
+    // Female / male equivalents
+    if (gender == "female") {
+        if (currentOccupation == "bartender") currentOccupation = "barmaid";
+        if (adultOccupation == "bartender") adultOccupation = "barmaid";
+        if (adultOccupation == "hunter") adultOccupation = "huntress";
+        if (currentOccupation == "hunter") currentOccupation = "huntress";
+        if (currentOccupation == "actor") currentOccupation = "acress";
+        if (adultOccupation == "actor") adultOccupation = "actress";
+        if (currentOccupation == "bounty hunter") currentOccupation = "bounty huntress";
+        if (adultOccupation == "bounty hunter") adultOccupation = "bounty huntress";
+        if (currentOccupation == "housekeeper") currentOccupation = "housewife";
+        if (adultOccupation == "housekeeper") adultOccupation = "housewife";
     }
 
 
@@ -257,6 +289,13 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
             dexterity += 1;
             constitution += 1;
             wisdom -= 1;
+        } else if (childhoodOccupation == "magician's apprentice") {
+            charisma += 2;
+            dexterity += 1;
+            intelligence += 1;
+        } else if (childhoodOccupation == "wizard's apprentice") {
+            intelligence += 2;
+            wisdom += 2;
         }
     }
 
@@ -313,7 +352,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     } else if (primaryPersonalityTrait == "creepy" || primaryPersonalityTrait == "perverted") {
         charisma -= 1;
         wisdom -= 3;
-    } else if (primaryPersonalityTrait == "absent-minded") {
+    } else if (primaryPersonalityTrait == "absent-minded" || primaryPersonalityTrait == "clueless") {
         wisdom -= 2;
         intelligence -= 3;
     } else if (primaryPersonalityTrait == "naive") {
@@ -372,6 +411,11 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         intelligence -= 4;
         constitution -= 4;
         charisma -= 3;
+    } else if (secondaryPersonalityTrait == "observant") {
+        wisdom += 3;
+    } else if (secondaryPersonalityTrait == "creative" || secondaryPersonalityTrait == "artistic") {
+        charisma += 2;
+        intelligence += 2;
     }
 
     var birthCity = generateSettlement(birthNation);
@@ -416,7 +460,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     // Add childhood or adult occupations based on age into text:
     
     if (age >= maturityAge) {
-        result += "During the childhood, " + characterName + " was " + indefinite_article(childhoodOccupation) + " " + childhoodOccupation + ". ";
+        result += "During the childhood, " + characterName.split(" ")[0] + " was " + indefinite_article(childhoodOccupation) + " " + childhoodOccupation + ". ";
     } if (age >= retirementAge) {
         result += "Before retirement, " + pronoun.toLowerCase() + " was " + indefinite_article(adultOccupation) + " " + adultOccupation + ". "
     }
@@ -428,7 +472,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         } else if (age >= maturityAge && age < retirementAge) {
             result += "When " + pronoun.toLowerCase() + " was in school, " + pronoun.toLowerCase() + " was mostly regarded as " + indefinite_article(studentType) + " " + studentType + ". ";
         } else if (age >= retirementAge) {
-            result += pronoun + " clearly remembers how back in the school days, " + characterName + " was the name associated with the " + studentType + " of the class. ";
+            result += pronoun + " clearly remembers how back in the school days, " + characterName.split(" ")[0] + " was the name associated with the " + studentType + " of the class. ";
         }
     }
     // add events:
@@ -524,7 +568,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             var locations = ["bazaar", "park", "streets"];
             var randomLocation = locations[MathRInt(0, locations.length)];
             if (randomRoll == 0) {
-                var poppingTools = ["needle", "pointy branch", ""];
+                var poppingTools = ["needle", "pointy branch", "pencil"];
                 var poppingTool = poppingTools[MathRInt(0, poppingTools.length)];
                 result += characterName + " was walking around the " + randomLocation + " with " + whose + " " + randomColor + " helium balloon, ";
                 result += " when suddenly " + whose + " archnemesis, " + archnemesis + " appeared, and pulled out the " + poppingTool + " and struck it into the poor balloon, ";

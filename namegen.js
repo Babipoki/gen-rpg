@@ -29,7 +29,7 @@
         var name2 = [];
         if (gender == "male") {
                 if (race == "human") {
-                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius"];
+                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir"];
                     
                 }
                 if (race == "youdel") {
@@ -69,7 +69,17 @@
 	"Bakli",
 	"Rikki",
 	"Pappo",
-	"Fovli"
+	"Fovli",
+	"Otto",
+	"Sullo",
+	"Gino",
+	"Flafty",
+	"Duno",
+	"Celgy",
+	"Rubo",
+	"Agil",
+	"Bravil",
+	"Jelvix"
 ];
                 }
         } else if (gender == "female") {
@@ -122,7 +132,28 @@
 	"Zerria",
 	"Aethelgyth",
 	"Adelana",
-	"Rianne"
+	"Rianne",
+	"Onna",
+	"Anava",
+	"Bona",
+	"Cecilia",
+	"Dagna",
+	"Efinia",
+	"Fierna",
+	"Gerona",
+	"Havna",
+	"Junjia",
+	"Kota",
+	"Limia",
+	"Maxia",
+	"Nunia",
+	"Ovanna",
+	"Ruta",
+	"Sonuva",
+	"Tekka",
+	"Unna",
+	"Viennia",
+	"Zema"
 ];
                 }
                 if (race == "youdel") {
@@ -139,7 +170,15 @@
 	"Sabrina",
 	"Terri",
 	"Zaka",
-	"Tava"
+	"Tava",
+	"Rama",
+	"Zavina",
+	"Bartosia",
+	"Povia",
+	"Trussia",
+	"Pivona",
+	"Regine",
+	"Bella"
 ];
                     
                 }
@@ -246,7 +285,27 @@
 	"Povazu",
 	"Resko",
 	"Kirimmi",
-	"Eratti"
+	"Eratti",
+	"Alsirson",
+	"Bivonni",
+	"Cretto",
+	"Divialli",
+	"Emelto",
+	"Fernatto",
+	"Girenno",
+	"Helmo",
+	"Inkiro",
+	"Jantollo",
+	"Kinmo",
+	"Limisso",
+	"Nuratto",
+	"Osvalli",
+	"Pierto",
+	"Ringo",
+	"Tevialli",
+	"Uveronno",
+	"Zavianni",
+	"Silannio"
 ];
         }
 
@@ -282,7 +341,10 @@
 	"the Gunwielder",
 	"the Sailor",
 	"the Mage",
-	"the Rogue"
+	"the Rogue",
+	"the Wizard",
+	"the Blacksmith",
+	"the Shoemaker"
 ];
 		}
 

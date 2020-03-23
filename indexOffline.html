@@ -1,0 +1,113 @@
+<script> var gen = "character" </script>
+
+<head>
+    <title>Babipoki's Generators</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</script>
+</head>
+<body>
+    <div class="generator">
+
+<h1>Character Generator</h1>
+<label for="nation">Nation:</label>
+        <select id="nation">
+            <option value="random">Random</option>
+            <option value="feretti">Feretti Kingdom</option>
+            <option value="ekkionlor">Ekkionlor</option>
+            <option value="junjian">Junjian Empire</option>
+            <option value="toras">Republic of Toras</option>
+            <option value="besizottia">Republic of Besizottia</option>
+            <option value="rotali">Rotali Sultanate</option>
+            <option value="pentiga">Republic of Pentiga</option>
+            <option value="santeno">Republic of Santeno</option>
+            <option value="abrax">Kingdom of Abrax</option>
+        </select>
+
+<label for="race">Race:</label>
+    <select id="race">
+        <option value="random">Random</option>
+        <option value="human">Human</option>
+        <option value="youdel">Youdel</option>
+        <option value="lafahl">Lafahl</option>
+    </select>
+
+<label for="age">Age:</label>
+    <select id="age">
+        <option value="random">Random</option>
+        <option value="toddler">Toddler</option>
+        <option value="child">Child</option>
+        <option value="adult">Adult</option>
+        <option value="elder">Elder</option>
+    </select>
+
+<label for="genderPref">Gender:</label>
+    <select id="genderPref">
+        <option value="random">Random</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br>
+<div class="generatedContent character">
+    <div id="result"></div>
+</div>
+
+<div class="stats"><h2>Stats</h2>
+    <div id="statsOutput">
+        <!--<div class="stat">
+            <div class="statProperty">INT</div>
+            <div class="statValue">+2</div>
+        </div>
+        <div class="stat">
+            <div class="statProperty">INT</div>
+            <div class="statValue">+2</div>
+        </div>
+        <div class="stat">
+            <div class="statProperty">INT</div>
+            <div class="statValue">+2</div>
+        </div>
+        <div class="stat">
+            <div class="statProperty">INT</div>
+            <div class="statValue">+2</div>
+        </div>-->
+    </div>
+</div>
+
+<button id="myBtn" onclick="generateCharacter(document.getElementById('nation').value, document.getElementById('race').value, document.getElementById('age').value, document.getElementById('genderPref').value);checkMouse();">Generate another...</button>
+
+<script>
+    var mouseDown = 0;
+    var firstTime = 1;
+    var input = document.getElementById("myBtn");
+    document.body.addEventListener("keyup", function(event) {
+        if (event.which == 13 || event.keyCode == 13) {
+            if (firstTime == 1) {
+                input.click();
+            }
+            return false;
+        }
+        return true;
+    });
+    document.body.onmousedown = function() {
+        ++mouseDown;
+    }
+    document.body.onmousedown = function() {
+        --mouseDown;
+    }
+    function checkMouse() {
+        if (mouseDown) {
+            firstTime = 0;
+        }
+    }
+</script>
+
+</div>
+</body>
+
+
+<script type="text/javascript" src="indefarticle.js"></script>
+<script type="text/javascript" src="namegen.js"></script>
+<script type="text/javascript" src="settlementgen.js"></script>
+<script type="text/javascript" src="charactergen.js"></script>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Abel|Fjalla+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 </script>
