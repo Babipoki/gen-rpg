@@ -15,7 +15,11 @@
     <?php include "./header.html"; ?>
         <?php if (empty($gen)) {
             echo "Please pick the generator...";
-        } else {
+        } else if ($gen = "currency"){
+            include "./currency/currency.html";
+        } 
+        
+        else {
             
             include "./" . $gen . ".html";
         }

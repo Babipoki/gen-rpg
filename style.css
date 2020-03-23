@@ -136,6 +136,11 @@ h2 {
     padding-top: 0;
 }
 
+.currencyConverter {
+    display: flex;
+    margin: 0 auto;
+}
+
 
 @media screen and (max-width: 1111px) {
     .statProperty {
