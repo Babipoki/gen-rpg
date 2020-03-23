@@ -122,9 +122,14 @@ function getCurrencyID (abbr) {
 
 function createChart(type, targetID, currencyID) {
     var theData = [];
-    if (type == "inflation") theData = currencies[currencyID][8];
-    else if (type == "power") theData = currencies[currencyID][9];
+    if (type == "inflation") {
+        theData = currencies[currencyID][8];
+    }
+    else if (type == "power") {
+        theData = currencies[currencyID][9];
+    }
     ctx = document.getElementById(targetID).getContext('2d');
+    document.getElementById(targetID).innerHTML = "";
     var chart = new Chart(ctx, {
         type: 'line',
         data:  {
