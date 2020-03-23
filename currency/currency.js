@@ -51,7 +51,7 @@ var inputs = '<label for="inputCurrency"></label><select id="inputCurrency">';
 for (i = 0; i < currencies.length; i++) {
     inputs += "<option value='" + currencies[i][2] + "'>" + currencies[i][2] + "</option>";
 }
-inputs += "</select> to: ";
+inputs += "</select> to:";
 document.getElementById("inputs").innerHTML = inputs;
 
 var outputs = '<label for="outputCurrency"></label><select id="outputCurrency">';
@@ -68,7 +68,7 @@ function calculateCurrency (value, from, to) {
     var toID = getCurrencyID(to);
     var inflationDiff = currencies[fromID][6] - currencies[toID][6];
     var powerDiff = currencies[fromID][7] - currencies[toID][7];
-    var convertedValue = Number(value) + (value * inflationDiff * powerDiff);
+    var convertedValue = Number(value) + (Number(value) * inflationDiff * powerDiff);
     if (currencies[toID][3] == false) {
         convertedValue = Math.floor(convertedValue);
     } else if (currencies[toID][4] == 10) {
@@ -77,7 +77,8 @@ function calculateCurrency (value, from, to) {
         convertedValue = (Math.round(convertedValue * 100) / 100).toFixed(2);
     }
 
-    document.getElementById("result").innerHTML = value + from + " equals to " + convertedValue + to;
+    document.getElementById("currencyResult").innerHTML = value + from + " equals to " + convertedValue + to;
+    return convertedValue;
 }
 
 function getCurrencyID (abbr) {

@@ -35,6 +35,7 @@ h1 {
     margin-bottom: 2px;
     padding-top: 0px;
     padding-bottom: 2px;
+    text-align: center;
 }
 
 .generatedContent {
@@ -137,8 +138,41 @@ h2 {
 }
 
 .currencyConverter {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
     display: flex;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+#currencyResult {
+    margin: auto;
+    width: 35%;
+    text-align: center;
+    background: white;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    border-radius: 1.43rem;
+}
+
+.currencyConverter > input {
+    height: 50px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#inputs > select, #outputs > select {
+    height: 50px;
+    font-weight: 600;
+    font-size: 25px;
 }
 
 
