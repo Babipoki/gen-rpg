@@ -93,9 +93,9 @@ document.getElementById("outputs").innerHTML = outputs;
 function calculateCurrency (value, from, to) {
     var fromID = getCurrencyID(from);
     var toID = getCurrencyID(to);
-    var inflationDiff = currencies[fromID][6] - currencies[toID][6];
-    var powerDiff = currencies[fromID][7] - currencies[toID][7];
-    var convertedValue = Number(value) + (Number(value) * Number(inflationDiff) / Number(powerDiff));
+    var actualPowerFrom = currencies[fromID][7] / currencies[fromID][6];
+    var actualPowerTo = currencies[toID][7] / currencies[toID][6];
+    var convertedValue = Number(value) * Number(actualPowerFrom / actualPowerTo);
     if (currencies[toID][3] == false) {
         convertedValue = Math.floor(convertedValue);
     } else if (currencies[toID][5] == 10) {
