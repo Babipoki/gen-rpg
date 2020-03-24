@@ -23,7 +23,7 @@ var sexualities = ["straight", "gay", "bisexual"];
 var bodyParts = ["left leg", "right leg", "left foot", "right foot", "spine", "left arm", "right arm", "forehead", "groin"];
 var balloonColors = ["red", "pink", "blue", "green", "yellow", "white", "black", "yellow smiley", "pink bunny-shaped"];
 // Events
-var childhoodEventCategories = ["betrayal", "injury", "discovery", "lost toy", "loss of relatives", "sickness", "paranormal/magical sighting", "commited crime"];
+var childhoodEventCategories = ["betrayal", "injury", "discovery", "lost toy", "loss of relatives", "sickness", "paranormal/magical sighting", "commited crime", "fortune"];
 
 // Defaults
 var archnemesis = "";
@@ -529,7 +529,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
 
     // Actual events:
     if (eventCategory == "betrayal") {
-        var randomRoll = MathRInt(0, 3);
+        var randomRoll = MathRInt(0, 4);
         if (randomRoll == 0) {result += whose + " best friend " + bestFriend + " betrayed " + whom + ", driving back the trust of the society as a whole.";
                     bestFriend = generateName("random", "random");
                     result += " " + bestFriend + " then became " + whose + " best friend."
@@ -538,6 +538,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomRoll == 2) {result += whose + " " + partner + " " + romanticPartner +" betrayed " + whom + ", cheating their way into another kid's heart.";
                     romanticPartner = generateName(getPartner(pronoun, sexuality) == "boyfriend" ? "male" : "female") } // assign new romantic partner, since this one is lost.
         else if (randomRoll == 3) result += whose + " friend betrayed " + whom + ", as they joined " + getFirstWord(characterName) + "'s archnemesis - <b>" + archnemesis + "</b>.";
+        else if (randomRoll == 4) result += whose + " parents sold " + whom + " to slavery, only to sustain themselves.";
     } else if (eventCategory == "injury") {
         var randomRoll = MathRInt(0, 3); 
         var randomBodyPart = bodyParts[MathRInt(0, bodyParts.length)];
@@ -659,6 +660,15 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         ];
         var crime = crimes[MathRInt(0, crimes.length)];
         result += pronoun.toLowerCase() + " " + crime + ".";
+    } else if (eventCategory == "fortune") {
+        var fortunes = [
+            pronoun.toLowerCase() + " won a lottery",
+            pronoun.toLowerCase() + " became a known local merchant kid",
+            whose + " parents sold their business, so there was a lot of money in the family",
+            pronoun.toLowerCase() + " helped shut down a local gang and got rewarded by the government"
+        ];
+        var fortune = fortunes[MathRInt(0, fortunes.length)];
+        result += fortune + ".";
     }
 
     return result;

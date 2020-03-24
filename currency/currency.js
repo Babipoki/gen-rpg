@@ -1,3 +1,5 @@
+var chart1 = null;
+var chart2 = null;
 var currentYear = 5472;
 var currencies = [
     [
@@ -10,9 +12,9 @@ var currencies = [
         1.4095,
         0.6429,
         [0.39, 0.42, 0.44, 0.55, 0.66,
-        0.99, 1.2341, 1.294, 1.2093,1.2112, 1.4095],
+        0.99, 1.2341, 1.294, 1.2093,1.2112, 1.3194, 1.4095],
         [0.2193, 0.1032, 0.1942, 0.2304, 0.4104,
-        0.4421, 0.5123, 0.4122, 0.5196, 0.5521, 0.6429]
+        0.4421, 0.5123, 0.4122, 0.5196, 0.5521, 0.5921, 0.6429]
     ],
     [
         "Republic of Toras",
@@ -23,8 +25,8 @@ var currencies = [
         100,
         1.5633,
         2.7313,
-        [0.39, 0.42, 0.44, 0.55, 0.66,
-        0.99, 1.2341, 1.294, 1.2093, 1.4095, 1.5633],
+        [1.121, 1.021, 1.210, 1.200, 1.27,
+        1.22, 1.02, 1.201, 1.391, 1.4095, 1.5633],
         [2.2193, 2.1032, 2.1942, 2.2304, 2.4104,
         2.4421, 2.5123, 2.4122, 2.5196, 2.6429, 2.7313]
     ], 
@@ -51,8 +53,8 @@ var currencies = [
        10,
        0.22491,
        0.0294,
-       [0.39, 0.42, 0.44, 0.55, 0.66,
-        0.99, 1.2341, 1.294, 1.2093, 1.4095, 0.22491],
+       [0.11, 0.12, 0.14, 0.16, 0.19,
+        0.211, 0.194, 0.196, 0.210, 0.221, 0.22491],
         [0.0093, 0.0032, 0.0042, 0.0014, 0.0064,
         0.0021, 0.0023, 0.0022, 0.0096, 0.0129, 0.0294]
     ],
@@ -65,7 +67,7 @@ var currencies = [
         100,
         0.13201,
         0.6213,
-        [0.29, 0.1242, 0.24, 0.15, 0.16,
+        [0.19, 0.1242, 0.14, 0.15, 0.16,
         0.13291, 0.13291, 0.12219, 0.12921, 0.13921, 0.13201],
         [0.2193, 0.1032, 0.1942, 0.2304, 0.4104,
         0.4421, 0.5123, 0.4122, 0.5196, 0.6429, 0.6213]
@@ -89,7 +91,6 @@ outputs += "</select>";
 
 document.getElementById("outputs").innerHTML = outputs;
 
-
 function calculateCurrency (value, from, to) {
     var fromID = getCurrencyID(from);
     var toID = getCurrencyID(to);
@@ -107,8 +108,11 @@ function calculateCurrency (value, from, to) {
         convertedValue = value;
     }
     document.getElementById("currencyResult").innerHTML = value + " <b>" + from + "</b> equals to " + convertedValue + " <b>" + to + "</b></br>AKA</br>" + value + " " + currencies[fromID][0] + "'s <b>" + currencies[fromID][1] + "s</b> equals to " + convertedValue + " " + currencies[toID][0] + "'s <b>" + currencies[toID][1] + "s";
-    createChart("inflation", "inflationChart", toID);
-    createChart("power", "powerChart", toID);
+    if (chart1 == null) {createCharts(toID)} 
+
+    updateChart(chart1, "inflationChart", toID);
+    updateChart(chart2, "powerChart", toID);
+
     return convertedValue;
 }
 
@@ -120,24 +124,22 @@ function getCurrencyID (abbr) {
     }
 }
 
-function createChart(type, targetID, currencyID) {
+function createCharts(targetID) {
+    
     var theData = [];
-    if (type == "inflation") {
-        theData = currencies[currencyID][8];
-    }
-    else if (type == "power") {
-        theData = currencies[currencyID][9];
-    }
-    ctx = document.getElementById(targetID).getContext('2d');
-    document.getElementById(targetID).innerHTML = "";
-    var chart = new Chart(ctx, {
+    theData = currencies[targetID][8];
+
+    ctx = document.getElementById("inflationChart").getContext('2d');
+    
+    chart1 = new Chart(ctx, {
         type: 'line',
         data:  {
             labels: [currentYear-100, currentYear-90, currentYear-80, currentYear-70, currentYear-60, currentYear-50, currentYear-40, currentYear-30, currentYear-20, currentYear-10, currentYear],
             datasets: [{
-                label: currencies[currencyID][2] + " " + type + " chart",
+                label: currencies[0][2] + " inflation",
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
+                fontColor: 'white',
                 data: theData
 
             }]
@@ -153,4 +155,56 @@ function createChart(type, targetID, currencyID) {
 
 
     });
+    // 2nd chart
+    ctx = document.getElementById("powerChart").getContext('2d');
+    theData = currencies[targetID][9];
+    chart2 = new Chart(ctx, {
+        type: 'line',
+        data:  {
+            labels: [currentYear-100, currentYear-90, currentYear-80, currentYear-70, currentYear-60, currentYear-50, currentYear-40, currentYear-30, currentYear-20, currentYear-10, currentYear],
+            datasets: [{
+                label: currencies[0][2] + "  power",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: theData
+            }]
+        },
+
+        options: {
+            legend: {
+                labels: {
+                    fontColor: 'white'
+                }
+            }
+        }
+
+
+    });
 }
+
+function updateChart(chart, type, targetID) {
+    var theData = [];
+
+    /*chart.data.datasets.forEach((dataset) =>{
+        dataset.data.pop();
+    });
+
+    var newLabel = "";*/
+    if (type == "inflationChart") {
+        theData = currencies[targetID][8];
+        newLabel = currencies[targetID][2] + " Inflation";
+    } else if (type == "powerChart") {
+        theData = currencies[targetID][9];
+        newLabel = currencies[targetID][2] + " Power";
+    }
+
+/*
+    chart.data.datasets.forEach((dataset) =>{
+        dataset.data.push(theData);
+    });*/
+    chart.data.datasets[0].data = theData;
+    chart.data.datasets[0].label = newLabel;
+    chart.update();
+
+}
+

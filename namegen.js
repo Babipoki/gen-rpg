@@ -29,7 +29,7 @@
         var name2 = [];
         if (gender == "male") {
                 if (race == "human") {
-                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir"];
+                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius"];
                     
                 }
                 if (race == "youdel") {
@@ -79,7 +79,11 @@
 	"Rubo",
 	"Agil",
 	"Bravil",
-	"Jelvix"
+	"Jelvix",
+	"Koko",
+	"Usodan",
+	"Okatan",
+	"Kifuto"
 ];
                 }
         } else if (gender == "female") {
@@ -153,7 +157,34 @@
 	"Tekka",
 	"Unna",
 	"Viennia",
-	"Zema"
+	"Zema",
+	"Iruma",
+	"Aldaila",
+	"Itachia",
+	"Isophia",
+	"Naida",
+	"Aila",
+	"Aili",
+	"Airisti",
+	"Seuda",
+	"Euna",
+	"Heula",
+	"Iana",
+	"Ilae",
+	"Irisura",
+	"Yanariara",
+	"Ainadilia",
+	"Euthellia",
+	"Sadaina",
+	"Lirtista",
+	"Asastlia",
+	"Lasittia",
+	"Essotia",
+	"Radeatia",
+	"Braubia",
+	"Aughetia",
+	"Anya",
+	"Emmia"
 ];
                 }
                 if (race == "youdel") {
@@ -305,7 +336,18 @@
 	"Tevialli",
 	"Uveronno",
 	"Zavianni",
-	"Silannio"
+	"Silannio",
+	"Shimaar",
+	"Silafo",
+	"Parioni",
+	"Zhalshimaar",
+	"Morett",
+	"Wobell",
+	"Rencianno",
+	"Ohasenuvo",
+	"Abelane",
+	"Bilasonni",
+	"Vordara"
 ];
         }
 
@@ -344,7 +386,10 @@
 	"the Rogue",
 	"the Wizard",
 	"the Blacksmith",
-	"the Shoemaker"
+	"the Shoemaker",
+	"the Gravedigger",
+	"the Skullcarver",
+	"the Translator"
 ];
 		}
 
@@ -364,7 +409,7 @@
 	
 	function generateLafahlName (theGender) {
 		var lf_male_first_name_prefixes = ["Fufu", "Hihe", "Po", "E", "No", "Ba", "Da", "Le", "Su", "Nunu", "Bo", "Lu", "Pu", "Du", "Ze", "Se", "Re", "Bu", "Babi", "Suti", "Po",
-		"Suti", "Po", "Popo", "Baba", "Dada", "Ge", "Rere", "Ruru", "Papa", "Nene", "Jaja", "Chu", "Yuyu", "Ga", "Te", "Pu"]
+		"Suti", "Po", "Popo", "Baba", "Dada", "Ge", "Rere", "Ruru", "Papa", "Nene", "Jaja", "Chu", "Yuyu", "Ga", "Te", "Du", "Ta", "Gu"]
 		var lf_male_last_name_prefixes = ["Kiki", "Niko", "Ke", "Tapi", "Wiwi", "Citu", "Ququ", "Jishu", "Bupi", "Petu", "Bu", "Jeti", "Zumi", "Fasi", "Pori", "Sanu", "Peto", "Veru",
 		"Wylo", "Yohu", "Selo", "To", "Go", "Mu", "Pa", "Lulu", "Odu", "Zaza", "Dala", "Du", "Gu", "Za", "Na", "Rom", "Yu", "Poto", "Ra", "Ma", "Buli", "Rala", "Lala", "Ke"]
 		var lf_female_first_and_last_name_prefixes = ["Cece", "Gecu", "Filu", "Rati", "Didi", "Kaco", "Safu", "Sofi", "Tutu", "Tatu", "Popu", "Papu", "Wagu", "Wagi", "Dama",
