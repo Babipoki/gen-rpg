@@ -21,7 +21,9 @@
         } 
         elseif ($gen == "currency"){
             include "./currency/currency.html";
-        } 
+        } elseif ($gen == "salary"){
+            include "./salary/salary.html";
+        }
         
         else {
             

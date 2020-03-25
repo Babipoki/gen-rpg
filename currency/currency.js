@@ -37,10 +37,10 @@ var currencies = [
         false, // 3 - decimals true or false
         "", // 4 - decimals name
         1, // 5 - decimals per 1 currency 
-        1.0405, // 6 - current inflation
+        11.0405, // 6 - current inflation
         0.2413, // 7 - power
-        [0.211, 0.216, 0.252, 0.134, 0.521,
-        0.821, 0.921, 0.941, 0.992, 1.002, 1.0405],
+        [10.211, 10.216, 10.252, 10.134, 10.521,
+        10.821, 10.921, 10.941, 10.992, 11.002, 11.0405],
         [0.5613, 0.5021, 0.4921, 0.2113, 0.2982,
         0.2313, 0.2401, 0.2441, 0.2501, 0.2521, 0.2413]
     ],
@@ -81,7 +81,7 @@ for (i = 0; i < currencies.length; i++) {
     inputs += "<option value='" + currencies[i][2] + "'>" + currencies[i][2] + "</option>";
 }
 inputs += "</select> to:";
-document.getElementById("inputs").innerHTML = inputs;
+if (gen == "currency") document.getElementById("inputs").innerHTML = inputs;
 
 var outputs = '<label for="outputCurrency"></label><select id="outputCurrency">';
 for (i = 0; i < currencies.length; i++) {
@@ -89,7 +89,7 @@ for (i = 0; i < currencies.length; i++) {
 }
 outputs += "</select>";
 
-document.getElementById("outputs").innerHTML = outputs;
+if (gen == "currency") document.getElementById("outputs").innerHTML = outputs;
 
 function calculateCurrency (value, from, to) {
     var fromID = getCurrencyID(from);
@@ -107,12 +107,13 @@ function calculateCurrency (value, from, to) {
     if (fromID == toID) {
         convertedValue = value;
     }
+    if (gen == "currency") {
     document.getElementById("currencyResult").innerHTML = value + " <b>" + from + "</b> equals to " + convertedValue + " <b>" + to + "</b></br>AKA</br>" + value + " " + currencies[fromID][0] + "'s <b>" + currencies[fromID][1] + "s</b> equals to " + convertedValue + " " + currencies[toID][0] + "'s <b>" + currencies[toID][1] + "s";
     if (chart1 == null) {createCharts(toID)} 
 
     updateChart(chart1, "inflationChart", toID);
     updateChart(chart2, "powerChart", toID);
-
+    }
     return convertedValue;
 }
 

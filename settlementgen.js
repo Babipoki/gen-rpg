@@ -1,3 +1,15 @@
+var allNations = [
+    ["feretti", "Feretti Kingdom"],
+    ["ekkionlor", "Ekkionlor"],
+    ["junjian", "Junjian Empire"],
+    ["toras", "Republic of Toras"],
+    ["besizottia", "Republic of Besizottia"],
+    ["rotali", "Rotali Sultanate"],
+    ["pentiga", "Republic of Pentiga"],
+    ["santeno", "Republic of Santeno"],
+    ["abrax", "Kingdom of Abrax"]
+]
+
 if (gen == "settlementname") {var amountToGenerate = document.getElementById("amountToGenerate").value; }
 else {amountToGenerate = 1}
     function MathRInt(min, max) {
