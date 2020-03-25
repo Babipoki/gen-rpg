@@ -7,7 +7,8 @@ var allNations = [
     ["rotali", "Rotali Sultanate"],
     ["pentiga", "Republic of Pentiga"],
     ["santeno", "Republic of Santeno"],
-    ["abrax", "Kingdom of Abrax"]
+    ["abrax", "Kingdom of Abrax"],
+    ["cora", "Realm of Cora"]
 ]
 
 if (gen == "settlementname") {var amountToGenerate = document.getElementById("amountToGenerate").value; }
