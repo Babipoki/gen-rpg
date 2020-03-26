@@ -29,7 +29,7 @@
         var name2 = [];
         if (gender == "male") {
                 if (race == "human") {
-                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius"];
+                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius", "Kalvin", "Dannicus", "Samuhale"];
                     
                 }
                 if (race == "youdel") {
@@ -83,7 +83,9 @@
 	"Koko",
 	"Usodan",
 	"Okatan",
-	"Kifuto"
+	"Kifuto",
+	"Rex",
+	"Sunal"
 ];
                 }
         } else if (gender == "female") {
@@ -184,7 +186,10 @@
 	"Braubia",
 	"Aughetia",
 	"Anya",
-	"Emmia"
+	"Emmia",
+	"Brilda",
+	"Bredda",
+	"Erildia"
 ];
                 }
                 if (race == "youdel") {
@@ -209,7 +214,9 @@
 	"Trussia",
 	"Pivona",
 	"Regine",
-	"Bella"
+	"Bella",
+	"Chika",
+	"Elakka"
 ];
                     
                 }
@@ -347,7 +354,13 @@
 	"Ohasenuvo",
 	"Abelane",
 	"Bilasonni",
-	"Vordara"
+	"Vordara",
+	"Sorra",
+	"Cascio",
+	"Thorne",
+	"Wilkie",
+	"Hummer",
+	"Genin"
 ];
         }
 
@@ -389,7 +402,8 @@
 	"the Shoemaker",
 	"the Gravedigger",
 	"the Skullcarver",
-	"the Translator"
+	"the Translator",
+	"the Cook"
 ];
 		}
 

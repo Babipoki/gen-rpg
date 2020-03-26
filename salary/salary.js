@@ -1,7 +1,7 @@
 var allResidences = ["Hamlet", "Village", "Town", "City", "Capital City"];
 var daysPerYear = 428;
 
-if (gen = "salary") {
+if (gen == "salary") {
     // Set up currency selector
     var currencyHTML = '<label for="currency"></label><select id="currency">';
     for (var i = 0; i < currencies.length; i++) {

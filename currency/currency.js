@@ -113,6 +113,19 @@ var currencies = [
         0.52, 0.54, 0.52, 0.57, 0.595, 0.5921],
         [0.42, 0.44, 0.445, 0.447, 0.45,
         0.47, 0.475, 0.478, 0.482, 0.486, 0.4925]
+    ],
+    [
+        "Republic of Pentiga",
+        "pent",
+        "PEP",
+        false,
+        1,
+        147.29,
+        0.24,
+        [102.42, 106.204, 108.29, 112.45, 118.24,
+        115.29, 122.24, 127.24, 137.24, 142.42, 147.29],
+        [20, 21, 19, 20, 20,
+        21, 21, 23, 22, 23, 24]
     ]
 ]; // 0 - nation, 1 - currency name, 2 - currency abbr, 3 - decimals(true or false), 4 - decimals name(singular), 5 - decimals per 1 currency, 6 - current inflation, 7 - power of the currency, 8 - inflation over time(100 years, in 10 incr + current), 9 - power over time(100 years, in 10 incr + current)
 
