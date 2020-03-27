@@ -30,11 +30,11 @@ if (gen == "salary") {
 }
 
 var jobs = {
-    "jobs" : 11,
+    "jobs" : 15,
     0 : {
         "title": "Woodcutter",
         "definition": "A person who cuts down trees or branches, especially for fuel",
-        "hourlyPay": 4.13, // FRK as a base
+        "hourlyPay": 6.13, // FRK as a base
         "hoursPerDay": 5,
         "yearlyParticipation": 0.78, // Basically, compared to whole year, how many days are spent working. 1.0 - full year, cannot be higher
         "demand": {
@@ -51,7 +51,7 @@ var jobs = {
     1: {
         "title": "Town Guard",
         "definition": "A person responsible for the safety of the settlement",
-        "hourlyPay": 5.24,
+        "hourlyPay": 7.24,
         "hoursPerDay": 8,
         "yearlyParticipation": 0.79,
         "demand": {
@@ -69,7 +69,7 @@ var jobs = {
         // Blacksmith
         "title": "Blacksmith",
         "definition": "A person who makes and repairs things in iron by hand",
-        "hourlyPay": 4.95,
+        "hourlyPay": 6.95,
         "hoursPerDay": 6,
         "yearlyParticipation": 0.62,
         "demand": {
@@ -87,7 +87,7 @@ var jobs = {
         // Leatherworker
         "title": "Leatherworker",
         "definition": "",
-        "hourlyPay": 4.49,
+        "hourlyPay": 6.49,
         "hoursPerDay": 5,
         "yearlyParticipation": 0.66,
         "demand": {
@@ -141,7 +141,7 @@ var jobs = {
         // Jester
         "title": "Jester",
         "definition": "",
-        "hourlyPay": 2.45,
+        "hourlyPay": 3.45,
         "hoursPerDay": 2,
         "yearlyParticipation": 0.98,
         "demand": {
@@ -161,7 +161,7 @@ var jobs = {
         // Miner
         "title": "Miner",
         "definition": "",
-        "hourlyPay": 4.95,
+        "hourlyPay": 6.95,
         "hoursPerDay": 10,
         "yearlyParticipation": 0.59,
         "demand": {
@@ -179,7 +179,7 @@ var jobs = {
         // Beekeeper
         "title": "Beekeeper",
         "definition": "",
-        "hourlyPay": 3.75,
+        "hourlyPay": 5.75,
         "hoursPerDay": 6,
         "yearlyParticipation": 0.25,
         "demand": {
@@ -197,7 +197,7 @@ var jobs = {
         // Farmer
         "title": "Farmer",
         "definition": "",
-        "hourlyPay": 3.45,
+        "hourlyPay": 5.45,
         "hoursPerDay": 10,
         "yearlyParticipation": 0.5,
         "demand": {
@@ -215,7 +215,7 @@ var jobs = {
         // Fisher
         "title": "Fisher",
         "definition": "",
-        "hourlyPay": 3.95,
+        "hourlyPay": 5.95,
         "hoursPerDay": 5,
         "yearlyParticipation": 0.66,
         "demand": {
@@ -247,22 +247,93 @@ var jobs = {
             "ferreti": 2,
             "ekkionlor": 0.25
         }
+    },
+    12: {
+        // Banker
+        "title": "Banker",
+        "definition": "",
+        "hourlyPay": 12.25,
+        "hoursPerDay": 7,
+        "yearlyParticipation": 0.58,
+        "demand": {
+            "Hamlet": 0.04,
+            "Village": 0.24,
+            "Town": 0.92,
+            "City": 1.24,
+            "Capital City": 2.42
+        },
+        "nationalDemand": {
+            "ekkionlor": 0.25,
+            "toras": 1.25
+        }
+    },
+    13: {
+        // Surgeon
+        "title": "Surgeon",
+        "definition": "",
+        "hourlyPay": 15.25,
+        "hoursPerDay": 5,
+        "yearlyParticipation": 0.34,
+        "demand": {
+            "Hamlet": 0.25,
+            "Village": 0.95,
+            "Town": 1.42,
+            "City": 2.24,
+            "Capital City": 2.72
+        },
+        "nationalDemand": {
+
+        }
+    },
+    14: {
+        // Locksmith
+        "title": "Locksmith",
+        "definition": "",
+        "hourlyPay": 7.24,
+        "hoursPerDay": 6,
+        "yearlyParticipation": 0.79,
+        "demand": {
+            "Hamlet": 0.95,
+            "Village": 1.02,
+            "Town": 1.05,
+            "City": 1.09,
+            "Capital City": 1.15
+        },
+        "nationalDemand": {
+
+        }
     }
 }
+
+/*
+"title": "",
+        "definition": "",
+        "hourlyPay": 0,
+        "hoursPerDay": 0,
+        "yearlyParticipation": 0,
+        "demand": {
+            "Hamlet": 0,
+            "Village": 0,
+            "Town": 0,
+            "City": 0,
+            "Capital City": 0
+        },
+        "nationalDemand": {
+
+        }
+*/
 
 
 // Profession | Definition | Hourly Pay | Yearly Salary | Demand
 
 function calculateSalaries(currencyID, theNation, theResidence) {
-    var result = "<table><tr><th>Profession</th><th>Definition</th><th>Hourly Pay</th><th>Yearly Salary</th><th>Demand</th></tr>";
+    var result = "<table><tr><th>Profession</th><th>Hourly Pay</th><th>Yearly Salary</th><th class='tooltip'>Demand<span class='tooltiptext'>Demand is calculated through settlement demand and national demand.</span></th><th class='tooltip'>YP / HpD<span class='tooltiptext'>Yearly Participation / Hours per Day</span></th></tr>";
 
     for (var i = 0; i < jobs["jobs"]; i++) {
         // Open
         result += "<tr>";
         // Profession
-        result += "<td>" + jobs[i]["title"] + "</td>";
-        // Definition
-        result += "<td>" + jobs[i]["definition"] + "</td>";
+        result += "<td class='tooltip'>" + jobs[i]["title"] + "<span class='tooltiptext'>" + jobs[i]["definition"] +"</span></td>";
         // Hourly Pay
         var demand = jobs[i]["demand"][theResidence] * (jobs[i]["nationalDemand"].hasOwnProperty(theNation) ? jobs[i]["nationalDemand"][theNation] : 1);
         var hourlyPay = jobs[i]["hourlyPay"] * demand;
@@ -275,6 +346,8 @@ function calculateSalaries(currencyID, theNation, theResidence) {
         result += "<td>" + yearlyPay + " " + currencies[currencyID][2] + "</td>";
         // Demand
         result += "<td>" + Math.floor(demand * 100) + "%</td>";
+        // YP / HpD
+        result += "<td class='YPHpD'>" + jobs[i]["yearlyParticipation"] + " / " + jobs[i]["hoursPerDay"] + "</td>";
         // Close
         result += "</tr>"
     }

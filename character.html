@@ -1,43 +1,51 @@
 <div class="generator">
 
     <h1>Character Generator</h1>
-    <label for="nation">Nation:</label>
-            <select id="nation">
-                <option value="random">Random</option>
-                <option value="feretti">Feretti Kingdom</option>
-                <option value="ekkionlor">Ekkionlor</option>
-                <option value="junjian">Junjian Empire</option>
-                <option value="toras">Republic of Toras</option>
-                <option value="besizottia">Republic of Besizottia</option>
-                <option value="rotali">Rotali Sultanate</option>
-                <option value="pentiga">Republic of Pentiga</option>
-                <option value="santeno">Republic of Santeno</option>
-                <option value="abrax">Kingdom of Abrax</option>
-            </select>
-
-    <label for="race">Race:</label>
-        <select id="race">
-            <option value="random">Random</option>
-            <option value="human">Human</option>
-            <option value="youdel">Youdel</option>
-            <option value="lafahl">Lafahl</option>
-        </select>
-    
-    <label for="age">Age:</label>
-        <select id="age">
-            <option value="random">Random</option>
-            <option value="toddler">Toddler</option>
-            <option value="child">Child</option>
-            <option value="adult">Adult</option>
-            <option value="elder">Elder</option>
-        </select>
-
-    <label for="genderPref">Gender:</label>
-        <select id="genderPref">
-            <option value="random">Random</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+    <div class="selectors">
+    	<div>
+    		<label for="nation">Nation:</label>
+    		        <select id="nation">
+    		            <option value="random">Random</option>
+    		            <option value="feretti">Feretti Kingdom</option>
+    		            <option value="ekkionlor">Ekkionlor</option>
+    		            <option value="junjian">Junjian Empire</option>
+    		            <option value="toras">Republic of Toras</option>
+    		            <option value="besizottia">Republic of Besizottia</option>
+    		            <option value="rotali">Rotali Sultanate</option>
+    		            <option value="pentiga">Republic of Pentiga</option>
+    		            <option value="santeno">Republic of Santeno</option>
+                        <option value="abrax">Kingdom of Abrax</option>
+                        <option value="cora">Realm of Cora</option>
+    		        </select>
+        </div>
+        <div>
+    		<label for="race">Race:</label>
+    		    <select id="race">
+    		        <option value="random">Random</option>
+    		        <option value="human">Human</option>
+    		        <option value="youdel">Youdel</option>
+    		        <option value="lafahl">Lafahl</option>
+    		    </select>
+        </div>
+        <div>
+    		<label for="age">Age:</label>
+    		    <select id="age">
+    		        <option value="random">Random</option>
+    		        <option value="toddler">Toddler</option>
+    		        <option value="child">Child</option>
+    		        <option value="adult">Adult</option>
+    		        <option value="elder">Elder</option>
+    		    </select>
+        </div>
+        <div>
+    		<label for="genderPref">Gender:</label>
+    		    <select id="genderPref">
+    		        <option value="random">Random</option>
+    		        <option value="male">Male</option>
+    		        <option value="female">Female</option>
+    		    </select>
+    	</div>
+    </div>
         <br>
     <div class="generatedContent character">
         <div id="result"></div>

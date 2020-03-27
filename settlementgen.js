@@ -49,6 +49,8 @@ else {amountToGenerate = 1}
                 name1 = ["Santeno", "Segoper", "Manalen", "Mashi", "Orita", "Kaiptliv", "Ocete", "Tokawa", "Garad", "Rise", "Whisper", "Chihamika", "Hastow", "Yilmet", "Yenover", "Almund", "Dalu", "Svannid", "Takilim"];
         } else if (nation == "abrax") {
                 name1 = ["Shakae", "Gonoe", "Nishi", "Naie", "Tatsuna", "Wagu", "Mita", "Kan", "Shizu", "Oiyamazu", "Oisendo", "Heto", "Naiai"];
+        } else if (nation == "cora") {
+                name1 = ["Rejover", "Alaranc", "Braybluff", "Torpegi", "Cawle", "Cosaubios", "Visamia", "Llani"]
         }
 
 

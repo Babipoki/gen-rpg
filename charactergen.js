@@ -16,7 +16,7 @@ var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "carele
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
 var races = ["human", "youdel", "lafahl"];
-var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali"];
+var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali", "pentiga", "santeno", "abrax", "cora"];
 var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian", "Salimian", "Santenian", "Pentigan", "Abian", "Borbonian", "Corian", "Eglenathian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
 var sexualities = ["straight", "gay", "bisexual"];
@@ -103,6 +103,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (birthNation == "pentiga") birthNationName = "Republic of Pentiga";
     if (birthNation == "santeno") birthNationName = "Republic of Santeno";
     if (birthNation == "abrax") birthNationName = "Kingdom of Abrax";
+    if (birthNation == "cora") birthNationName = "Realm of Cora";
 
     if (race == null || race == "random") {
         race = races[MathRInt(0, races.length)]; 
@@ -137,6 +138,9 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     } else if (birthNationName == "Kingdom of Abrax") {
         wisdom += 1;
         charisma += 1;
+    } else if (birthNationName == "Realm of Cora") {
+        charisma += 1;
+        constitution -= 1;
     }
 
     // Race & their stats

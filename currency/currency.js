@@ -1,3 +1,5 @@
+
+
 var chart1 = null;
 var chart2 = null;
 var currentYear = 5472;
@@ -138,6 +140,7 @@ for (i = 0; i < currencies.length; i++) {
 }
 inputs += "</select> to:";
 if (gen == "currency") document.getElementById("inputs").innerHTML = inputs;
+
 
 var outputs = '<label for="outputCurrency"></label><select id="outputCurrency">';
 for (i = 0; i < currencies.length; i++) {
