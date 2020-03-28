@@ -1,7 +1,9 @@
 
 	if (gen == "fantasyname") {var amountToGenerate = document.getElementById("amountToGenerate").value;}
     function MathRInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
+		min = Math.ceil(min);
+    	max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     function capitalize(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -29,7 +31,7 @@
         var name2 = [];
         if (gender == "male") {
                 if (race == "human") {
-                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius", "Kalvin", "Dannicus", "Samuhale", "Divitus", "Rezal", "Unilicus"];
+                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius", "Kalvin", "Dannicus", "Samuhale", "Divitus", "Rezal", "Unilicus", "Lotivan", "Pahn'aad", "Tivalis"];
                     
                 }
                 if (race == "youdel") {
@@ -86,7 +88,8 @@
 	"Kifuto",
 	"Rex",
 	"Sunal",
-	"Foxy"
+	"Foxy",
+	"Argy"
 ];
                 }
         } else if (gender == "female") {
@@ -193,7 +196,10 @@
 	"Erildia",
 	"Polavia",
 	"Zevunia",
-	"Tezamia"
+	"Tezamia",
+	"Filinia",
+	"Nydia",
+	"Rahelia"
 ];
                 }
                 if (race == "youdel") {
@@ -221,7 +227,8 @@
 	"Bella",
 	"Chika",
 	"Elakka",
-	"Alina"
+	"Alina",
+	"Ybilia"
 ];
                     
                 }
@@ -369,7 +376,11 @@
 	"Windrace",
 	"Kaminni",
 	"Peravio",
-	"Tetovio"
+	"Tetovio",
+	"Etivinni",
+	"Laroessi",
+	"Rigothio",
+	"Taydinno"
 ];
         }
 
@@ -412,7 +423,8 @@
 	"the Gravedigger",
 	"the Skullcarver",
 	"the Translator",
-	"the Cook"
+	"the Cook",
+	"the Stablemaster"
 ];
 		}
 

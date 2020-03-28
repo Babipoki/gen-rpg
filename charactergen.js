@@ -87,11 +87,11 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         
 
     // Sexuality
-    sexuality = sexualities[MathRInt(0, sexualities.length)];
+    sexuality = sexualities[MathRInt(0, sexualities.length - 1)];
 
     // Birth Nation
     if (birthNation == null || birthNation == "random") {
-        birthNation = nations[MathRInt(0, nations.length)]; 
+        birthNation = nations[MathRInt(0, nations.length - 1)]; 
     }
 
     if (birthNation == "feretti") birthNationName = "Feretti Kingdom";
@@ -106,7 +106,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     if (birthNation == "cora") birthNationName = "Realm of Cora";
 
     if (race == null || race == "random") {
-        race = races[MathRInt(0, races.length)]; 
+        race = races[MathRInt(0, races.length - 1)]; 
     }
     // Assign nation stats
     if (birthNationName == "Feretti Kingdom") {
@@ -195,18 +195,18 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
 
         // Generate occupations.
     if (age < childhoodAge) {
-        currentOccupation = toddlerOccupations[MathRInt(0, toddlerOccupations.length)];
+        currentOccupation = toddlerOccupations[MathRInt(0, toddlerOccupations.length - 1)];
         childhoodOccupation = "nothing lol";
     } else if (age < maturityAge) {
-        currentOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
+        currentOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length - 1)];
         childhoodOccupation = currentOccupation;
     } else if (age < retirementAge) {
-        currentOccupation = adultOccupations[MathRInt(0, adultOccupations.length)];
-        childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
+        currentOccupation = adultOccupations[MathRInt(0, adultOccupations.length - 1)];
+        childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length - 1)];
     } else {
-        currentOccupation = retiredOccupations[MathRInt(0, retiredOccupations.length)];
-        adultOccupation = adultOccupations[MathRInt(0, adultOccupations.length)];
-        childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length)];
+        currentOccupation = retiredOccupations[MathRInt(0, retiredOccupations.length - 1)];
+        adultOccupation = adultOccupations[MathRInt(0, adultOccupations.length - 1)];
+        childhoodOccupation = childhoodOccupations[MathRInt(0, childhoodOccupations.length - 1)];
     }
 
     // Female / male equivalents
@@ -225,7 +225,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
 
 
     // Generate student type.
-    studentType = studentTypes[MathRInt(0, studentTypes.length)];
+    studentType = studentTypes[MathRInt(0, studentTypes.length - 1)];
 
     // Childhood occupation's stats:
     if (age > childhoodAge) {
@@ -304,9 +304,9 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     }
 
     // Generate personality traits and stuff...
-    primaryPersonalityTrait = primaryPersonalityTraits[MathRInt(0, primaryPersonalityTraits.length)];
-    secondaryPersonalityTrait = secondaryPersonalityTraits[MathRInt(0, secondaryPersonalityTraits.length)];
-    physicalTrait = physicalTraits[MathRInt(0, physicalTraits.length)];
+    primaryPersonalityTrait = primaryPersonalityTraits[MathRInt(0, primaryPersonalityTraits.length - 1)];
+    secondaryPersonalityTrait = secondaryPersonalityTraits[MathRInt(0, secondaryPersonalityTraits.length - 1)];
+    physicalTrait = physicalTraits[MathRInt(0, physicalTraits.length - 1)];
 
     // Physical trait's stats:
     if (physicalTrait == "fat" || physicalTrait == "obese" || physicalTrait == "overweight") {
@@ -424,7 +424,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
 
     var birthCity = generateSettlement(birthNation);
     if (genderPref == "random" || genderPref == null) {
-        gender = genders[MathRInt(0, genders.length)];
+        gender = genders[MathRInt(0, genders.length - 1)];
     } else if (genderPref == "male") {
         gender = "male";
     } else {
@@ -510,7 +510,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             ageOfEvent = MathRInt(childhoodAge, age);
         }
     }
-    var eventCategory = childhoodEventCategories[MathRInt(0, childhoodEventCategories.length)];
+    var eventCategory = childhoodEventCategories[MathRInt(0, childhoodEventCategories.length - 1)];
     var partner = getPartner(pronoun, sexuality);
     
     
@@ -545,7 +545,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomRoll == 4) result += whose + " parents sold " + whom + " to slavery, only to sustain themselves.";
     } else if (eventCategory == "injury") {
         var randomRoll = MathRInt(0, 3); 
-        var randomBodyPart = bodyParts[MathRInt(0, bodyParts.length)];
+        var randomBodyPart = bodyParts[MathRInt(0, bodyParts.length - 1)];
         if (randomRoll == 0) result += pronoun.toLowerCase() + " fell into the well, injuring " + whose + " " + randomBodyPart + " in the process.";
         else if (randomRoll == 1) result += pronoun.toLowerCase() + " was beaten up by other kids, injuring " + whose + " " + randomBodyPart + " heavily.";
         else if (randomRoll == 2) result += pronoun.toLowerCase() + " tried to punch a boulder, injuring the right hand in the process.";
@@ -566,15 +566,15 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomRoll == 2) result += pronoun.toLowerCase() + " made a scientific discovery. Not something of spectacular scope. But for " + whom + " it was a big deal.";
     } else if (eventCategory == "lost toy") {
         var toys = ["balloon", "teddy bear", "doll", "wooden sword"]
-        var randomToy = toys[MathRInt(0, toys.length)];
+        var randomToy = toys[MathRInt(0, toys.length - 1)];
         if (randomToy == "balloon") {
             var randomRoll = MathRInt(0, 2);
-            var randomColor = balloonColors[MathRInt(0, balloonColors.length)];
+            var randomColor = balloonColors[MathRInt(0, balloonColors.length - 1)];
             var locations = ["bazaar", "park", "streets"];
-            var randomLocation = locations[MathRInt(0, locations.length)];
+            var randomLocation = locations[MathRInt(0, locations.length - 1)];
             if (randomRoll == 0) {
                 var poppingTools = ["needle", "pointy branch", "pencil"];
-                var poppingTool = poppingTools[MathRInt(0, poppingTools.length)];
+                var poppingTool = poppingTools[MathRInt(0, poppingTools.length - 1)];
                 result += characterName + " was walking around the " + randomLocation + " with " + whose + " " + randomColor + " helium balloon, ";
                 result += " when suddenly " + whose + " archnemesis, " + archnemesis + " appeared, and pulled out the " + poppingTool + " and struck it into the poor balloon, ";
                 result += " making it pop into many different pieces. This event was one of the saddest in " + getFirstWord(characterName) + "'s life.";
@@ -592,7 +592,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomToy == "teddy bear") {
             var randomRoll = MathRInt(0, 1);
             var lostLocations = ["bedroom", "garden", "living room", "school"]
-            var lostLocation = lostLocations[MathRInt(0, lostLocations.length)];
+            var lostLocation = lostLocations[MathRInt(0, lostLocations.length - 1)];
             if (randomRoll == 0) result += pronoun.toLowerCase() + " lost " + whose + " teddy bear somewhere in the " + lostLocation + ", never to be found again.";
             if (randomRoll == 1) result += pronoun.toLowerCase() + " had " + whose + " teddy bear stolen by none other but " + whose + " archnemesis - " + archnemesis + ".";
         } else if (randomToy == "doll") {
@@ -605,9 +605,9 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
     } else if (eventCategory == "loss of relatives") {
         var randomRoll = MathRInt(0, 3)
         var causesOfDeath = ["sickness", "accident at work", "being assassinated", "being run over by a horse", "unsuccessful scientific experiments"];
-        var causeOfDeath = causesOfDeath[MathRInt(0, causesOfDeath.length)];
+        var causeOfDeath = causesOfDeath[MathRInt(0, causesOfDeath.length - 1)];
         var randomRelatives = ["grandma", "grandpa", "brother", "sister", "cousin"];
-        var randomRelative = randomRelatives[MathRInt(0, randomRelatives.length)];
+        var randomRelative = randomRelatives[MathRInt(0, randomRelatives.length - 1)];
         if (randomRoll == 0) {
             result += pronoun.toLowerCase() + " lost " + whose + " father, who died after " + causeOfDeath + ".";
             dadAlive = false;
@@ -636,11 +636,11 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
          "demon ears, where " + pronoun.toLowerCase() + " could only hear what demons tell" + whom,
          "magic allergy, which caused mild allergic reaction to anything that was even slightly magical"
             ]; // Source: http://dndspeak.com/2018/04/100-diseases/   I should add more later.
-        var disease = diseases[MathRInt(0, diseases.length)];
+        var disease = diseases[MathRInt(0, diseases.length - 1)];
         result += pronoun.toLowerCase() + " caught " + disease + "."
     } else if (eventCategory == "paranormal/magical sighting") {
         var magicalAnimals = ["dog", "cat", "tiger", "owl", "penguin", "giraffe", "lion", "puma", "fennec fox", "hamster", "mouse", "rat", "platypus", "monkey", "crow", "parrot", "elephant", "alligator", "crocodile", "bear", "hedgehog", "turtle", "armadillo", "otter", "goat", "sheep", "zebra", "wolf"];
-        var magicalAnimal = magicalAnimals[MathRInt(0, magicalAnimals.length)];
+        var magicalAnimal = magicalAnimals[MathRInt(0, magicalAnimals.length - 1)];
         var magicalEvents = [
             "came across a wizard's book",
             "met a wizard and became his apprentice",
@@ -650,7 +650,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             "found a magical treasure chest, containing secrets of the other world",
             "encountered a magical " + magicalAnimal + " who could talk to " + whom + " and accompanied " + whom + " ever since"
         ];
-        var magicalEvent = magicalEvents[MathRInt(0, magicalEvents.length)];
+        var magicalEvent = magicalEvents[MathRInt(0, magicalEvents.length - 1)];
         result += pronoun.toLowerCase() + " " + magicalEvent + ".";
     } else if (eventCategory == "commited crime") {
         var crimes = [
@@ -658,11 +658,11 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             "stole another kid's balloon",
             "popped another kid's balloon",
             "stole a loaf of bread from the bazaar",
-            "punched a town guard in the " + bodyParts[MathRInt(0, bodyParts.length)],
+            "punched a town guard in the " + bodyParts[MathRInt(0, bodyParts.length - 1)],
             "participated in underground kids' gambling game",
             "gave " + archnemesis + ", " + whose + " archnemesis, a wedgie"
         ];
-        var crime = crimes[MathRInt(0, crimes.length)];
+        var crime = crimes[MathRInt(0, crimes.length - 1)];
         result += pronoun.toLowerCase() + " " + crime + ".";
     } else if (eventCategory == "fortune") {
         var fortunes = [
@@ -671,7 +671,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
             whose + " parents sold their business, so there was a lot of money in the family",
             pronoun.toLowerCase() + " helped shut down a local gang and got rewarded by the government"
         ];
-        var fortune = fortunes[MathRInt(0, fortunes.length)];
+        var fortune = fortunes[MathRInt(0, fortunes.length - 1)];
         result += fortune + ".";
     }
 

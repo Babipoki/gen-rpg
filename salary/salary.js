@@ -30,7 +30,7 @@ if (gen == "salary") {
 }
 
 var jobs = {
-    "jobs" : 15,
+    "jobs" : 18,
     0 : {
         "title": "Woodcutter",
         "definition": "A person who cuts down trees or branches, especially for fuel",
@@ -298,6 +298,60 @@ var jobs = {
             "Town": 1.05,
             "City": 1.09,
             "Capital City": 1.15
+        },
+        "nationalDemand": {
+
+        }
+    },
+    15: {
+        // Mayor
+        "title": "Mayor",
+        "definition": "",
+        "hourlyPay": 12.42,
+        "hoursPerDay": 12,
+        "yearlyParticipation": 0.98,
+        "demand": {
+            "Hamlet": 0.25,
+            "Village": 0.95,
+            "Town": 1.25,
+            "City": 1.55,
+            "Capital City": 1.75
+        },
+        "nationalDemand": {
+
+        }
+    },
+    16: {
+        // Veterinarian
+        "title": "Veterinarian",
+        "definition": "",
+        "hourlyPay": 8.21,
+        "hoursPerDay": 6,
+        "yearlyParticipation": 0.80,
+        "demand": {
+            "Hamlet": 0.05,
+            "Village": 0.5,
+            "Town": 0.75,
+            "City": 1.00,
+            "Capital City": 1.25
+        },
+        "nationalDemand": {
+
+        }
+    },
+    17: {
+        // Goldsmith
+        "title": "Goldsmith",
+        "definition": "",
+        "hourlyPay": 10.25,
+        "hoursPerDay": 6,
+        "yearlyParticipation": 0.65,
+        "demand": {
+            "Hamlet": 0.05,
+            "Village": 0.20,
+            "Town": 0.45,
+            "City": 0.95,
+            "Capital City": 1.25
         },
         "nationalDemand": {
 
