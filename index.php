@@ -25,6 +25,8 @@
             include "./salary/salary.html";
         } elseif ($gen == "senses"){
             include "./senses/senses.html";
+        } elseif ($gen == "balloon"){
+            include "./balloon/balloon.html";
         }
         
         else {

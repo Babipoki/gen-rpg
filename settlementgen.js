@@ -13,9 +13,6 @@ var allNations = [
 
 if (gen == "settlementname") {var amountToGenerate = document.getElementById("amountToGenerate").value; }
 else {amountToGenerate = 1}
-    function MathRInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
     function capitalize(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
