@@ -1,6 +1,23 @@
-function generateBalloons(n) {
+var occasions = ["Birthday", "Afterparty", "Event"];
+
+if (gen == "balloon") displayOccassionSelector();
+
+function displayOccassionSelector() {
+    var result = `<label for="occasion">What occasion did you get the balloon(-s) from?</label> <select id="occasion"><option>Random</option>`;
+    for (var i = 0; i < occasions.length; i++) {
+        result += `<option>${occasions[i]}</option>`;
+    }
+
+    result += `</select>`;
+
+    document.getElementById("occasionSelector").innerHTML = result;
+}
+
+function generateBalloons(n, occasion) {
+    var characterName = generateName("male", "human");
+    if (n == "random") n = MathRInt(1, 11);
     var result = ``;
-    var balloonShapes = ["round", "round", "round", "round", "bunny-shaped", "bunny-shaped", "mouse-shaped", "bear-shaped", "heart-shaped", ""]; // repeats increase the chance, nothing else
+    var balloonShapes = ["round", "round", "round", "round", "round", "round", "round", "round", "bunny-shaped", "bunny-shaped", "bunny-shaped", "bunny-shaped", "mouse-shaped", "bear-shaped", "heart-shaped"]; // repeats increase the chance, nothing else
     var balloonColors = ["red", "red", "blue", "blue", "pink", "pink", "yellow", "yellow", "white", "black", "orange", "emerald green", "goldenrod", "lime green", "jewel lime green", "royal blue", "dark blue", "light blue", "navy blue", "purple", "hot pink", "berry", "peach", "clear", "silver", "gold", "brown"];
     var balloonSizes = ["12\"", "14\"" , "16\""];
     var balloonConditions = ["overinflated", "underinflated", "with a factory defect spot", "made of high quality latex", "made of average quality latex", "made of below average quality latex", "made of low quality latex", "made of very rare quality of latex", "made of very strong quality of latex", "slowly leaking air from a hole"]; // "It is ..."
@@ -9,6 +26,26 @@ function generateBalloons(n) {
     var inflationTypes = ["helium", "helium", "helium", "mouth-inflated", "pump-inflated"];
     var tyingTechniques = ["beautiful white ribbon", "old knitting yarn", "silver ribbon", "sewing string", "pink ribbon", "gold ribbon", "silver ribbon", "red ribbon", "purple ribbon", "baby blue ribbon", "copper ribbon"]; // for helium only
     var prints = ["polka dots", "a smiley face", "a happy boy face", "dog paws", "a scared/worried face", "a derpy face with a tongue sticking out", "a face in love, with heart-filled eyes", "a laughing face", "a pleading face"];
+    if (occasion == "Random") occasion = occasions[MathRInt(0, occasions.length - 1)];
+    switch(occasion) {
+        case "Birthday":
+            var thBirthdays = ["7th", "8th", "9th", "10th", "11th", "12th"];
+            var thBirthday = thBirthdays[MathRInt(0, thBirthdays.length - 1)];
+            result += `Happy ${thBirthday} birthday, ${characterName.split(" ")[0]}! The ${n == 1 ? "balloon you got from your friend, " + generateName("male", "human").split(" ")[0] + " is:<br><br>" : "balloons you got for your birthday from your friends are:<br><br>"}`;
+            break;
+        case "Afterparty":
+            var partyDescribers = ["a great", "an awesome", "a boring", "a wicked", "a fun", "an annoying", "a horrible"];
+            var partyDescriber = partyDescribers[MathRInt(0, partyDescribers.length - 1)];
+            result += `You had ${partyDescriber} party at friends' place, and managed to snatch ${n == 1 ? "the balloon after it was over.<br><br>" : "some balloons after it was over.<br><br>"}`;
+            break;
+        case "Event":
+            var eventLocations = ["at the town", "in school", "in the city", "in your village", "near the hospital", "at the convention center", "near the stablemaster", "at the election office"];
+            var eventLocation = eventLocations[MathRInt(0, eventLocations.length - 1)];
+            var eventDescribers = ["a cool", "a boring", "an awesome"];
+            var eventDescriber = eventDescribers[MathRInt(0, eventDescribers.length - 1)];
+            result += `There was ${eventDescriber} event ${eventLocation} and they were giving out balloons. You managed to get ${n == 1 ? "one:": "a few:"}<br><br>`;
+            break;
+    }
 
     for (var i = 0; i < n; i++) {
         var balloonShape = balloonShapes[MathRInt(0, balloonShapes.length - 1)];
@@ -32,6 +69,19 @@ function generateBalloons(n) {
     result += `<br><br>
     `;
     result += n == 1 ? `The balloon was inflated ${inflationTime}.` : `All balloons were inflated ${inflationTime}.`;
+    var destinations = ["home", "to school"];
+    var destination = destinations[MathRInt(0, destinations.length - 1)];
+    var secondaryActions = ["cooking food", "playing video games", "doing homework", `playing with the ${n == 1 ? "balloon" : "balloons"}`, `popping ${n == 1 ? "that stupid balloon": "these stupid balloons"}`, "getting ready for the school trip"];
+    var secondaryAction = secondaryActions[MathRInt(0, secondaryActions.length - 1)];
+    var locations = ["walking at the park and enjoying the view", `walking in the alley on your way ${destination}`, `walking through the park on your way ${destination}`, "in class at your school", "on break at your school", `chilling at home and ${secondaryAction}`, `opening your home's door and planning on ${secondaryAction}`, "spending your time at the boy scouts' camp", "sunbathing at the beach"];
+    var currentLocation = locations[MathRInt(0, locations.length - 1)];
+    var secondCharacter = generateName("male", "human");
+    var relations = ["archnemesis", "best friend", "old friend", "friend", "ex-boyfriend", "classmate", "big brother", "small brother", "twin brother", "boyfriend"];
+    var relation = relations[MathRInt(0, relations.length - 1)];
+    var poppingTools = ["a pointy wooden stick", "a rather blunt wooden stick", "an unsharpened pencil", "a sharp pencil", "a fountain pen", "a fork", "a sewing needle", "a pushpin", "a pair of scissors", "a pair of rounded safety scissors", "a construction nail", "a ninja with sharp shuriken toy", "a paper knife", "an origami paper", "no sharp objects... why would he need any? That's ridiculous"];
+    var poppingTool = poppingTools[MathRInt(0, poppingTools.length - 1)];
+
+    result += `<hr><br>You are ${characterName.split(" ")[0]}, and you are currently ${currentLocation}. Somewhere nearby is ${secondCharacter.split(" ")[0]}, your ${relation}, who just happens to be carrying ${poppingTool}.`;
 
     document.getElementById("result").innerHTML = result;
 }

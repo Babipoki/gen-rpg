@@ -23,7 +23,7 @@ else {amountToGenerate = 1}
         }
 
         if (nation == "random") {
-            nation = nations[MathRInt(0, nations.length)];
+            nation = nations[MathRInt(0, nations.length - 1)];
         }
 
         
@@ -51,7 +51,7 @@ else {amountToGenerate = 1}
         }
 
 
-        var name = capitalize(name1[MathRInt(0, name1.length)]);
+        var name = capitalize(name1[MathRInt(0, name1.length - 1)]);
         return name;
     }
 

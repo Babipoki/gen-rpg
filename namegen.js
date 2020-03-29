@@ -20,11 +20,11 @@
 		}
 		
 		if (gender == "random") {
-			gender = genders[MathRInt(0, genders.length)];
+			gender = genders[MathRInt(0, genders.length - 1)];
 		}
 
 		if (race == "random") {
-			race = races[MathRInt(0, races.length)];
+			race = races[MathRInt(0, races.length - 1)];
 		}
 
         var name1 = [];
@@ -435,7 +435,7 @@
 		}
 			var name = "";
 		if (race != "lafahl") {
-			name = capitalize(name1[MathRInt(0, name1.length)]) + ' ' + name2[MathRInt(0, name2.length)];
+			name = capitalize(name1[MathRInt(0, name1.length - 1)]) + ' ' + name2[MathRInt(0, name2.length - 1)];
 		} else {
 			name = generatedLafahlName;
 		}
@@ -454,12 +454,12 @@
 		var lf_male_suffixes = ["ha", "woha", "wichis", "de", "rapu", "muko", "chapa", "nuku", "poki", "pom", "tari", "fom", "deli", "kki", "bala", "mada", "ori", "dori", "tapu",
 		"dapi", "shan", "nasu", "meda", "zeda", "wazu", "ragi", "mehi", "baru", "kuta", "chuto", "yoma", "neko", "lno", "lado", "mani", "lugi", "zai", "nan", "ral", "tan"];
 		if (theGender == "male") {
-			var suffix = lf_male_suffixes[MathRInt(0, lf_male_suffixes.length)];
-			return lf_male_first_name_prefixes[MathRInt(0, lf_male_first_name_prefixes.length)] + suffix + " " 
-			+ lf_male_last_name_prefixes[MathRInt(0, lf_male_last_name_prefixes.length)] + suffix;
+			var suffix = lf_male_suffixes[MathRInt(0, lf_male_suffixes.length - 1)];
+			return lf_male_first_name_prefixes[MathRInt(0, lf_male_first_name_prefixes.length - 1)] + suffix + " " 
+			+ lf_male_last_name_prefixes[MathRInt(0, lf_male_last_name_prefixes.length - 1)] + suffix;
 		} else {
-			var suffix = lf_female_suffixes[MathRInt(0, lf_female_suffixes.length)];
-			var prefix = lf_female_first_and_last_name_prefixes[MathRInt(0, lf_female_first_and_last_name_prefixes.length)];
+			var suffix = lf_female_suffixes[MathRInt(0, lf_female_suffixes.length - 1)];
+			var prefix = lf_female_first_and_last_name_prefixes[MathRInt(0, lf_female_first_and_last_name_prefixes.length - 1)];
 			return prefix + suffix + " " + prefix;
 		}
 	}
@@ -481,4 +481,18 @@
 
     if (gen == "fantasyname") {
         generateNames();
-    }
+	}
+	
+
+	/*
+
+
+
+
+
+	PENIS MUSIC
+
+
+
+
+	*/

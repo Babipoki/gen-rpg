@@ -1,9 +1,10 @@
 <div class="generator">
-    <h1>Balloon Generator</h1>
+    <h1>Balloon Story Intro Generator</h1>
     
     
     <label for="howMany">How many:</label>
     <select id="howMany">
+        <option value="random">Random</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -16,10 +17,12 @@
         <option>10</option>
         <option>11</option>
     </select>
+
+    <div id="occasionSelector"></div>
     
     <div class="generatedContent">
         <div id="result"></div>
     </div>
     
-    <button id="myBtn" onclick="generateBalloons(document.getElementById('howMany').value)">Inflate</button>
+    <button id="myBtn" onclick="generateBalloons(document.getElementById('howMany').value, document.getElementById('occasion').value)">Inflate</button>
 </div>
