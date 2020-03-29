@@ -30,7 +30,7 @@ if (gen == "salary") {
 }
 
 var jobs = {
-    "jobs" : 18,
+    "jobs" : 19,
     0 : {
         "title": "Woodcutter",
         "definition": "A person who cuts down trees or branches, especially for fuel",
@@ -352,6 +352,24 @@ var jobs = {
             "Town": 0.45,
             "City": 0.95,
             "Capital City": 1.25
+        },
+        "nationalDemand": {
+
+        }
+    },
+    18: {
+        // Intercity Courier
+        "title": "Intercity Courier",
+        "definition": "a courier who travels from city to city for package delivery",
+        "hourlyPay": 11.25,
+        "hoursPerDay": 16,
+        "yearlyParticipation": 0.5,
+        "demand": {
+            "Hamlet": 0.15,
+            "Village": 0.45,
+            "Town": 0.95,
+            "City": 1.45,
+            "Capital City": 1.75
         },
         "nationalDemand": {
 
