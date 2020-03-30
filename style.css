@@ -278,6 +278,10 @@ td {
     font-size: 20px;
 }
 
+.generatedContent a {
+    padding: 0;
+}
+
 
 @media screen and (max-width: 1111px) {
     .statProperty {

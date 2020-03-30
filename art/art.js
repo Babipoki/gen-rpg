@@ -31,8 +31,9 @@ function generateArtIdea(complexity, category) {
             ["Bloons", 2, ["Dart Monkey", "Boomerang Monkey", "Ninja Monkey"]],
             ["Camp Camp", 3, ["Max", "Dolph Houston", "Harrison", "Neil"]],
             ["South Park", 3, ["Stan Marsh", "Kyle Broflovski", "Eric Cartman", "Kenny McCormic", "Butters Stotch", "Clyde Donovan", "Craig Tucker"]],
-            ["Boku no Hero Academia", 4, ["Izuku Midoriya", "Katsuki Bakugo", "Minoru Mineta", "Shoto Todoroki", "Sen Kaibara", "Yosetsu Awase", "Kosei Tsuburaba"]],
-            ["Inazuma Eleven", 2, ["Endou Mamoru", "Guenji Shuuya", "Kidou Yuuto", "Matsukaze Tenma"]]
+            ["Boku no Hero Academia", 4, ["Izuku Midoriya", "Katsuki Bakugo", "Minoru Mineta", "Shoto Todoroki", "Sen Kaibara", "Yosetsu Awase", "Kosei Tsuburaba", "Nirengeki Shoda", "Yuyu Haya"]],
+            ["Inazuma Eleven", 2, ["Endou Mamoru", "Guenji Shuuya", "Kidou Yuuto", "Matsukaze Tenma"]],
+            ["Karakai Jouzu no Takagi-san", 2, ["Nishikata", "Nakai", "Hamaguchi"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
@@ -42,17 +43,19 @@ function generateArtIdea(complexity, category) {
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
 
-        result = `Draw <b>${selectedCharacter}</b> from <b>${selectedSeries[0]}</b> series.`;
+        result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series.`;
     }
     // Study
     if (category == "Study") {
         var allStudies = [
-            ["environment", 3, ["Lake", "Sea", "Forest", "Plains"]],
-            ["interiors", 4, ["Kid's Room", "Kitchen", ""]],
-            ["urban environment", 3, ["City", "Town", "Village"]],
-            ["anatomy", 2, ["Body", "Legs", "Eyes", "Arms", "Hands", "Feet", "Ears", "Noses", "Mouths", "Chests", "Hips"]],
-            ["gestures", 1, ["Animals", "Humans"]],
-            ["color", 2, ["Disney", "Google Street Maps"]] // Go study ___ of the ___.
+            ["environments", 3, ["a lake", "sea", "forest", "plains"]],
+            ["interiors", 4, ["a kid's Room", "a kitchen", "a bedroom", "a shop"]],
+            ["urban environment", 3, ["a city", "a town", "a village"]],
+            ["anatomy", 2, ["body", "legs", "eyes", "arms", "hands", "feet", "ears", "noses", "mouths", "chests", "hips", "adults", "facial expressions"]],
+            ["gestures", 1, ["animals", "humans"]],
+            ["color", 2, ["Disney color keys", "Google Street Maps", "game screenshots"]], // Go study ___ of the ___.
+            ["props", 3, ["weapons", "furniture", "toys"]],
+            ["misc studies", 2, ["materials", "game levels", "textures", "clothing"]]
         ];
 
         var selectedStudy = allStudies[MathRInt(0, allStudies.length - 1)];
@@ -62,7 +65,7 @@ function generateArtIdea(complexity, category) {
 
         var selectedSubject = selectedStudy[2][MathRInt(0, selectedStudy[2].length - 1)];
 
-        result = `Go study the <b>${selectedStudy[0]}</b> of <b>${selectedSubject.toLowerCase()}</b>.`
+        result = `Go study the <b>${selectedStudy[0]}</b> of <b>${selectedSubject}</b>.`
 
     }
 
@@ -80,19 +83,19 @@ function generateArtIdea(complexity, category) {
         char = characters[MathRInt(0, characters.length - 1)];
     }
 
-    var animals = ["dog", "cat", "tiger", "kitten", "puppy", "bat", "monkey"];
-    if (char[0] == "animal") char[0] = animals[MathRInt(0, animals.length - 1)];
+    var animals = ["dog", "cat", "tiger", "kitten", "puppy", "bat", "monkey", "panda", "frog", "turtle", "dinosaur", "parrot", "crocodile", "fennec fox", "furret", "mouse", "wolf", "lizard", "hedgehog", "fox", "rabbit", "bunny"];
+    if (char[0] == "animal") char[0] = animals[MathRInt(0, animals.length - 1)] + (MathRInt(0, 2) == 2 ? "(or a creature that looks like it)" : "");
 
-    var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy"]; // personality or mood
+    var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous"]; // personality or mood
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
-    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others"];
+    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
     var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
      
     
     // Design a [personality] [character], who [trait1] and [trait2].
-    result = `Design ${indefinite_article(personalityTrait)} ${personalityTrait} ${char[0]}, who ${trait1} and ${trait2}.`;
+    result = `Design ${indefinite_article(personalityTrait)} <b>${personalityTrait} ${char[0]}</b>, who ${trait1} and ${trait2}.`;
 }
     document.getElementById("result").innerHTML = result;
 
