@@ -374,6 +374,24 @@ var jobs = {
         "nationalDemand": {
 
         }
+    },
+    19: {
+        // Clown
+        "title": "Clown",
+        "definition": "a circus entertainer",
+        "hourlyPay": 5.25,
+        "hoursPerDay": 6,
+        "yearlyParticipation": 0.45,
+        "demand": {
+            "Hamlet": 0.5,
+            "Village": 0.8,
+            "Town": 0.9,
+            "City": 1.2,
+            "Capital City": 1.4
+        },
+        "nationalDemand": {
+
+        }
     }
 }
 
