@@ -27,7 +27,7 @@ function generateBalloons(n, occasion) {
     var numerations = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"];
     var inflationTypes = ["helium", "helium", "helium", "mouth-inflated", "pump-inflated"];
     var tyingTechniques = ["beautiful white ribbon", "old knitting yarn", "silver ribbon", "sewing string", "pink ribbon", "gold ribbon", "silver ribbon", "red ribbon", "purple ribbon", "baby blue ribbon", "copper ribbon"]; // for helium only
-    var prints = ["polka dots", "a smiley face", "a happy boy face", "dog paws", "a scared/worried face", "a derpy face with a tongue sticking out", "a face in love, with heart-filled eyes", "a laughing face", "a pleading face"];
+    var prints = ["polka dots", "a smiley face", "a happy boy face", "dog paws", "a scared/worried face", "a derpy face with a tongue sticking out", "a face in love, with heart-filled eyes", "a laughing face", "a pleading face", "a dabbing penguin", "hearts", "a cute duck"];
     if (occasion == "Random") occasion = occasions[MathRInt(0, occasions.length - 1)];
     switch(occasion) {
         case "Birthday":

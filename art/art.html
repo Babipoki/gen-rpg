@@ -1,0 +1,23 @@
+<div class="generator">
+<h1>Art Idea Generator</h1>
+<label for="complexity">Complexity: </label>
+    <select id="complexity">
+        <option>Random</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+    </select>
+<label for="category">Category: </label>
+    <select id="category">
+        <option>Random</option>
+        <option>Fanart</option>
+        <option>Design</option>
+        <option>Study</option>
+    </select>
+<div class="generatedContent art">
+    <div id="result"></div>
+</div>
+
+<button id="myBtn" onclick="generateArtIdea(document.getElementById('complexity').value, document.getElementById('category').value)">Generate</button>
+
+</div>
