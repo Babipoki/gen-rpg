@@ -57,7 +57,7 @@ function generateArtIdea(complexity, category) {
             ["urban environment", 3, ["a city", "a town", "a village"]],
             ["anatomy", 2, ["body", "legs", "eyes", "arms", "hands", "feet", "ears", "noses", "mouths", "chests", "hips", "adults", "facial expressions"]],
             ["gestures", 1, ["animals", "humans"]],
-            ["color", 2, ["Disney color keys", "Google Street Maps", "game screenshots"]], // Go study ___ of the ___.
+            ["color", 2, ["Disney color keys", "Google Street Maps", "game screenshots"]],
             ["props", 3, ["weapons", "toys", "books", "chests", "balloons", "tents"]],
             ["furniture", 4, ["beds", "chairs", "fridges", "clocks", "bookshelves", "cupboards"]],
             ["misc studies", 2, ["materials", "game levels", "textures", "clothing"]]

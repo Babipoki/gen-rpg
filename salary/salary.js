@@ -30,7 +30,7 @@ if (gen == "salary") {
 }
 
 var jobs = {
-    "jobs" : 19,
+    "jobs" : 21,
     0 : {
         "title": "Woodcutter",
         "definition": "A person who cuts down trees or branches, especially for fuel",
@@ -388,6 +388,24 @@ var jobs = {
             "Town": 0.9,
             "City": 1.2,
             "Capital City": 1.4
+        },
+        "nationalDemand": {
+
+        }
+    },
+    20: {
+        // Butcher
+        "title": "Butcher",
+        "definition": "",
+        "hourlyPay": 4.28,
+        "hoursPerDay": 12,
+        "yearlyParticipation": 0.95,
+        "demand": {
+            "Hamlet": 0.95,
+            "Village": 1.05,
+            "Town": 1.15,
+            "City": 1.25,
+            "Capital City": 1.35
         },
         "nationalDemand": {
 
