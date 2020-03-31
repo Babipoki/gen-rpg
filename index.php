@@ -29,6 +29,8 @@
             include "./balloon/balloon.html";
         } elseif ($gen == "art"){
             include "./art/art.html";
+        } elseif ($gen == "gameidea"){
+            include "./gameidea/gameidea.html";
         }
         
         else {

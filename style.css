@@ -282,6 +282,10 @@ td {
     padding: 0;
 }
 
+.gameidea {
+    font-size: 20px;
+}
+
 
 @media screen and (max-width: 1111px) {
     .statProperty {
