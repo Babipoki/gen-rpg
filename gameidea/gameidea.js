@@ -1,6 +1,6 @@
 var gameTimelines = ["Random", "Abstract", "Sci-Fi", "Fantasy", "Modern", "Medieval", "Big Mess"]; // Big mess means it takes all categories and plays with the whole thing.
 
-initGameIdeaPageSelector();
+if (gen == "gameidea")initGameIdeaPageSelector();
 
 function initGameIdeaPageSelector () {
     var result = `<label for="timeline">Timeline: </label><select id="timeline">`;
