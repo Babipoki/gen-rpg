@@ -12,13 +12,14 @@ function displayOccassionSelector() {
 
     document.getElementById("occasionSelector").innerHTML = result;
 }
+var myBalloons = [];
 
 function generateBalloons(n, occasion) {
     var characterName = generateName("male", "human");
     if (n == "random") n = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11][MathRInt(0, 20)];
     var result = ``;
-
-
+    // Reset my balloons on regeneration.
+    myBalloons = [];
     var balloonShapes = ["round", "round", "round", "round", "round", "round", "round", "round", "bunny-shaped", "bunny-shaped", "bunny-shaped", "bunny-shaped", "mouse-shaped", "bear-shaped", "heart-shaped"]; // repeats increase the chance, nothing else
     var balloonColors = ["red", "red", "blue", "blue", "pink", "pink", "yellow", "yellow", "white", "black", "orange", "emerald green", "goldenrod", "lime green", "jewel lime green", "royal blue", "dark blue", "light blue", "navy blue", "purple", "hot pink", "berry", "peach", "clear", "silver", "gold", "brown"];
     var balloonSizes = ["12\"", "14\"" , "16\""];
@@ -58,12 +59,17 @@ function generateBalloons(n, occasion) {
         var inflationType = inflationTypes[MathRInt(0, inflationTypes.length - 1)];
         var extra = ``;
         var tyingTechnique = tyingTechniques[MathRInt(0, tyingTechniques.length - 1)]
-        var print = prints[MathRInt(0, prints.length - 1)];
+        var print = null;
         var everyNthIsPrint = 2;
         var randomPrintChance = MathRInt(0, everyNthIsPrint);
         if (inflationType == "helium") extra += ` It is tied with a ${tyingTechnique}.`;
-        if (randomPrintChance == everyNthIsPrint && balloonShape == "round") extra += ` It is printed with ${print}.`;
+        if (randomPrintChance == everyNthIsPrint && balloonShape == "round")  {
+            print = prints[MathRInt(0, prints.length - 1)];
+            extra += ` It is printed with ${print}.`;
 
+        }
+
+        myBalloons.push([balloonShape, balloonColor, balloonSize, balloonCondition, inflationType, print])
         result += `${numeration} balloon is a  ${inflationType} ${balloonSize} ${balloonShape} ${balloonColor} balloon. It is ${balloonCondition}.${extra}<br>
         `;
     }

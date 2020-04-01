@@ -86,7 +86,7 @@ var jobs = {
     3: {
         // Leatherworker
         "title": "Leatherworker",
-        "definition": "",
+        "definition": "A person who works with leather",
         "hourlyPay": 6.49,
         "hoursPerDay": 5,
         "yearlyParticipation": 0.66,
@@ -104,7 +104,7 @@ var jobs = {
     4: {
         // Barber
         "title": "Barber",
-        "definition": "",
+        "definition": "A person who cuts men's hair and shaves or trims beards as an occupation",
         "hourlyPay": 6.22,
         "hoursPerDay": 8,
         "yearlyParticipation": 0.85,
@@ -122,7 +122,7 @@ var jobs = {
     5: {
         // Mercenary
         "title": "Mercenary",
-        "definition": "",
+        "definition": "A professional soldier hired to serve in a foreign army",
         "hourlyPay": 8.50,
         "hoursPerDay": 5,
         "yearlyParticipation": 0.5,
@@ -140,7 +140,7 @@ var jobs = {
     6: {
         // Jester
         "title": "Jester",
-        "definition": "",
+        "definition": "A professional joker or 'fool' at a medieval court, typically wearing a cap with bells on it and carrying a mock sceptre",
         "hourlyPay": 3.45,
         "hoursPerDay": 2,
         "yearlyParticipation": 0.98,
@@ -160,7 +160,7 @@ var jobs = {
     7: {
         // Miner
         "title": "Miner",
-        "definition": "",
+        "definition": "A person who owns in a mine",
         "hourlyPay": 6.95,
         "hoursPerDay": 10,
         "yearlyParticipation": 0.59,
@@ -178,7 +178,7 @@ var jobs = {
     8: {
         // Beekeeper
         "title": "Beekeeper",
-        "definition": "",
+        "definition": "A person who owns and breeds bees, especially for honey",
         "hourlyPay": 5.75,
         "hoursPerDay": 6,
         "yearlyParticipation": 0.25,
@@ -196,7 +196,7 @@ var jobs = {
     9: {
         // Farmer
         "title": "Farmer",
-        "definition": "",
+        "definition": "A person who owns or manages a farm",
         "hourlyPay": 5.45,
         "hoursPerDay": 10,
         "yearlyParticipation": 0.5,
@@ -214,7 +214,7 @@ var jobs = {
     10: {
         // Fisher
         "title": "Fisher",
-        "definition": "",
+        "definition": "A person who catches fish for a living",
         "hourlyPay": 5.95,
         "hoursPerDay": 5,
         "yearlyParticipation": 0.66,
@@ -251,7 +251,7 @@ var jobs = {
     12: {
         // Banker
         "title": "Banker",
-        "definition": "",
+        "definition": "A person who manages or owns a bank or group of banks",
         "hourlyPay": 12.25,
         "hoursPerDay": 7,
         "yearlyParticipation": 0.58,
