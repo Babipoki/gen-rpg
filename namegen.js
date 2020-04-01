@@ -31,7 +31,7 @@
         var name2 = [];
         if (gender == "male") {
                 if (race == "human") {
-                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius", "Kalvin", "Dannicus", "Samuhale", "Divitus", "Rezal", "Unilicus", "Lotivan", "Pahn'aad", "Tivalis", "Divilis", "Pivius", "Zak'aar", "Baxilius", "Rokim", "Epivius", "Poroy", "Zigaran"];
+                    name1 = ["Gary", "Riko", "Osten", "Atrok", "Barin", "Brel", "Crustoz", "Dochen", "Dorzec", "Ervin", "Hervil", "Tradvoth", "Zek", "Madri", "Dargot", "El", "Kogram", "Razeim", "Gor", "Juku-Zif", "Hidgor", "Lio", "Lional", "Hami", "Thio", "Glerdom", "Enhed", "Narder", "Exard", "Mesym", "Nehelm", "Wuldy", "Tane", "Dani", "Espen", "Dovek", "Fenn", "Gofer", "Hans", "Imlep", "Deris", "Jixterion", "Kevuk", "Lesigfrid", "Malik", "Adriel","Arhan",	"Kielik",	"Aldafuns",	"Etfled",	"Warin",	"Darin",	"Elured",	"Osbert",	"Rafold",	"Wymund",	"Erkenrad",	"Edelstein",	"Aganbold",	"Hugubert",	"Hadley",	"Harvey",	"Josias",	"Grant",	"Herzen",	"Isiver",	"Jartolav",	"Kastav",	"Lin",	"Mantre",	"Nadimak",	"Opasimius", "Galvin", "Simnir", "Ruksin", "Dofkir", "Rinis", "Gardis", "Pikir", "Fazir", "Feleo", "Matsu", "Pifiko", "Ivann", "Zivkin", "Aelzon", "Bilsamir", "Cecilius", "Duvan", "Erskit", "Fimilan", "Grezivius", "Huniticus", "Ikirius", "Jovanicus", "Kit", "Lemitt", "Muzvin", "Nukar", "Obivil", "Prinsepticus", "Rikus", "Quzel", "Tuvix", "Unizar", "Viriks", "Zuntir", "Lusoy", "Rynozi", "Kirir", "Rolub", "Vanakk", "Wusar", "Duron", "Nigulin", "Siarin", "Adalis", "Sondossan", "Shatar", "Sherin", "Yamato", "Keita", "Fuji", "Sawa", "Akiki", "Zaki", "Lyseril", "Noran", "Sunil", "Rodrilo", "Tohm", "Dynios", "Bepios", "Teuraos", "Dariaos", "Atto", "Hinio", "Foibo", "Parenzo", "Ematius", "Kalvin", "Dannicus", "Samuhale", "Divitus", "Rezal", "Unilicus", "Lotivan", "Pahn'aad", "Tivalis", "Divilis", "Pivius", "Zak'aar", "Baxilius", "Rokim", "Epivius", "Poroy", "Zigaran", "Salik", "Ferik"];
                     
                 }
                 if (race == "youdel") {
@@ -207,7 +207,9 @@
 	"Gelandra",
 	"Hanivia",
 	"Lavia",
-	"Toniella"
+	"Toniella",
+	"Gotana",
+	"Mona"
 ];
                 }
                 if (race == "youdel") {
@@ -240,7 +242,8 @@
 	"Elena",
 	"Agata",
 	"Diana",
-	"Kava"
+	"Kava",
+	"Oriane"
 ];
                     
                 }
@@ -248,28 +251,7 @@
 
         if (race == "human") {
             name2 = [
-	"Nicklesteam",
-	"Zitveme",
-	"Julandes",
-	"Fand",
-	"Bicribi",
-	"Chaz",
-	"Whiteclaw",
-	"Stornun",
-	"Frozenhorn",
-	"Nosereaver",
-	"Mupveld",
-	"Nei",
-	"Chaon",
-	"Mernen",
-	"Hazecutter",
-	"Shedad",
-	"Bheimin",
-	"Pasqelde",
-	"Greensteam",
-	"Vrenzobu",
-	"Puang",
-	"Piscuzin",
+	"Nicklesteam", "Moriksen", "Zitveme", "Rojas", "Julandes", "Duruhami", "Fand", "Bicribi", "Chaz", "Whiteclaw", "Stornun", "Frozenhorn", "Nosereaver", "Mupveld", "Nei", "Chaon", "Mernen", "Hazecutter", "Shedad", "Bheimin", "Pasqelde", "Greensteam", "Vrenzobu", "Puang", "Piscuzin", "Masciulli", "Huante", "Matinzo", "Ekato",
 	"Stoduz",
 	"Greatflayer",
 	"Girnelzegya",

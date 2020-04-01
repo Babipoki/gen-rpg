@@ -69,7 +69,7 @@ function generateBalloons(n, occasion) {
 
         }
 
-        myBalloons.push([balloonShape, balloonColor, balloonSize, balloonCondition, inflationType, print])
+        myBalloons.push([balloonShape, balloonColor, balloonSize, balloonCondition, inflationType, print]);
         result += `${numeration} balloon is a  ${inflationType} ${balloonSize} ${balloonShape} ${balloonColor} balloon. It is ${balloonCondition}.${extra}<br>
         `;
     }
