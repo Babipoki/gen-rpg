@@ -35,7 +35,8 @@ function generateArtIdea(complexity, category) {
             ["Inazuma Eleven", 2, ["Endou Mamoru", "Guenji Shuuya", "Kidou Yuuto", "Matsukaze Tenma"]],
             ["Karakai Jouzu no Takagi-san", 2, ["Nishikata", "Nakai", "Hamaguchi"]],
             ["Mini Ninjas", 3, ["Hiro", "Shun", "Tora"]],
-            ["Wakfu", 3, ["Yugo", "Chibi", "Adamaï", "Az", "Sir Percedal of Sadlygrove", "Flopin"]]
+            ["Wakfu", 3, ["Yugo", "Chibi", "Adamaï", "Az", "Sir Percedal of Sadlygrove", "Flopin"]],
+            ["Tekkonkinkreet", 2, ["Kuro", "Shiro", "Kuro and Shiro"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
@@ -44,7 +45,7 @@ function generateArtIdea(complexity, category) {
         }
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
-        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons"]
+        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", ""]
         var action = MathRInt(0, 2) == 1 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
 
         result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}.`;
