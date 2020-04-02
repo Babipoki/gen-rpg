@@ -53,14 +53,15 @@ function generateArtIdea(complexity, category) {
     // Study
     if (category == "Study") {
         var allStudies = [
-            ["environments", 3, ["a lake", "sea", "forest", "plains"]],
-            ["interiors", 4, ["a kid's room", "a kitchen", "a bedroom", "a shop"]],
-            ["urban environment", 3, ["a city", "a town", "a village"]],
+            ["environments", 3, ["a lake", "sea", "forest", "plains", "hell", "clouds", "mountains", "ruins", "rainy weather", "snowy weather"]],
+            ["interiors", 4, ["a kid's room", "a kitchen", "a bedroom", "a shop", "a living room", "a dining room", "a balloon shop", "a jewelry store", "a blacksmith's shop"]],
+            ["urban environment", 3, ["a city", "a town", "a village", "a park"]],
             ["anatomy", 2, ["body", "legs", "eyes", "arms", "hands", "feet", "ears", "noses", "mouths", "chests", "hips", "adults", "facial expressions"]],
             ["gestures", 1, ["animals", "humans"]],
             ["color", 2, ["Disney color keys", "Google Street Maps", "game screenshots"]],
-            ["props", 3, ["weapons", "toys", "books", "chests", "balloons", "tents"]],
+            ["props", 3, ["weapons", "toys", "books", "chests", "balloons", "tents", "wooden toys"]],
             ["furniture", 4, ["beds", "chairs", "fridges", "clocks", "bookshelves", "cupboards"]],
+            ["buildings", 3, ["shops", "residential houses", "apartments", "skyscrapers", "village houses", "stalls"]],
             ["misc studies", 2, ["materials", "game levels", "textures", "clothing"]]
         ];
 
@@ -93,11 +94,11 @@ function generateArtIdea(complexity, category) {
     var animals = ["dog", "cat", "tiger", "kitten", "puppy", "bat", "monkey", "panda", "frog", "turtle", "dinosaur", "parrot", "crocodile", "fennec fox", "furret", "mouse", "wolf", "lizard", "hedgehog", "fox", "rabbit", "bunny"];
     if (char[0] == "animal") char[0] = animals[MathRInt(0, animals.length - 1)] + (MathRInt(0, 2) == 2 ? "(or a creature that looks like it)" : "");
 
-    var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy"]; // personality or mood
+    var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy", "friendly", "shy"]; // personality or mood
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
-    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet"];
+    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
-    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing"]
+    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
      
     

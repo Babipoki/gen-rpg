@@ -13,13 +13,26 @@ function displayOccassionSelector() {
     document.getElementById("occasionSelector").innerHTML = result;
 }
 var myBalloons = [];
+var peopleInLocation = [];
+var itemsInLocation = [];
+var privacyLevel = 0; // 0 - 100% public. 1 - possible to go somewhere private. 2 - pretty much private
+var protagonistPersonality = "";
 
 function generateBalloons(n, occasion) {
     var characterName = generateName("male", "human");
     if (n == "random") n = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11][MathRInt(0, 20)];
     var result = ``;
+    var weather = ``;
+    var temperature = ``;
+    itemsInLocation = [];
+    var isIndoors = false;
+    var protagonistAge = 0;
     // Reset my balloons on regeneration.
     myBalloons = [];
+    var possibleWeathers = ["clear", "rainy", "snowy", "foggy", "windy", "thunderstormy"];
+    weather = possibleWeathers[MathRInt(0, possibleWeathers.length - 1)];
+    var possibleTemperatures = ["freezing", "cold", "cool", "warm", "hot", "searing hot"];
+    temperature = possibleTemperatures[MathRInt(0, possibleTemperatures.length - 1)];
     var balloonShapes = ["round", "round", "round", "round", "round", "round", "round", "round", "bunny-shaped", "bunny-shaped", "bunny-shaped", "bunny-shaped", "mouse-shaped", "bear-shaped", "heart-shaped"]; // repeats increase the chance, nothing else
     var balloonColors = ["red", "red", "blue", "blue", "pink", "pink", "yellow", "yellow", "white", "black", "orange", "emerald green", "goldenrod", "lime green", "jewel lime green", "royal blue", "dark blue", "light blue", "navy blue", "purple", "hot pink", "berry", "peach", "clear", "silver", "gold", "brown"];
     var balloonSizes = ["12\"", "14\"" , "16\""];
@@ -29,11 +42,13 @@ function generateBalloons(n, occasion) {
     var inflationTypes = ["helium", "helium", "helium", "mouth-inflated", "pump-inflated"];
     var tyingTechniques = ["beautiful white ribbon", "old knitting yarn", "silver ribbon", "sewing string", "pink ribbon", "gold ribbon", "silver ribbon", "red ribbon", "purple ribbon", "baby blue ribbon", "copper ribbon"]; // for helium only
     var prints = ["polka dots", "a smiley face", "a happy boy face", "dog paws", "a scared/worried face", "a derpy face with a tongue sticking out", "a face in love, with heart-filled eyes", "a laughing face", "a pleading face", "a dabbing penguin", "hearts", "a cute duck", "a silly face showing off its teeth"];
+    protagonistAge = MathRInt(7, 12);
     if (occasion == "Random") occasion = occasions[MathRInt(0, occasions.length - 1)];
     switch(occasion) {
         case "Birthday":
             var thBirthdays = ["7th", "8th", "9th", "10th", "11th", "12th"];
             var thBirthday = thBirthdays[MathRInt(0, thBirthdays.length - 1)];
+            protagonistAge = Number(thBirthday.replace("th", ""));
             result += `Happy ${thBirthday} birthday, ${characterName.split(" ")[0]}! The ${n == 1 ? "balloon you got from your friend, " + generateName("male", "human").split(" ")[0] + " is:<br><br>" : "balloons you got for your birthday from your friends are:<br><br>"}`;
             break;
         case "Afterparty":
@@ -118,6 +133,8 @@ function generateBalloons(n, occasion) {
     var secondaryAction = secondaryActions[MathRInt(0, secondaryActions.length - 1)];
     var locations = ["walking at the park and enjoying the view", `walking in the alley on your way ${destination}`, `walking through the park on your way ${destination}`, "in class at your school", "on break at your school", `chilling at home and ${secondaryAction}`, `opening your home's door and planning on ${secondaryAction}`, "spending your time at the boy scouts' camp", "sunbathing at the beach", "eating at the fast food store"];
     
+    var actualLocation = ``;
+    peopleInLocation = [];
     var currentLocation = locations[MathRInt(0, locations.length - 1)];
     var secondCharacter = generateName("male", "human");
     var relations = ["archnemesis", "best friend", "old friend", "friend", "ex-boyfriend", "classmate", "big brother", "small brother", "twin brother", "boyfriend"];
@@ -126,8 +143,103 @@ function generateBalloons(n, occasion) {
     var poppingTool = poppingTools[MathRInt(0, poppingTools.length - 1)];
     var secondCharacterMoods = ["pissed", "cheerful", "derpy", "exhausted", "lacking attention", "nervous", "going insane", "very happy for some reason", "focused on the thought of the destruction of all world's balloons", "careless", "having an unlucky day", "having a bad day", "having a good day of ruining the day for the others"];
     var secondCharacterMood = secondCharacterMoods[MathRInt(0, secondCharacterMoods.length - 1)];
+    var protagonistPersonalities = ["happy", "cheerful", "protective", "shy", "uncomfortable"];
+    protagonistPersonality = protagonistPersonalities[MathRInt(0, protagonistPersonalities.length - 1)];
 
-    result += `<hr><br>It is currently <span class="tooltip">${currentHour} o'clock<span class="tooltiptext">Time in my setting is 18-hour based instead of IRL 24 hour clock.</span> in the ${timeOfDay}. You are ${characterName.split(" ")[0]}, and you are currently ${currentLocation}. Somewhere nearby is ${secondCharacter.split(" ")[0]}, your ${relation}, who just happens to be carrying ${poppingTool} and seems to be ${secondCharacterMood}.`;
+    // Set up actualLocation and whether or not this is indoors
+    switch (currentLocation) {
+        case "walking at the park and enjoying the view":
+            actualLocation = "park";
+            isIndoors = false;
+            break;
+        case `walking in the alley on your way ${destination}`:
+            actualLocation = "alley";
+            isIndoors = false;
+            break;
+        case `walking through the park on your way ${destination}`:
+            actualLocation = "park";
+            isIndoors = false;
+            break;
+        case "in class at your school":
+            actualLocation = "classroom";
+            isIndoors = true;
+            break;
+        case "on break at your school":
+            actualLocation = "school";
+            isIndoors = true;
+            break;
+        case `chilling at home and ${secondaryAction}`:
+            actualLocation = "home";
+            isIndoors = true;
+            break;
+        case `opening your home's door and planning on ${secondaryAction}`:
+            actualLocation = "home";
+            isIndoors = false;
+            break;
+        case "spending your time at the boy scouts' camp":
+            actualLocation = "boy scouts' camp";
+            isIndoors = false;
+            break;
+        case "sunbathing at the beach":
+            actualLocation = "beach";
+            isIndoors = false;
+            temperature = possibleTemperatures[MathRInt(3, possibleTemperatures.length - 1)];
+            break;
+        case "eating at the fast food store":
+            actualLocation = "fast food store";
+            isIndoors = true;
+            break;
+    }
+
+    // Set up People in Location and Items in Location, also in future custom dialog lines.
+    switch (actualLocation) {
+        case "park":
+            itemsInLocation = ["branch", "recycling bin", "tree", "bench", "public bathroom"]
+            peopleInLocation = [["dog handlers", MathRInt(0, 4)], ["couples", MathRInt(0, 8)], ["old people", MathRInt(0, 13)], ["kids with parents", MathRInt(0, 8)], ["kids without parents", MathRInt(0, 3)]];
+            privacyLevel = 1;
+            break;
+        case "alley":
+            itemsInLocation = ["recycling container", "recycling bin", "brick wall"];
+            peopleInLocation = [["homeless person", MathRInt(0, 1)]];
+            privacyLevel = 2;
+            if (peopleInLocation[0][1] == 1) privacyLevel = 0;
+            break;
+        case "classroom":
+            itemsInLocation = ["pencil", "scissors", "class door"];
+            peopleInLocation = [["girl classmate", MathRInt(0, 15)], ["boy classmate", MathRInt(0, 15)], ["class teacher", MathRInt(0, 1)]];
+            privacyLevel = 0;
+            break;
+        case "school":
+            itemsInLocation = ["small recycling bin", "class photo", "class door", "school bathroom"];
+            peopleInLocation = [["girl classmate", MathRInt(0, 15)], ["boy classmate", MathRInt(0, 15)], ["schoolmates", MathRInt(0, 120)], ["school staff", MathRInt(0, 12)]];
+            privacyLevel = 1;
+            break;
+        case "home":
+            itemsInLocation = ["spoon", "kitchen knife", "pocket knife", "needle"]; // fill me more
+            peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["siblings", MathRInt(0, 3)]];
+            privacyLevel = 1;
+            break;
+        case "boy scouts' camp":
+            itemsInLocation = ["branch", "tree", "tent"];
+            peopleInLocation = [["scouts", MathRInt(0, 20)], ["scout leader", MathRInt(0, 1)]];
+            privacyLevel = 1;
+            break;
+        case "beach":
+            itemsInLocation = ["plastic shovel", "plastic rake", "umbrella", "public bathroom"];
+            peopleInLocation = [["beachgoers", MathRInt(0, 200)]];
+            privacyLevel = 1;
+            break;
+        case "fast food store":
+            itemsInLocation = ["fork", "knife", "spoon", "public bathroom"];
+            peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["staff", MathRInt(1, 10)], ["others", MathRInt(0, 25)]];
+            privacyLevel = 1;
+            break;
+    }
+
+    result += `<hr><br>It is currently <span class="tooltip">${currentHour} o'clock<span class="tooltiptext">Time in my setting is 18-hour based instead of IRL 24 hour clock.</span> in the ${timeOfDay}. You are ${characterName.split(" ")[0]}, and you are currently ${currentLocation}. Somewhere nearby is ${secondCharacter.split(" ")[0]}, your ${relation}, who just happens to be carrying ${poppingTool} and seems to be ${secondCharacterMood}.<br>
+    <br>
+    <br>
+    It is ${temperature} and ${weather} outside.`;
 
     document.getElementById("result").innerHTML = result;
 }
