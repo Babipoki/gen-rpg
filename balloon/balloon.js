@@ -17,6 +17,7 @@ var peopleInLocation = [];
 var itemsInLocation = [];
 var privacyLevel = 0; // 0 - 100% public. 1 - possible to go somewhere private. 2 - pretty much private
 var protagonistPersonality = "";
+var antagonistInventory = [];
 
 function generateBalloons(n, occasion) {
     var characterName = generateName("male", "human");
@@ -36,7 +37,7 @@ function generateBalloons(n, occasion) {
     var balloonShapes = ["round", "round", "round", "round", "round", "round", "round", "round", "bunny-shaped", "bunny-shaped", "bunny-shaped", "bunny-shaped", "mouse-shaped", "bear-shaped", "heart-shaped"]; // repeats increase the chance, nothing else
     var balloonColors = ["red", "red", "blue", "blue", "pink", "pink", "yellow", "yellow", "white", "black", "orange", "emerald green", "goldenrod", "lime green", "jewel lime green", "royal blue", "dark blue", "light blue", "navy blue", "purple", "hot pink", "berry", "peach", "clear", "silver", "gold", "brown"];
     var balloonSizes = ["12\"", "14\"" , "16\""];
-    var balloonConditions = ["overinflated", "underinflated", "with a factory defect spot", "made of high quality latex", "made of average quality latex", "made of below average quality latex", "made of low quality latex", "made of very rare quality of latex", "made of very strong quality of latex", "slowly leaking air from a hole", "worn out and has been inflated many times"]; // "It is ..."
+    var balloonConditions = ["overinflated", "underinflated", "with a factory defect spot", "made of high quality latex", "made of average quality latex", "made of below average quality latex", "made of low quality latex", "made of very rare quality of latex", "made of very strong quality of latex", "slowly leaking air from a hole", "worn out and has been inflated many times", "filled with confetti", "has a candy inside"]; // "It is ..."
     var inflationTimes = ["just a few minutes ago", "an hour ago", "two hours ago", "three hours ago", "four hours ago", "five hours ago", "six hours ago", "seven hours ago", "eight hours ago", "nine hours ago", "ten hours ago", "yesterday"];
     var numerations = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"];
     var inflationTypes = ["helium", "helium", "helium", "mouth-inflated", "pump-inflated"];
@@ -141,9 +142,10 @@ function generateBalloons(n, occasion) {
     var relation = relations[MathRInt(0, relations.length - 1)];
     var poppingTools = ["a pointy wooden stick", "a rather blunt wooden stick", "an unsharpened pencil", "a sharp pencil", "a fountain pen", "a fork", "a sewing needle", "a pushpin", "a pair of scissors", "a pair of rounded safety scissors", "a construction nail", "a ninja with sharp shuriken toy", "a paper knife", "an origami paper", "no sharp objects... why would he need any? That's ridiculous", "a shaving razor blade", "two knitting needles"];
     var poppingTool = poppingTools[MathRInt(0, poppingTools.length - 1)];
+    antagonistInventory = (poppingTool == "no sharp objects... why would he need any? That's ridiculous") ? [] : [poppingTool];
     var secondCharacterMoods = ["pissed", "cheerful", "derpy", "exhausted", "lacking attention", "nervous", "going insane", "very happy for some reason", "focused on the thought of the destruction of all world's balloons", "careless", "having an unlucky day", "having a bad day", "having a good day of ruining the day for the others"];
     var secondCharacterMood = secondCharacterMoods[MathRInt(0, secondCharacterMoods.length - 1)];
-    var protagonistPersonalities = ["happy", "cheerful", "protective", "shy", "uncomfortable"];
+    var protagonistPersonalities = ["happy", "cheerful", "protective", "shy", "uncomfortable", "derpy", "tired", "nervous"];
     protagonistPersonality = protagonistPersonalities[MathRInt(0, protagonistPersonalities.length - 1)];
 
     // Set up actualLocation and whether or not this is indoors
@@ -194,52 +196,165 @@ function generateBalloons(n, occasion) {
     // Set up People in Location and Items in Location, also in future custom dialog lines.
     switch (actualLocation) {
         case "park":
-            itemsInLocation = ["branch", "recycling bin", "tree", "bench", "public bathroom"]
-            peopleInLocation = [["dog handlers", MathRInt(0, 4)], ["couples", MathRInt(0, 8)], ["old people", MathRInt(0, 13)], ["kids with parents", MathRInt(0, 8)], ["kids without parents", MathRInt(0, 3)]];
+            itemsInLocation = ["a branch", "a recycling bin", "a tree", "a bench", "public bathroom"]
+            peopleInLocation = [["dog handler", MathRInt(0, 4)], ["couple", MathRInt(0, 8)], ["old people", MathRInt(0, 13)], ["kids with parents", MathRInt(0, 8)], ["kids without parents", MathRInt(0, 3)]];
             privacyLevel = 1;
             break;
         case "alley":
-            itemsInLocation = ["recycling container", "recycling bin", "brick wall"];
+            itemsInLocation = ["a recycling container", "a recycling bin", "a brick wall"];
             peopleInLocation = [["homeless person", MathRInt(0, 1)]];
             privacyLevel = 2;
             if (peopleInLocation[0][1] == 1) privacyLevel = 0;
             break;
         case "classroom":
-            itemsInLocation = ["pencil", "scissors", "class door"];
+            itemsInLocation = ["a pencil", "scissors", "a class door"];
             peopleInLocation = [["girl classmate", MathRInt(0, 15)], ["boy classmate", MathRInt(0, 15)], ["class teacher", MathRInt(0, 1)]];
             privacyLevel = 0;
             break;
         case "school":
-            itemsInLocation = ["small recycling bin", "class photo", "class door", "school bathroom"];
+            itemsInLocation = ["a small recycling bin", "a class photo", "a class door", "school bathroom"];
             peopleInLocation = [["girl classmate", MathRInt(0, 15)], ["boy classmate", MathRInt(0, 15)], ["schoolmates", MathRInt(0, 120)], ["school staff", MathRInt(0, 12)]];
             privacyLevel = 1;
             break;
         case "home":
-            itemsInLocation = ["spoon", "kitchen knife", "pocket knife", "needle"]; // fill me more
+            itemsInLocation = ["a spoon", "a kitchen knife", "a pocket knife", "a needle", "an iron", "dumbells", "glue", "a book", "a pushpin"]; // fill me more
             peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["siblings", MathRInt(0, 3)]];
             privacyLevel = 1;
             break;
         case "boy scouts' camp":
-            itemsInLocation = ["branch", "tree", "tent"];
+            itemsInLocation = ["a branch", "a tree", "a tent", "a pin badge"];
             peopleInLocation = [["scouts", MathRInt(0, 20)], ["scout leader", MathRInt(0, 1)]];
             privacyLevel = 1;
             break;
         case "beach":
-            itemsInLocation = ["plastic shovel", "plastic rake", "umbrella", "public bathroom"];
-            peopleInLocation = [["beachgoers", MathRInt(0, 200)]];
+            itemsInLocation = ["a plastic shovel", "a plastic rake", "a beach umbrella", "public bathroom", "a basket"];
+            peopleInLocation = [["beachgoers", MathRInt(0, 200)], ["lifeguard", MathRInt(0, 1)]];
             privacyLevel = 1;
             break;
         case "fast food store":
-            itemsInLocation = ["fork", "knife", "spoon", "public bathroom"];
+            itemsInLocation = ["a fork", "a knife", "a spoon", "public bathroom", "french fries"];
             peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["staff", MathRInt(1, 10)], ["others", MathRInt(0, 25)]];
             privacyLevel = 1;
             break;
     }
+    var relationType = "";
+    // Relations ["archnemesis", "best friend", "old friend", "friend", "ex-boyfriend", "classmate", "big brother", "small brother", "twin brother", "boyfriend"]
+    switch (relation) {
+        case "archnemesis":
+            relationType = "enemy";
+            break;
+        case "best friend":
+            relationType = "ally";
+            break;
+        case "old friend":
+            relationType = "neutral";
+            break;
+        case "friend":
+            relationType = "ally";
+            break;
+        case "ex-boyfriend":
+            relationType = "enemy";
+            break;
+        case "classmate":
+            relationType = (MathRInt(0, 1) == 1) ? "ally" : "enemy";
+            break;
+        case "big brother":
+            relationType = "neutral";
+            break;
+        case "small brother":
+            relationType = "neutral";
+            break;
+        case "twin brother":
+            relationType = "neutral";
+            break;
+        case "boyfriend":
+            relationType = "ally";
+            break;
+    }
 
-    result += `<hr><br>It is currently <span class="tooltip">${currentHour} o'clock<span class="tooltiptext">Time in my setting is 18-hour based instead of IRL 24 hour clock.</span> in the ${timeOfDay}. You are ${characterName.split(" ")[0]}, and you are currently ${currentLocation}. Somewhere nearby is ${secondCharacter.split(" ")[0]}, your ${relation}, who just happens to be carrying ${poppingTool} and seems to be ${secondCharacterMood}.<br>
+    // Second character mood ["pissed", "cheerful", "derpy", "exhausted", "lacking attention", "nervous", "going insane", "very happy for some reason", "focused on the thought of the destruction of all world's balloons", "careless", "having an unlucky day", "having a bad day", "having a good day of ruining the day for the others"]
+    switch (secondCharacterMood) {
+        case "pissed":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            break;
+        case "cheerful":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a pack of balloons");
+            break;
+        case "derpy":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("an uninflated balloon");
+            break;
+        case "exhausted":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a large school backpack");
+            break;
+        case "lacking attention":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            break;
+        case "nervous":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a lighter");
+            break;
+        case "going insane":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a paper knife");
+            break;
+        case "very happy or some reason":
+            break;
+        case "focused on the thought of the destruction of all world's balloons":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            break;
+        case "careless":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a small rock");
+            break;
+        case "having an unlucky day":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a book");
+            break;
+        case "having a bad day":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a large rock");
+            break;
+        case "having a good day of ruining the day for the others":
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            break;
+
+    }
+
+    result += `<hr><br>It is currently <span class="tooltip">${currentHour} o'clock<span class="tooltiptext">Time in my setting is 18-hour based instead of IRL 24 hour clock.</span> in the ${timeOfDay}. You are ${characterName.split(" ")[0]}, and you are currently ${currentLocation}. Somewhere nearby is ${secondCharacter.split(" ")[0]}, your ${relation}, who just happens to be carrying ${JoinArray(antagonistInventory)} and seems to be ${secondCharacterMood}.<br>
     <br>
     <br>
-    It is ${temperature} and ${weather} outside.`;
+    It is ${temperature} and ${weather} outside. Around you there's ${JoinArray(PeopleJoiner(peopleInLocation))}. Looking around, you can also see ${JoinArray(itemsInLocation)}.`;
 
     document.getElementById("result").innerHTML = result;
+}
+
+function JoinArray (arr, separator = ", ", lastSeparator = "and") {
+    let l = arr.length;
+    if (!l) return "";
+    if (l<2) return arr[0];
+    if (l<3) return arr.join(` ${lastSeparator} `);
+    str = arr.slice(0, -1).join(`${separator}`) + ` ${lastSeparator} ` + arr.slice(-1);
+    return str;
+}
+
+function PeopleJoiner (arr) {
+    let l = arr.length;
+    var result = [];
+    if (!l) return ["nobody"];
+    for (let i = 0; i < l; i++) {
+        if (arr[i][1] == 1) {
+            result.push(arr[i][0]);
+        }
+        else if (arr[i][1] > 1) {
+            result.push(`${arr[i][1]} ${Pluralfy(arr[i][0])}`);
+        }
+    }
+    return result;
+}
+
+function Pluralfy (str) {
+    var givenString = str;
+    var specialStrings = ["man", "person", "woman", "child", "tooth", "alga"]
+    var specialReplacements = ["men", "people", "women", "children", "teeth", "algae"]
+    var noChangeStrings = ["deer", "fish", "staff"]
+    for (var i = 0; i < specialStrings.length; i++) {
+        str.replace(specialStrings[i], specialReplacements[i]);
+    }
+    if (givenString == str && noChangeStrings.indexOf(str) == -1 && str.match(/s$/) == null) return str.replace(/y$/, "ie") + "s";
+    return str;
 }
