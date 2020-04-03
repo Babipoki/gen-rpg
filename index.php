@@ -12,12 +12,15 @@
     <meta charset="utf-8">
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <meta name="google-site-verification" content="3WUrJsem0s6ghm4EqlVtXVi4StneVxostiQQOyu1pm8" />
 </script>
 </head>
 <body>
     <?php include "./header.html"; ?>
         <?php if (empty($gen)) {
-            echo "Please pick the generator...";
+            $gen = "character";
+            echo '<script> var gen = "' . $gen . '" </script>';
+            include "./character.html";
         } 
         elseif ($gen == "currency"){
             include "./currency/currency.html";
