@@ -34,6 +34,8 @@
             include "./art/art.html";
         } elseif ($gen == "gameidea"){
             include "./gameidea/gameidea.html";
+        } elseif ($gen == "privacypolicy"){
+            include "./privacypolicy/privacypolicy.html";
         }
         
         else {

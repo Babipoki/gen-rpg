@@ -127,8 +127,20 @@ var currencies = [
         0.24,
         [102.42, 106.204, 108.29, 112.45, 118.24,
         115.29, 122.24, 127.24, 137.24, 142.42, 147.29],
-        [20, 21, 19, 20, 20,
-        21, 21, 23, 22, 23, 24]
+        [0.20, 0.21, 0.19, 0.20, 0.20,
+        0.21, 0.21, 0.23, 0.22, 0.23, 0.24]
+    ],
+    [
+        "Salimi Confederacy",
+        "givalir",
+        "SCG",
+        true,
+        100,
+        "cent",
+        0.5763,
+        0.38,
+        [0.28, 0.25, 0.29, 0.25, 0.23,
+        0.27, 0.28, 0.31, 0.32, 0.35, 0.38]
     ]
 ]; // 0 - nation, 1 - currency name, 2 - currency abbr, 3 - decimals(true or false), 4 - decimals name(singular), 5 - decimals per 1 currency, 6 - current inflation, 7 - power of the currency, 8 - inflation over time(100 years, in 10 incr + current), 9 - power over time(100 years, in 10 incr + current)
 

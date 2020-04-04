@@ -35,7 +35,7 @@ else {amountToGenerate = 1}
         } else if (nation == "junjian") {
                 name1 = ["Yenadevil", "Desudo", "Bogolmo", "Rauni", "Mirabima", "Hampo", "Fashu", "Ara", "Anpo", "Touyako"];
         } else if (nation == "toras") {
-                name1 = ["Wulopi", "Samino", "Kirna", "Dunwich", "Tohamu", "Felnerzog", "Ziglon", "Temblelas", "Rabalon", "Satareku City", "Esembejas", "Sashi", "Upiaba", "Stedt", "Bronzetown", "Boru", "Oshi", "Feligen"]
+                name1 = ["Wulopi", "Samino", "Kirna", "Dunwich", "Tohamu", "Felnerzog", "Ziglon", "Temblelas", "Rabalon", "Satareku City", "Esembejas", "Sashi", "Upiaba", "Stedt", "Bronzetown", "Boru", "Oshi", "Feligen"];
         } else if (nation == "besizottia") {
                 name1 = ["Pioz", "Allocen", "Ely", "Argala"];
         } else if (nation == "rotali") {
@@ -47,7 +47,9 @@ else {amountToGenerate = 1}
         } else if (nation == "abrax") {
                 name1 = ["Shakae", "Gonoe", "Nishi", "Naie", "Tatsuna", "Wagu", "Mita", "Kan", "Shizu", "Oiyamazu", "Oisendo", "Heto", "Naiai"];
         } else if (nation == "cora") {
-                name1 = ["Rejover", "Alaranc", "Braybluff", "Torpegi", "Cawle", "Cosaubios", "Visamia", "Llani"]
+                name1 = ["Rejover", "Alaranc", "Braybluff", "Torpegi", "Cawle", "Cosaubios", "Visamia", "Llani"];
+        } else if (nation == "salimi") {
+                name1 = ["Luronte", "Midegana", "Petalo", "Mabarve", "Keflavik", "Haganes", "Ingolfsfell", "Flugumyrr", "Larovil", "Esrillo", "Skalavik", "Rond"];
         }
 
 

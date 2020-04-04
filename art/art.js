@@ -38,7 +38,9 @@ function generateArtIdea(complexity, category) {
             ["Wakfu", 3, ["Yugo", "Chibi", "Adamaï", "Az", "Sir Percedal of Sadlygrove", "Flopin"]],
             ["Tekkonkinkreet", 2, ["Kuro", "Shiro", "Kuro and Shiro"]],
             ["Tegami Bachi", 2, ["Lag Seeing", "Zazie", "Connor Kluff", "Lag and Zazie", "Nelli Pepper", "Nello Pepper"]],
-            ["Blue Exorcist", 4, ["Rin Okumura", "Yukio Okumura", "Rin and Yukio", "Shima", "Amaimon", "Konekomaru"]]
+            ["Blue Exorcist", 4, ["Rin Okumura", "Yukio Okumura", "Rin and Yukio", "Shima", "Amaimon", "Konekomaru"]],
+            ["Big Hero 6", 3, ["Hiro Hamada", "Baymax"]],
+            ["How to Train Your Dragon", 2, ["Hiccup", "Toothless"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
@@ -47,7 +49,7 @@ function generateArtIdea(complexity, category) {
         }
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
-        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window"]
+        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella"]
         var action = MathRInt(0, 2) == 1 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
 
         result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}.`;
@@ -55,9 +57,9 @@ function generateArtIdea(complexity, category) {
     // Study
     if (category == "Study") {
         var allStudies = [
-            ["environments", 3, ["a lake", "sea", "forest", "plains", "hell", "clouds", "mountains", "ruins", "rainy weather", "snowy weather", "deserts", "a beach"]],
-            ["interiors", 4, ["a kid's room", "a kitchen", "a bedroom", "a shop", "a living room", "a dining room", "a balloon shop", "a jewelry store", "a blacksmith's shop", "a church", "a shack", "a mansion"]],
-            ["urban environment", 3, ["a city", "a town", "a village", "a park"]],
+            ["environments", 3, ["a lake", "sea", "forest", "plains", "hell", "clouds", "mountains", "ruins", "rainy weather", "snowy weather", "deserts", "a beach", "an arctic environment"]],
+            ["interiors", 4, ["a kid's room", "a kitchen", "a bedroom", "a shop", "a living room", "a dining room", "a balloon shop", "a jewelry store", "a blacksmith's shop", "a church", "a shack", "a mansion", "a bathroom", "a research station"]],
+            ["urban environment", 3, ["a city", "a town", "a village", "a park", "a city plaza"]],
             ["anatomy", 2, ["body", "legs", "eyes", "arms", "hands", "feet", "ears", "noses", "mouths", "chests", "hips", "adults", "facial expressions"]],
             ["gestures", 1, ["animals", "humans"]],
             ["color", 2, ["Disney color keys", "Google Street Maps", "game screenshots"]],
@@ -98,9 +100,9 @@ function generateArtIdea(complexity, category) {
 
     var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy", "friendly", "shy", "stupid"]; // personality or mood
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
-    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside"];
+    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
-    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards"]
+    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
      
     
