@@ -100,9 +100,9 @@ function generateArtIdea(complexity, category) {
 
     var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy", "friendly", "shy", "stupid", "athletic"]; // personality or mood
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
-    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy", "lives in the slums", "lives in the sewers"];
+    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy", "lives in the slums", "lives in the sewers", "is helpful", "wears eyeglasses", "wears an eyepatch", "is a scientist"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
-    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer"]
+    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer", "is very dramatic"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
      
     
