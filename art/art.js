@@ -40,7 +40,8 @@ function generateArtIdea(complexity, category) {
             ["Tegami Bachi", 2, ["Lag Seeing", "Zazie", "Connor Kluff", "Lag and Zazie", "Nelli Pepper", "Nello Pepper"]],
             ["Blue Exorcist", 4, ["Rin Okumura", "Yukio Okumura", "Rin and Yukio", "Shima", "Amaimon", "Konekomaru"]],
             ["Big Hero 6", 3, ["Hiro Hamada", "Baymax"]],
-            ["How to Train Your Dragon", 2, ["Hiccup", "Toothless"]]
+            ["How to Train Your Dragon", 3, ["Hiccup", "Toothless"]],
+            ["Kingdom Hearts", 2, ["Sora", "Roxas", "Ventus", "Mickey Mouse", "Donald Duck"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
