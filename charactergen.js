@@ -110,41 +110,52 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         race = races[MathRInt(0, races.length - 1)]; 
     }
     // Assign nation stats
-    if (birthNationName == "Feretti Kingdom") {
-        intelligence += 2;
-        constitution -= 1;
-    } else if (birthNationName == "Ekkionlor") {
-        dexterity += 3;
-        intelligence -= 2;
-    } else if (birthNationName == "Junjian Empire") {
-        strength += 1;
-        charisma += 1;
-        constitution += 1;
-        wisdom -= 1;
-    } else if (birthNationName == "Republic of Toras") {
-        constitution += 1;
-        strength += 2;
-        charisma += 2;
-    } else if (birthNationName == "Republic of Besizottia") {
-        intelligence += 3;
-        wisdom += 2;
-        strength -= 1;
-    } else if (birthNationName == "Rotali Sultanate") {
-        intelligence += 3;
-    } else if (birthNationName == "Republic of Pentiga") {
-        intelligence += 2;
-    } else if (birthNationName == "Republic of Santeno") {
-        intelligence += 1;
-        constitution += 2;
-    } else if (birthNationName == "Kingdom of Abrax") {
-        wisdom += 1;
-        charisma += 1;
-    } else if (birthNationName == "Realm of Cora") {
-        charisma += 1;
-        constitution -= 1;
-    } else if (birthNationName == "Salimi Confederacy") {
-        strength += 3;
-        charisma += 1;
+    switch (birthNationName) {
+        case "Feretti Kingdom":
+            intelligence += 2;
+            constitution -= 1;
+            break;
+        case  "Ekkionlor":
+                dexterity += 3;
+                intelligence -= 2;
+            break;
+        case  "Junjian Empire":
+                strength += 1;
+                charisma += 1;
+                constitution += 1;
+                wisdom -= 1;
+            break;
+        case  "Republic of Toras":
+                constitution += 1;
+                strength += 2;
+                charisma += 2;
+            break;
+        case  "Republic of Besizottia":
+                intelligence += 3;
+                wisdom += 2;
+                strength -= 1;
+            break;
+        case  "Rotali Sultanate":
+                intelligence += 3;
+            break;
+        case  "Republic of Pentiga":
+                intelligence += 2;
+            break;
+        case "Republic of Santeno":
+                intelligence += 1;
+                constitution += 2;
+            break;
+        case "Kingdom of Abrax":
+                wisdom += 1;
+                charisma += 1;
+            break;
+        case  "Realm of Cora":
+                charisma += 1;
+                constitution -= 1;
+            break;
+        case  "Salimi Confederacy":
+                strength += 3;
+                charisma += 1;
     }
 
     // Race & their stats
