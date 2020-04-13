@@ -44,7 +44,8 @@ function generateArtIdea(complexity, category) {
             ["Kingdom Hearts", 2, ["Sora", "Roxas", "Ventus", "Mickey Mouse", "Donald Duck"]],
             ["Winnie the Pooh", 3, ["Christopher Robin", "Winnie the Pooh", "Piglet"]],
             ["Digimon", 2, ["Tai Kamiya", "T. K. Takaishi", "Matt Ishida", "Izzy Izumi", "a random digimon"]],
-            ["Animal Crossing", 1, ["Yū", "Raymond", "Broccolo", "Doc", "Drake", "Filbert", "Nibbles", "Joey", "Ruby"]]
+            ["Animal Crossing", 1, ["Yū", "Raymond", "Broccolo", "Doc", "Drake", "Filbert", "Nibbles", "Joey", "Ruby"]],
+            ["Ninjala", 1, ["Van", "Ron", "Burton", "Kappei"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
@@ -53,7 +54,7 @@ function generateArtIdea(complexity, category) {
         }
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
-        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings"]
+        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings", "tying up shoes", "buying balloons"]
         var action = MathRInt(0, 2) == 1 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
 
         result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}.`;
@@ -106,7 +107,7 @@ function generateArtIdea(complexity, category) {
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
     var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy", "lives in the slums", "lives in the sewers", "is helpful", "wears eyeglasses", "wears an eyepatch", "is a scientist", "is a knight", "is a scientist"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
-    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer", "is very dramatic", "loves to dress up in costumes", "loves bowties"]
+    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer", "is very dramatic", "loves to dress up in costumes", "loves bowties", "dislikes girls"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
      
     
