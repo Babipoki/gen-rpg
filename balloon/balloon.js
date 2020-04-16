@@ -335,8 +335,12 @@ function JoinArray (arr, separator = ", ", lastSeparator = "and") {
 function PeopleJoiner (arr) {
     let l = arr.length;
     var result = [];
-    if (!l) return ["nobody"];
+    var filled = arr.length;
+    if (l == 0) return ["nobody"];
     for (let i = 0; i < l; i++) {
+        if (arr[i][1] == 0){
+            filled--;
+        }
         if (arr[i][1] == 1) {
             result.push(arr[i][0]);
         }
@@ -344,6 +348,7 @@ function PeopleJoiner (arr) {
             result.push(`${arr[i][1]} ${Pluralfy(arr[i][0])}`);
         }
     }
+    if (filled == 0) return ["nobody"]
     return result;
 }
 
