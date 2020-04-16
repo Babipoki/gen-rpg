@@ -567,7 +567,7 @@ function generateChildhoodEvent(pronoun, characterName, birthNationName, race, a
         else if (randomRoll == 3) result += pronoun.toLowerCase() + " lost an eye after falling in the ruins."
     } else if (eventCategory == "discovery") {
         var randomRoll = MathRInt(0, 2);
-        if (randomRoll == 0) result += pronoun.toLowerCase() + " discovered a terrible secret of one of " + whose + " parents. He kept it for " + whom + "self ever since.";
+        if (randomRoll == 0) result += pronoun.toLowerCase() + " discovered a terrible secret of one of " + whose + ` parents. ${pronoun} kept it for ` + whom + "self ever since.";
         else if (randomRoll == 1) {
             result += pronoun.toLowerCase() + " discovered that " + whose + " friend " + generateName("random", "random") +" was gay.";
             if (sexuality == "gay" || sexuality == "bisexual") {
