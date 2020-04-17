@@ -37,7 +37,7 @@ function generateBalloons(n, occasion) {
     var balloonShapes = ["round", "round", "round", "round", "round", "round", "round", "round", "bunny-shaped", "bunny-shaped", "bunny-shaped", "bunny-shaped", "mouse-shaped", "bear-shaped", "heart-shaped"]; // repeats increase the chance, nothing else
     var balloonColors = ["red", "red", "blue", "blue", "pink", "pink", "yellow", "yellow", "white", "black", "orange", "emerald green", "goldenrod", "lime green", "jewel lime green", "royal blue", "dark blue", "light blue", "navy blue", "purple", "hot pink", "berry", "peach", "clear", "silver", "gold", "brown"];
     var balloonSizes = ["12\"", "14\"" , "16\""];
-    var balloonConditions = ["overinflated", "underinflated", "with a factory defect spot", "made of high quality latex", "made of average quality latex", "made of below average quality latex", "made of low quality latex", "made of very rare quality of latex", "made of very strong quality of latex", "slowly leaking air from a hole", "worn out and has been inflated many times", "filled with confetti", "has a candy inside"]; // "It is ..."
+    var balloonConditions = ["overinflated", "underinflated", "with a factory defect spot", "made of high quality latex", "made of average quality latex", "made of below average quality latex", "made of low quality latex", "made of very rare quality of latex", "made of very strong quality of latex", "slowly leaking air from a hole", "worn out and has been inflated many times", "filled with confetti", "with a candy inside", "with many candies inside", "with a bill inside"]; // "It is ..."
     var inflationTimes = ["just a few minutes ago", "an hour ago", "two hours ago", "three hours ago", "four hours ago", "five hours ago", "six hours ago", "seven hours ago", "eight hours ago", "nine hours ago", "ten hours ago", "yesterday"];
     var numerations = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"];
     var inflationTypes = ["helium", "helium", "helium", "mouth-inflated", "pump-inflated"];
@@ -196,43 +196,74 @@ function generateBalloons(n, occasion) {
     // Set up People in Location and Items in Location, also in future custom dialog lines.
     switch (actualLocation) {
         case "park":
-            itemsInLocation = ["a branch", "a recycling bin", "a tree", "a bench", "public bathroom"]
+            itemsInLocation = ["a tree"];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pointy branch");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a recycling bin");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a bench");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a public bathroom");
             peopleInLocation = [["dog handler", MathRInt(0, 4)], ["couple", MathRInt(0, 8)], ["old people", MathRInt(0, 13)], ["kids with parents", MathRInt(0, 8)], ["kids without parents", MathRInt(0, 3)]];
             privacyLevel = 1;
             break;
         case "alley":
-            itemsInLocation = ["a recycling container", "a recycling bin", "a brick wall"];
+            itemsInLocation = ["a brick wall"];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a recycling container");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a recycling bin");
             peopleInLocation = [["homeless person", MathRInt(0, 1)]];
             privacyLevel = 2;
             if (peopleInLocation[0][1] == 1) privacyLevel = 0;
             break;
         case "classroom":
-            itemsInLocation = ["a pencil", "scissors", "a class door"];
+            itemsInLocation = ["a class door"];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pencil");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pair of scissors");
             peopleInLocation = [["girl classmate", MathRInt(0, 15)], ["boy classmate", MathRInt(0, 15)], ["class teacher", MathRInt(0, 1)]];
             privacyLevel = 0;
             break;
         case "school":
-            itemsInLocation = ["a small recycling bin", "a class photo", "a class door", "school bathroom"];
+            itemsInLocation = ["a class door", "school bathroom"];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a class photo");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a small recycling bin");
             peopleInLocation = [["girl classmate", MathRInt(0, 15)], ["boy classmate", MathRInt(0, 15)], ["schoolmates", MathRInt(0, 120)], ["school staff", MathRInt(0, 12)]];
             privacyLevel = 1;
             break;
         case "home":
-            itemsInLocation = ["a spoon", "a kitchen knife", "a pocket knife", "a needle", "an iron", "dumbells", "glue", "a book", "a pushpin"]; // fill me more
+            itemsInLocation = ["a book"]; // fill me more
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a spoon");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a kitchen knife");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pocket knife");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a needle");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("an iron");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pair of dumbells");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pushpin");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a small bottle of liquid glue");
             peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["siblings", MathRInt(0, 3)]];
             privacyLevel = 1;
             break;
         case "boy scouts' camp":
-            itemsInLocation = ["a branch", "a tree", "a tent", "a pin badge"];
+            itemsInLocation = ["a tree"];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a branch");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a tent");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a pin badge");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a campfire sitting log");
             peopleInLocation = [["scouts", MathRInt(0, 20)], ["scout leader", MathRInt(0, 1)]];
             privacyLevel = 1;
             break;
         case "beach":
-            itemsInLocation = ["a plastic shovel", "a plastic rake", "a beach umbrella", "public bathroom", "a basket"];
+            itemsInLocation = [];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a plastic shovel");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a plastic rake");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a beach umbrella");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a public bathroom");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a basket");
             peopleInLocation = [["beachgoers", MathRInt(0, 200)], ["lifeguard", MathRInt(0, 1)]];
             privacyLevel = 1;
             break;
         case "fast food store":
-            itemsInLocation = ["a fork", "a knife", "a spoon", "public bathroom", "french fries"];
+            itemsInLocation = ["a public bathroom"];
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a fork");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a knife");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a spoon");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a plate of french fries");
             peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["staff", MathRInt(1, 10)], ["others", MathRInt(0, 25)]];
             privacyLevel = 1;
             break;
@@ -276,21 +307,27 @@ function generateBalloons(n, occasion) {
     switch (secondCharacterMood) {
         case "pissed":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a sharpie pen");
             break;
         case "cheerful":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a pack of balloons");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a matchbox");
             break;
         case "derpy":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("an uninflated balloon");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a golf tee");
             break;
         case "exhausted":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a large school backpack");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a lighter");
             break;
         case "lacking attention":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("an orange");
             break;
         case "nervous":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a lighter");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a paper plane");
             break;
         case "going insane":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a paper knife");
@@ -299,6 +336,7 @@ function generateBalloons(n, occasion) {
             break;
         case "focused on the thought of the destruction of all world's balloons":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a slingshot");
+            if (MathRInt(0, 1) == 1) antagonistInventory.push("a paper plane");
             break;
         case "careless":
             if (MathRInt(0, 1) == 1) antagonistInventory.push("a small rock");
@@ -318,7 +356,7 @@ function generateBalloons(n, occasion) {
     result += `<hr><br>It is currently <span class="tooltip">${currentHour} o'clock<span class="tooltiptext">Time in my setting is 18-hour based instead of IRL 24 hour clock.</span> in the ${timeOfDay}. You are ${characterName.split(" ")[0]}, and you are currently ${currentLocation}. Somewhere nearby is ${secondCharacter.split(" ")[0]}, your ${relation}, who just happens to be carrying ${JoinArray(antagonistInventory)} and seems to be ${secondCharacterMood}.<br>
     <br>
     <br>
-    It is ${temperature} and ${weather} outside. Around you there's ${JoinArray(PeopleJoiner(peopleInLocation))}. Looking around, you can also see ${JoinArray(itemsInLocation)}.`;
+    It is ${temperature} and ${weather} outside. Around you there's ${JoinArray(PeopleJoiner(peopleInLocation))}. Looking around, you can also see ${JoinArray(itemsInLocation) != "" ? JoinArray(itemsInLocation) : "no interesting items"}.`;
 
     document.getElementById("result").innerHTML = result;
 }
