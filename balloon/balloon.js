@@ -201,6 +201,7 @@ function generateBalloons(n, occasion) {
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a recycling bin");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a bench");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a public bathroom");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a handful of small rocks");
             peopleInLocation = [["dog handler", MathRInt(0, 4)], ["couple", MathRInt(0, 8)], ["old people", MathRInt(0, 13)], ["kids with parents", MathRInt(0, 8)], ["kids without parents", MathRInt(0, 3)]];
             privacyLevel = 1;
             break;
@@ -227,7 +228,7 @@ function generateBalloons(n, occasion) {
             privacyLevel = 1;
             break;
         case "home":
-            itemsInLocation = ["a book"]; // fill me more
+            itemsInLocation = ["a book"];
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a spoon");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a kitchen knife");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a pocket knife");
@@ -236,6 +237,7 @@ function generateBalloons(n, occasion) {
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a pair of dumbells");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a pushpin");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a small bottle of liquid glue");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a toothpick");
             peopleInLocation = [["mom", MathRInt(0, 1)], ["dad", MathRInt(0, 1)], ["siblings", MathRInt(0, 3)]];
             privacyLevel = 1;
             break;
@@ -245,6 +247,7 @@ function generateBalloons(n, occasion) {
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a tent");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a pin badge");
             if (MathRInt(0, 1) == 1) itemsInLocation.push("a campfire sitting log");
+            if (MathRInt(0, 1) == 1) itemsInLocation.push("a handful of small rocks");
             peopleInLocation = [["scouts", MathRInt(0, 20)], ["scout leader", MathRInt(0, 1)]];
             privacyLevel = 1;
             break;
