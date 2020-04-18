@@ -25,7 +25,7 @@ function generateArtIdea(complexity, category) {
         // Series / Fanart
         // Series complexity: 0 - super easy, 1 - easy, 2 - medium, 3 - hard, 4 - super hard (complexity can be impacted by how much i like the series or/and how complex the characters are)
         var allSeries = [
-            ["Pokémon", 1, ["Pikachu", "Scorbunny", "Raboot", "Oshawott", "Toxel", "Psyduck", "Drifloon", "Politoed", "Aipom", "Sableye", "Chimchar", "Pansage", "Panpour", "Sobble", "Pancham", "Dedenne", "Togedemaru", "Drizzile", "Morpeko"]],
+            ["Pokémon", 1, ["Ash Ketchum", "Pikachu", "Scorbunny", "Raboot", "Oshawott", "Toxel", "Psyduck", "Drifloon", "Politoed", "Aipom", "Sableye", "Chimchar", "Pansage", "Panpour", "Sobble", "Pancham", "Dedenne", "Togedemaru", "Drizzile", "Morpeko"]],
             ["Mystery Kids", 2, ["Dipper Pines", "Norman Babcock", "Razputin Aquato", "Wirt", "Greg", "Wirt and Greg", "Danny Phantom", "Invader Zim"]],
             ["League of Legends", 2, ["Gnar", "Teemo", "Kennen", "Nunu", "Heimerdinger"]],
             ["Bloons", 2, ["Dart Monkey", "Boomerang Monkey", "Ninja Monkey"]],
@@ -46,7 +46,17 @@ function generateArtIdea(complexity, category) {
             ["Digimon", 2, ["Tai Kamiya", "T. K. Takaishi", "Matt Ishida", "Izzy Izumi", "a random digimon"]],
             ["Animal Crossing", 1, ["Yū", "Raymond", "Broccolo", "Doc", "Drake", "Filbert", "Nibbles", "Joey", "Ruby"]],
             ["Ninjala", 1, ["Van", "Ron", "Burton", "Kappei"]],
-            ["Fullmetal Alchemist", 3, ["Selim Bradley", "Edward Elric", "Rick"]]
+            ["Fullmetal Alchemist", 3, ["Selim Bradley", "Edward Elric", "Rick"]],
+            ["Jak (3?)", 4, ["Jak", "Daxter", "Jak and Daxter", "that religious kid", "Pecker"]],
+            ["Dark Cloud 2", 3, ["Max", "Erik", "Max and Erik", "Gaspard"]],
+            ["Bully: Scholarship Edition", 3, ["Jimmy Hopkins", "Pete Kowalski", "Pedro De La Hoya", "Sheldon Thompson"]],
+            ["Dragon Quest XI", 3, ["Erik", "Hero", "Tockles", "a Tockle", ""]],
+            ["Alex Kidd", 2, ["Alex Kidd", "Igul"]],
+            ["Sonic the Hedgehog", 3, ["Tails", "Sonic", "Sonic and Tails"]],
+            ["Fallout Series", 3, ["Bryan Wilks", "Knick Knack", "little Robert MacCready", "Zip", "Austin Engill", "Shaun"]],
+            ["Yo-Kai Watch", 2, ["Whisper", "Nathan Adams", "Nathan and Whisper", "Jibanyan", "Hovernyan", "Edward"]],
+            ["A Boy and His Blob", 2, ["Boy", "Blob", "Boy... and his blob?"]],
+            ["Blue Dragon Plus", 2, ["Shu", "Jiro", "Marumaro"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
@@ -55,7 +65,7 @@ function generateArtIdea(complexity, category) {
         }
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
-        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings", "tying up shoes", "buying balloons", "composing battle plans", "leading an army", "petting a pet", "throwing rocks"]
+        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings", "tying up shoes", "buying balloons", "composing battle plans", "leading an army", "petting a pet", "throwing rocks", "racing", "drawing", "sitting in the classroom", "being stealthy"]
         var action = MathRInt(0, 2) == 1 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
 
         result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}.`;
