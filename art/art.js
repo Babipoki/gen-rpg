@@ -57,7 +57,7 @@ function generateArtIdea(complexity, category) {
             ["Yo-Kai Watch", 2, ["Whisper", "Nathan Adams", "Nathan and Whisper", "Jibanyan", "Hovernyan", "Edward"]],
             ["A Boy and His Blob", 2, ["Boy", "Blob", "Boy... and his blob?"]],
             ["Blue Dragon Plus", 2, ["Shu", "Jiro", "Marumaro"]],
-            ["Solo Series", 2, ["Croket (Croket! game)", "Sadwick (The Whispered World)", "Oliver (Ni No Kuni)"]],
+            ["Solo Series", 2, ["Croket (Croket! game)", "Sadwick (The Whispered World)", "Oliver (Ni No Kuni)", "Boy from Legend of River King 2", "Pajama Sam", "Fuusuke (Ninku)"]],
             ["Harvest Moon", 3, ["Mark", "Chelsea", "Barett", "Basil", "Gaius", "Gray", "Jack", "Kyle", "Zaid"]],
         ];
 
@@ -123,7 +123,7 @@ function generateArtIdea(complexity, category) {
 
     var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy", "friendly", "shy", "stupid", "athletic"]; // personality or mood
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
-    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy", "lives in the slums", "lives in the sewers", "is helpful", "wears eyeglasses", "wears an eyepatch", "is a scientist", "is a knight", "is a scientist"];
+    var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy", "lives in the slums", "lives in the sewers", "is helpful", "wears eyeglasses", "wears an eyepatch", "is a scientist", "is a knight", "is a scientist", "is depressed", "is a clown", "likes to eat a lot", "knows dark magic"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
     var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer", "is very dramatic", "loves to dress up in costumes", "loves bowties", "dislikes girls"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
