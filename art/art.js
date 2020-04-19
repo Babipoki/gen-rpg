@@ -66,7 +66,7 @@ function generateArtIdea(complexity, category) {
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
         var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings", "tying up shoes", "buying balloons", "composing battle plans", "leading an army", "petting a pet", "throwing rocks", "racing", "drawing", "sitting in the classroom", "being stealthy"]
-        var action = MathRInt(0, 2) == 1 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
+        var action = MathRInt(0, 100) >= 35 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
 
         result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}.`;
     }
