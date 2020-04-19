@@ -47,7 +47,7 @@ function generateArtIdea(complexity, category) {
             ["Animal Crossing", 1, ["Yū", "Raymond", "Broccolo", "Doc", "Drake", "Filbert", "Nibbles", "Joey", "Ruby"]],
             ["Ninjala", 1, ["Van", "Ron", "Burton", "Kappei"]],
             ["Fullmetal Alchemist", 3, ["Selim Bradley", "Edward Elric", "Rick"]],
-            ["Jak (3?)", 4, ["Jak", "Daxter", "Jak and Daxter", "that religious kid", "Pecker"]],
+            ["Jak (3?)", 4, ["Jak", "Daxter", "Jak and Daxter", "Seem", "Pecker"]],
             ["Dark Cloud 2", 3, ["Max", "Erik", "Max and Erik", "Gaspard"]],
             ["Bully: Scholarship Edition", 3, ["Jimmy Hopkins", "Pete Kowalski", "Pedro De La Hoya", "Sheldon Thompson"]],
             ["Dragon Quest XI", 3, ["Erik", "Hero", "Tockles", "a Tockle", ""]],
