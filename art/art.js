@@ -58,6 +58,7 @@ function generateArtIdea(complexity, category) {
             ["A Boy and His Blob", 2, ["Boy", "Blob", "Boy... and his blob?"]],
             ["Blue Dragon Plus", 2, ["Shu", "Jiro", "Marumaro"]],
             ["Solo Series", 2, ["Croket (Croket! game)", "Sadwick (The Whispered World)", "Oliver (Ni No Kuni)", "Boy from Legend of River King 2", "Pajama Sam", "Fuusuke (Ninku)"]],
+            ["Solo Series", 3, ["Alvin (Chipmunks)", "Rex (Xenoblade)", "Nup Martini (Summon Night 3)", "Halé (Halé+Guu)", "Prince Ezran (Dragon Prince)", "Len Kagamine"]],
             ["Harvest Moon", 3, ["Mark", "Chelsea", "Barett", "Basil", "Gaius", "Gray", "Jack", "Kyle", "Zaid"]],
         ];
 
