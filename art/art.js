@@ -25,7 +25,7 @@ function generateArtIdea(complexity, category) {
         // Series / Fanart
         // Series complexity: 0 - super easy, 1 - easy, 2 - medium, 3 - hard, 4 - super hard (complexity can be impacted by how much i like the series or/and how complex the characters are)
         var allSeries = [
-            ["Pokémon", 1, ["Ash Ketchum", "Pikachu", "Scorbunny", "Raboot", "Oshawott", "Toxel", "Psyduck", "Drifloon", "Politoed", "Aipom", "Sableye", "Chimchar", "Pansage", "Panpour", "Sobble", "Pancham", "Dedenne", "Togedemaru", "Drizzile", "Morpeko"]],
+            ["Pokémon", 1, ["Ash Ketchum", "Pikachu", "Scorbunny", "Raboot", "Oshawott", "Toxel", "Psyduck", "Drifloon", "Politoed", "Aipom", "Sableye", "Chimchar", "Pansage", "Panpour", "Sobble", "Pancham", "Dedenne", "Togedemaru", "Drizzile", "Morpeko", "Scraggy"]],
             ["Mystery Kids", 2, ["Dipper Pines", "Norman Babcock", "Razputin Aquato", "Wirt", "Greg", "Wirt and Greg", "Danny Phantom", "Invader Zim"]],
             ["League of Legends", 2, ["Gnar", "Teemo", "Kennen", "Nunu", "Heimerdinger"]],
             ["Bloons", 2, ["Dart Monkey", "Boomerang Monkey", "Ninja Monkey"]],
