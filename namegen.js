@@ -36,7 +36,7 @@
                     
                 }
                 if (race == "youdel") {
-                    name1 = ["Aelhand",	"Brundon", "Brunton", "Aeltifi", "Carrus", "Carney", "Ferrin", "Ferkie", "Greemus", "Grippy", "Halbie", "Halbert", "Jacoby", "Jaklie", "Leland", "Livie", "Marko", "Mirrie", "Pelias", "Pellie", "Raurus", "Riri", "Talliannid", "Tallie", "Tainy", "Xavier", "Xetrick", "Zeke", "Zaiky", "Divie", "Dapli", "Ensi", "Erfi", "Bakli", "Rikki", "Pappo", "Fovli", "Otto", "Sullo", "Gino", "Flafty", "Duno", "Celgy", "Rubo", "Agil", "Bravil", "Jelvix", "Koko", "Usodan", "Okatan", "Kifuto", "Rex", "Sunal", "Foxy", "Argy", "Enton", "Ki", "Chopper", "Notan", "Ikkitan", "Gitan", "Tavalan", "Filsh", "Karbat", "Sultan", "Kreun", "Sharik"
+                    name1 = ["Aelhand",	"Brundon", "Brunton", "Aeltifi", "Carrus", "Carney", "Ferrin", "Ferkie", "Greemus", "Grippy", "Halbie", "Halbert", "Jacoby", "Jaklie", "Leland", "Livie", "Marko", "Mirrie", "Pelias", "Pellie", "Raurus", "Riri", "Talliannid", "Tallie", "Tainy", "Xavier", "Xetrick", "Zeke", "Zaiky", "Divie", "Dapli", "Ensi", "Erfi", "Bakli", "Rikki", "Pappo", "Fovli", "Otto", "Sullo", "Gino", "Flafty", "Duno", "Celgy", "Rubo", "Agil", "Bravil", "Jelvix", "Koko", "Usodan", "Okatan", "Kifuto", "Rex", "Sunal", "Foxy", "Argy", "Enton", "Ki", "Chopper", "Notan", "Ikkitan", "Gitan", "Tavalan", "Filsh", "Karbat", "Sultan", "Kreun", "Sharik", "Andy", "Bookins", "Chocoboy", "Diggy", "Evilboy", "Foxtrot", "Gogo", "Higgy", "Huggy", "Index", "Jethro", "Katikatis", "Lumpo", "Meowser", "Nonix", "Otho", "Pinkster", "Quiverboy", "Ridigulous", "Silvin", "Tuko", "Ugnir", "Vavi", "Xerbert", "Youngster", "Zakkie"
 ];
                 }
         } else if (gender == "female") {
@@ -67,35 +67,7 @@
 	"",
 	"",
 	"",
-	"the Unknown",
-	"the Hero",
-	"the Warhammer",
-	"the Speaker",
-	"the Joker",
-	"the Warrior",
-	"the Archer",
-	"the Assassin",
-	"the Troublemaker",
-	"the Longnose",
-	"the Keeper",
-	"the Smith",
-	"the Warden",
-	"the Scout",
-	"the Duelist",
-	"the Barber",
-	"the Rocket Launcher",
-	"the Gunwielder",
-	"the Sailor",
-	"the Mage",
-	"the Rogue",
-	"the Wizard",
-	"the Blacksmith",
-	"the Shoemaker",
-	"the Gravedigger",
-	"the Skullcarver",
-	"the Translator",
-	"the Cook",
-	"the Stablemaster"
+	"the Unknown", "the Hero", "the Warhammer", "the Speaker", "the Joker", "the Warrior",	"the Archer", "the Assassin", "the Troublemaker", "the Longnose", "the Keeper", "the Smith", "the Warden", "the Scout", "the Duelist", "the Barber",	"the Rocket Launcher", "the Gunwielder", "the Sailor", "the Mage", "the Rogue", "the Wizard", "the Blacksmith", "the Shoemaker", "the Gravedigger", "the Skullcarver", "the Translator", "the Cook", "the Stablemaster", "the Affiliator", "the Balloonpopper", "the Cartographer", "the Digmaster", "the Evil", "the Firemaker", "the Grasshopper", "the Humanhelper", "the Inspector", "the Jungler", "the Elfhelper", "the Lafahlhelper", "the Killer", "the Logmaster", "the Materializer", "the Nutcracker", "the Observer", "the Perfectionist", "the Quiet", "the Rocksmasher", "the Shieldmaster", "the Timetraveler", "the Undercutter", "the Vendor", "the Xenocide", "the Zookeeper"
 ];
 		}
 

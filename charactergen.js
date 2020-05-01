@@ -460,9 +460,12 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         charisma += 1;
     }
 
+    youdelNonprofessionTitles = ["Unknown", "Warhammer", "Longnose", "Keeper", "Smith", "Rocket Launcher", "Skullcarver", "Affiliator", "Balloonpopper", "Digmaster", "Evil", "Firemaker", "Grasshopper", "Humanhelper", "Inspector", "Jungler", "Killer", "Logmaster", "Materializer", "Nutcracker", "Observer", "Perfectionist", "Quiet", "Rocksmasher", "Shieldmaster", "Timetraveler", "Undercutter", "Vendor", "Xenocide"]
     // Check if yordle name contains a profession
-    if (characterName.includes(" the ") && !characterName.includes("Unknown") && !characterName.includes("Warhammer")) {
-        currentOccupation = characterName.split(" the ")[1].toLowerCase();
+    if (characterName.includes(" the ")){
+        if (!youdelNonprofessionTitles.includes(characterName.split(" the ")[1])) {
+            currentOccupation = characterName.split(" the ")[1].toLowerCase();
+        }
     }
 
     // Generate PEOPLE
