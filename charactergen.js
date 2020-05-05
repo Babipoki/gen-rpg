@@ -460,7 +460,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         charisma += 1;
     }
 
-    youdelNonprofessionTitles = ["Unknown", "Warhammer", "Longnose", "Keeper", "Smith", "Rocket Launcher", "Skullcarver", "Affiliator", "Balloonpopper", "Digmaster", "Evil", "Firemaker", "Grasshopper", "Humanhelper", "Inspector", "Jungler", "Killer", "Logmaster", "Materializer", "Nutcracker", "Observer", "Perfectionist", "Quiet", "Rocksmasher", "Shieldmaster", "Timetraveler", "Undercutter", "Vendor", "Xenocide", "Abstracted", "Balloonhugger", "Chickenwings", "Downer", "Eavesdropper", "Goatkeeper", "Herald", "Innkeeper", "Jokester", "Jester", "Kilted", "Loser", "Master", "Naked", "Omitted", "Principious", "Ridiculous", "Smoocher", "Uninvited", "Vengeful", "Zealous", "Winner"]
+    youdelNonprofessionTitles = ["Unknown", "Warhammer", "Longnose", "Keeper", "Smith", "Rocket Launcher", "Skullcarver", "Affiliator", "Balloonpopper", "Digmaster", "Evil", "Firemaker", "Grasshopper", "Humanhelper", "Inspector", "Jungler", "Killer", "Logmaster", "Materializer", "Nutcracker", "Observer", "Perfectionist", "Quiet", "Rocksmasher", "Shieldmaster", "Timetraveler", "Undercutter", "Vendor", "Xenocide", "Abstracted", "Balloonhugger", "Chickenwings", "Downer", "Eavesdropper", "Goatkeeper", "Herald", "Innkeeper", "Jokester", "Kilted", "Loser", "Master", "Naked", "Omitted", "Principious", "Ridiculous", "Smoocher", "Uninvited", "Vengeful", "Zealous", "Winner"]
     // Check if yordle name contains a profession
     if (characterName.includes(" the ")){
         if (!youdelNonprofessionTitles.includes(characterName.split(" the ")[1])) {
