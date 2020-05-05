@@ -45,7 +45,7 @@
 ];
                 }
                 if (race == "youdel") {
-                    name1 = [ "Brandy", "Catarine", "Eala", "Galli", "Helena", "Kellie", "Kittie", "Margo", "Quiver", "Sabrina", "Terri", "Zaka", "Tava", "Rama", "Zavina", "Bartosia", "Povia", "Trussia", "Pivona", "Regine", "Bella", "Chika", "Elakka", "Alina", "Ybilia", "Elena", "Agata", "Diana", "Kava", "Oriane", "Fiona", "Dovilia", "Gretha", "Bulta", "Akolta", "Divannia"
+                    name1 = [ "Brandy", "Catarine", "Eala", "Galli", "Helena", "Kellie", "Kittie", "Margo", "Quiver", "Sabrina", "Terri", "Zaka", "Tava", "Rama", "Zavina", "Bartosia", "Povia", "Trussia", "Pivona", "Regine", "Bella", "Chika", "Elakka", "Alina", "Ybilia", "Elena", "Agata", "Diana", "Kava", "Oriane", "Fiona", "Dovilia", "Gretha", "Bulta", "Akolta", "Divannia", "Agata", "Adata", "Beatrice", "Cidra", "Dovila", "Evelinn", "Fernanda", "Galivia", "Holga", "Irena", "Javia", "Kate", "Lipsmoochia", "Manta", "Navia", "Olga", "Patricia", "Quanda", "Ruta", "Sudava", "Tarnia", "Upa", "Vivia", "Xendricia", "Zukia"
 ];                 
                 }
         }
@@ -67,7 +67,7 @@
 	"",
 	"",
 	"",
-	"the Unknown", "the Hero", "the Warhammer", "the Speaker", "the Joker", "the Warrior",	"the Archer", "the Assassin", "the Troublemaker", "the Longnose", "the Keeper", "the Smith", "the Warden", "the Scout", "the Duelist", "the Barber",	"the Rocket Launcher", "the Gunwielder", "the Sailor", "the Mage", "the Rogue", "the Wizard", "the Blacksmith", "the Shoemaker", "the Gravedigger", "the Skullcarver", "the Translator", "the Cook", "the Stablemaster", "the Affiliator", "the Balloonpopper", "the Cartographer", "the Digmaster", "the Evil", "the Firemaker", "the Grasshopper", "the Humanhelper", "the Inspector", "the Jungler", "the Elfhelper", "the Lafahlhelper", "the Killer", "the Logmaster", "the Materializer", "the Nutcracker", "the Observer", "the Perfectionist", "the Quiet", "the Rocksmasher", "the Shieldmaster", "the Timetraveler", "the Undercutter", "the Vendor", "the Xenocide", "the Zookeeper"
+	"the Unknown", "the Hero", "the Warhammer", "the Speaker", "the Joker", "the Warrior",	"the Archer", "the Assassin", "the Troublemaker", "the Longnose", "the Keeper", "the Smith", "the Warden", "the Scout", "the Duelist", "the Barber",	"the Rocket Launcher", "the Gunwielder", "the Sailor", "the Mage", "the Rogue", "the Wizard", "the Blacksmith", "the Shoemaker", "the Gravedigger", "the Skullcarver", "the Translator", "the Cook", "the Stablemaster", "the Affiliator", "the Balloonpopper", "the Cartographer", "the Digmaster", "the Evil", "the Firemaker", "the Grasshopper", "the Humanhelper", "the Inspector", "the Jungler", "the Elfhelper", "the Lafahlhelper", "the Killer", "the Logmaster", "the Materializer", "the Nutcracker", "the Observer", "the Perfectionist", "the Quiet", "the Rocksmasher", "the Shieldmaster", "the Timetraveler", "the Undercutter", "the Vendor", "the Xenocide", "the Zookeeper", "the Abstracted", "the Balloonhugger", "the Chickenwings", "the Downer", "the Eavesdropper", "the Farmer", "the Goatkeeper", "the Herald", "the Innkeeper", "the Jokester", "the Jester", "the Kilted", "the Loser", "the Master", "the Naked", "the Omitted", "the Principious", "the Ridiculous", "the Smoocher", "the Uninvited", "the Vengeful", "the Zealous", "the Winner"
 ];
 		}
 
