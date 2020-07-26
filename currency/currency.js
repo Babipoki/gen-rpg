@@ -141,6 +141,20 @@ var currencies = [
         0.38,
         [0.28, 0.25, 0.29, 0.25, 0.23,
         0.27, 0.28, 0.31, 0.32, 0.35, 0.38]
+    ],
+    [
+        "Kingdom of Abrax",
+        "gil",
+        "ABG",
+        false,
+        1,
+        "",
+        0.093966666666,
+        0.6429,
+        [0.037, 0.06, 0.072, 0.07, 0.06,
+        0.067, 0.066, 0.065, 0.06,0.07, 0.08, 0.093966666666],
+        [0.2197, 0.1932, 0.1842, 0.2304, 0.4204,
+        0.4431, 0.5723, 0.4182, 0.5696, 0.4521, 0.5821, 0.6429]
     ]
 ]; // 0 - nation, 1 - currency name, 2 - currency abbr, 3 - decimals(true or false), 4 - decimals name(singular), 5 - decimals per 1 currency, 6 - current inflation, 7 - power of the currency, 8 - inflation over time(100 years, in 10 incr + current), 9 - power over time(100 years, in 10 incr + current)
 

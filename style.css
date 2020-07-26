@@ -286,6 +286,9 @@ td {
     font-size: 20px;
 }
 
+#subjectTable {
+    background-color: rgba(0, 0, 0, 0.3)
+}
 
 @media screen and (max-width: 1111px) {
     .statProperty {

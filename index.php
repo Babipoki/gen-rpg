@@ -36,6 +36,8 @@
             include "./gameidea/gameidea.html";
         } elseif ($gen == "privacypolicy"){
             include "./privacypolicy/privacypolicy.html";
+        } elseif ($gen == "commission-3D"){
+            include "./commission-3D/commission-3D.html";
         }
         
         else {
