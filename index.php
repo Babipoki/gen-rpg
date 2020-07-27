@@ -38,6 +38,8 @@
             include "./privacypolicy/privacypolicy.html";
         } elseif ($gen == "commission-3D"){
             include "./commission-3D/commission-3D.html";
+        } elseif ($gen == "disciples"){
+            include "./disciples/disciples.html";
         }
         
         else {

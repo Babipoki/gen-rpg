@@ -1,0 +1,49 @@
+<div class="generator">
+    <h1>Disciples of Land/Hand Calculator</h1>
+
+    <label for="theDisciple">Disciple:</label>
+    <select id="theDisciple" onchange="discipleChange()">
+        <option>Crafting</option>
+        <option>Gathering</option>
+    </select>
+
+    <div id="craftingFrame">
+        <h2>Crafting</h2>
+        <h3>Recipe</h3>
+        <label for="recipeName">Recipe Name:</label> <input type="text" id="recipeName" name="recipeName"><br>
+        <label for="recipeLevel">Recipe Level:</label> <input type="number" id="recipeLevel" name="recipeLevel"><br>
+        <label for="recipeDifficulty">Difficulty:</label> <input type="number" id="recipeDifficulty" name="recipeDifficulty"><br>
+        <label for="recipeMaterials">Total Materials:</label> <input type="number" id="recipeMaterials" name="recipeMaterials"><br>
+        <label for="materialsHQ">HQ Materials:</label> <input type="number" id="materialsHQ" name="materialsHQ"><br>
+        <label for="recipeOutput">Output:</label> <input type="number" id="recipeOutput" name="recipeOutput" value="1"><br>
+        
+        <h3>Character</h3>
+        <label for="charName">Character Name:</label> <input type="text" id="charName" name="charName"><br>
+        <label for="charCrafterLevel">Character Crafter Level:</label> <input type="number" id="charCrafterLevel" name="charCrafterLevel"><br>
+        <label for="charCraftsmanship">Character Craftsmanship Score:</label> <input type="number" id="charCraftsmanship" name="charCraftsmanship"><br>
+        <label for="charControl">Character Control Score:</label> <input type="number" id="charControl" name="charControl"><br>
+
+    </div>
+
+    <div id="gatheringFrame" style="display:none;">
+        <h2>Gathering</h2>
+        <h3>Node</h3>
+        <label for="nodeName">Node Name:</label> <input type="text" id="nodeName" name="nodeName"><br>
+        <label for="nodeLevel">Node Level:</label> <input type="number" id="nodeLevel" name="nodeLevel"><br>
+        <label for="miningActions">Mining Actions:</label> <input type="number" id="miningActions" name="miningActions"><br>
+        
+        <h3>Character</h3>
+        <label for="charNameG">Character Name:</label> <input type="text" id="charNameG" name="charNameG"><br>
+        <label for="charConstitution">Character Constitution Score:</label><input type="text" id="charConstitution" name="charConstitution"><br>
+        <label for="charGathererLevel">Character Gatherer Level:</label> <input type="number" id="charGathererLevel" name="charGathererLevel"><br>
+        <label for="charGathering">Character Gathering Score:</label> <input type="number" id="charGathering" name="charGathering"><br>
+        <label for="charHQPerception">Character HQ Perception Score:</label> <input type="number" id="charHQPerception" name="charHQPerception"><br>
+
+    </div>
+
+    <button id="myBtn" onclick="calculateDisciple()">Calculate</button>
+    
+    <div class="generatedContent">
+        <div id="result"></div>
+    </div>
+</div>

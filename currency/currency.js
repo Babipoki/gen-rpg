@@ -287,11 +287,6 @@ function createCharts(targetID) {
 function updateChart(chart, type, targetID) {
     var theData = [];
 
-    /*chart.data.datasets.forEach((dataset) =>{
-        dataset.data.pop();
-    });
-
-    var newLabel = "";*/
     if (type == "inflationChart") {
         theData = currencies[targetID][8];
         newLabel = currencies[targetID][2] + " Inflation";
@@ -300,10 +295,6 @@ function updateChart(chart, type, targetID) {
         newLabel = currencies[targetID][2] + " Power";
     }
 
-/*
-    chart.data.datasets.forEach((dataset) =>{
-        dataset.data.push(theData);
-    });*/
     chart.data.datasets[0].data = theData;
     chart.data.datasets[0].label = newLabel;
     chart.update();
