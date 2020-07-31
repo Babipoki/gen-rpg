@@ -10,7 +10,7 @@
     }
     function generateName(gender = null, race = null) {
 		var genders = ["male", "female"];
-		var races = ["human", "youdel", "lafahl"];
+		var races = ["human", "youdel", "lafahl", "namazu"];
 
 		if (gender == null) {
             gender = document.getElementById("gender").value;
@@ -45,7 +45,7 @@
 ];
                 }
                 if (race == "youdel") {
-                    name1 = [ "Brandy", "Catarine", "Eala", "Galli", "Helena", "Kellie", "Kittie", "Margo", "Quiver", "Sabrina", "Terri", "Zaka", "Tava", "Rama", "Zavina", "Bartosia", "Povia", "Trussia", "Pivona", "Regine", "Bella", "Chika", "Elakka", "Alina", "Ybilia", "Elena", "Agata", "Diana", "Kava", "Oriane", "Fiona", "Dovilia", "Gretha", "Bulta", "Akolta", "Divannia", "Agata", "Adata", "Beatrice", "Cidra", "Dovila", "Evelinn", "Fernanda", "Galivia", "Holga", "Irena", "Javia", "Kate", "Lipsmoochia", "Manta", "Navia", "Olga", "Patricia", "Quanda", "Ruta", "Sudava", "Tarnia", "Upa", "Vivia", "Xendricia", "Zukia"
+                    name1 = [ "Brandy", "Catarine", "Eala", "Galli", "Helena", "Kellie", "Kittie", "Margo", "Quiver", "Sabrina", "Terri", "Zaka", "Tava", "Rama", "Zavina", "Bartosia", "Povia", "Trussia", "Pivona", "Regine", "Bella", "Chika", "Elakka", "Alina", "Ybilia", "Elena", "Agata", "Diana", "Kava", "Oriane", "Fiona", "Dovilia", "Gretha", "Bulta", "Akolta", "Divannia", "Agata", "Adata", "Beatrice", "Cidra", "Dovila", "Evelinn", "Fernanda", "Galivia", "Holga", "Irena", "Javia", "Kate", "Lipsmoochia", "Manta", "Navia", "Olga", "Patricia", "Quanda", "Ruta", "Sudava", "Tarnia", "Upa", "Vivia", "Xendricia", "Zukia", "Asata", "Bizeva", "Charna", "Dela", "Eka", "Fansa", "Gala", "Hala", "Irma", "Jakla", "Krata", "Lamina", "Maksa", "Noksa", "Oksa", "Parsa", "Tata", "Varna", "Ziva"
 ];                 
                 }
         }
@@ -71,20 +71,29 @@
 ];
 		}
 
-		var generatedLafahlName = "";
+		var generatedName = "";
 		// FILLLL THISSSSS
 		if (race == "lafahl") {
-			generatedLafahlName = generateLafahlName(gender);
+			generatedName = generateLafahlName(gender);
+		} else if (race == "namazu") {
+			generatedName = generateNamazuName();
 		}
 			var name = "";
-		if (race != "lafahl") {
+		if (race != "lafahl" && race != "namazu") {
 			name = capitalize(name1[MathRInt(0, name1.length - 1)]) + ' ' + name2[MathRInt(0, name2.length - 1)];
 		} else {
-			name = generatedLafahlName;
+			name = generatedName;
 		}
         return name;
 	}
 	
+
+	function generateNamazuName() {
+		var namazu_suffixes = ["fu", "fuku", "ka", "kei", "ku", "rei", "rin", "ro", "ryu", "san", "shin", "sho", "shu", "sui", "tai", "taku", "fun", "zu", "di", "du", "dyu", "fa", "fi", "fo", "fyu", "che", "je", "she", "tsa", "tsi", "tse", "tso", "ti", "tu", "tyu", "va", "vi", "ve", "vo", "vya", "wi", "wo", "mo", "no", "so", "tsu", "ra", "re"]
+		var suffix = namazu_suffixes[MathRInt(0, namazu_suffixes.length-1)];
+		return "Gyo" + suffix;
+	}
+
 	function generateLafahlName (theGender) {
 		var lf_male_first_name_prefixes = ["Fufu", "Hihe", "Po", "E", "No", "Ba", "Da", "Le", "Su", "Nunu", "Bo", "Lu", "Pu", "Du", "Ze", "Se", "Re", "Bu", "Babi", "Suti", "Po",
 		"Suti", "Po", "Popo", "Baba", "Dada", "Ge", "Rere", "Ruru", "Papa", "Nene", "Jaja", "Chu", "Yuyu", "Ga", "Te", "Du", "Ta", "Gu"]
