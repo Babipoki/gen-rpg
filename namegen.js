@@ -10,7 +10,7 @@
     }
     function generateName(gender = null, race = null) {
 		var genders = ["male", "female"];
-		var races = ["human", "youdel", "lafahl", "namazu"];
+		var races = ["human", "youdel", "lafahl", "namazu", "mandirigorri"];
 
 		if (gender == null) {
             gender = document.getElementById("gender").value;
@@ -69,6 +69,19 @@
 	"",
 	"the Unknown", "the Hero", "the Warhammer", "the Speaker", "the Joker", "the Warrior",	"the Archer", "the Assassin", "the Troublemaker", "the Longnose", "the Keeper", "the Smith", "the Warden", "the Scout", "the Duelist", "the Barber",	"the Rocket Launcher", "the Gunwielder", "the Sailor", "the Mage", "the Rogue", "the Wizard", "the Blacksmith", "the Shoemaker", "the Gravedigger", "the Skullcarver", "the Translator", "the Cook", "the Stablemaster", "the Affiliator", "the Balloonpopper", "the Cartographer", "the Digmaster", "the Evil", "the Firemaker", "the Grasshopper", "the Humanhelper", "the Inspector", "the Jungler", "the Elfhelper", "the Lafahlhelper", "the Killer", "the Logmaster", "the Materializer", "the Nutcracker", "the Observer", "the Perfectionist", "the Quiet", "the Rocksmasher", "the Shieldmaster", "the Timetraveler", "the Undercutter", "the Vendor", "the Xenocide", "the Zookeeper", "the Abstracted", "the Balloonhugger", "the Chickenwings", "the Downer", "the Eavesdropper", "the Farmer", "the Goatkeeper", "the Herald", "the Innkeeper", "the Jokester", "the Jester", "the Kilted", "the Loser", "the Master", "the Naked", "the Omitted", "the Principious", "the Ridiculous", "the Smoocher", "the Uninvited", "the Vengeful", "the Zealous", "the Winner"
 ];
+		}
+
+		if (race == "mandirigorri") {
+			// First name - family name, adjective
+			var name1 = ["Cute", "Adorable", "Ugly", "Swift"]
+
+			// Last name - veggie male, flower female
+
+			if (gender == "male") {
+				name2 = ["Cucumber", "Bean", "Potato", "Tomato", "Onion"]
+			} else {
+				name2 = ["Rose", "Orchid", "Lilly"]
+			}
 		}
 
 		var generatedName = "";
