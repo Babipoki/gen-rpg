@@ -481,7 +481,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
 
     // Result:
 
-    result = "<b>" + characterName + "</b> is " + indefinite_article(physicalTrait) + " " + physicalTrait + " " + age + " year old " + gender + " " + race + ", born in " + birthCity + ", " + birthNationName + ". ";
+    result = "<b>" + characterName + "</b> is " + indefinite_article(physicalTrait) + " " + physicalTrait + " " + age + " year old " + (race == "namazu"? "" : gender + " ")  + race + ", born in " + birthCity + ", " + birthNationName + ". ";
     result += pronoun + " is " + indefinite_article(primaryPersonalityTrait) +" " + primaryPersonalityTrait + " and " + secondaryPersonalityTrait + " " + currentOccupation + ". ";
     // Add childhood or adult occupations based on age into text:
     
