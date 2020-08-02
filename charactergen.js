@@ -506,6 +506,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         result += generateChildhoodEvent(pronoun, characterName, birthNationName, race, age, maturityAge, childhoodAge, sexuality);
     }
     displayStats();
+    if (race == "namazu") result+= " Yes, yes.";
     document.getElementById("result").innerHTML = result;
 }
 
