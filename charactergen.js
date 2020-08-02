@@ -451,6 +451,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     }
     if (gender == "male") pronoun = "He";
     if (gender == "female") pronoun = "She";
+    if (race == "namazu") pronoun = "It"
     var characterName = generateName(gender, race);
 
 
