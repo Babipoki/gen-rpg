@@ -15,7 +15,7 @@ var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", 
 var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable", "observant", "artistic", "creative"];
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
-var races = ["human", "youdel", "lafahl"];
+var races = ["human", "youdel", "lafahl", "namazu"];
 var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali", "pentiga", "santeno", "abrax", "cora", "salimi"];
 var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian", "Salimian", "Santenian", "Pentigan", "Abian", "Borbonian", "Corian", "Eglenathian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
@@ -57,10 +57,10 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     var adultOccupation = "";
     var currentOccupation = "";
     var studentType = "";
-    var maturityAges = [16, 30, 18];
-    var retirementAges = [60, 348, 68];
-    var lifeSpans = [80, 420, 95];
-    var childhoodAges = [6, 8, 12];
+    var childhoodAges = [6, 8, 12, 2];
+    var maturityAges = [16, 30, 18, 4];
+    var retirementAges = [60, 348, 68, 8];
+    var lifeSpans = [80, 420, 95, 60];
     var raceID = -1;
     var childhoodAge = 0; // age when you go to school or are able to walk and communicate
     var maturityAge = 0; // age when you are legally responsible for yourself
@@ -172,6 +172,10 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         raceID = 2;
         intelligence += 2;
         charisma += 1;
+    } else if (race == "namazu") {
+        raceID = 3;
+        charisma += 2;
+        intelligence -= 1;
     }
     childhoodAge = childhoodAges[raceID];
     maturityAge = maturityAges[raceID];
