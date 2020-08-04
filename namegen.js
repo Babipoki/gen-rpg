@@ -72,15 +72,15 @@
 		}
 
 		if (race == "mandirigorri") {
-			// First name - family name, adjective
-			var name1 = ["Cute", "Adorable", "Ugly", "Swift"]
+			// First name - family name, adjective, src: https://www.paperrater.com/page/lists-of-adjectives
+			var name1 = ["Cute", "Adorable", "Ugly", "Swift", "Attractive", "Bald", "Beautiful", "Chubby", "Clean", "Dazzling", "Elegant", "Fancy", "Fit", "Flabby", "Glamorous", "Gorgeous", "Handsome", "Magnificent", "Muscular", "Plain", "Plump", "Scruffy", "Shapely", "Skinny", "Unkempt", "Unsightly", "Agreeable", "Ambitious", "Brave", "Calm", "Delightful", "Eager", "Faithful", "Gentle", "Happy", "Jolly", "Kind", "Lively", "Nice", "Obedient", "Polite", "Proud", "Silly", "Thankful", "Victorious", "Witty", "Wonderful", "Zealous", "Angry", "Bewildered", "Clumsy", "Defeated", "Embarassed", "Fierce", "Grumpy", "Helpless", "Itchy", "Jealous", "Lazy", "Mysterious", "Nervous", "Obnoxious", "Panicky", "Pitiful", "Repulsive", "Scary", "Thoughtless", "Uptight", "Worried", "Big", "Colossal", "Fat", "Gigantic", "Great", "Huge", "Immense", "Large", "Little", "Massive", "Petite", "Puny", "Scrawny", "Short", "Small", "Tall", "Teeny", "Tiny"]
 
-			// Last name - veggie male, flower female
+			// Last name - veggie/fruit male, flower female
 
 			if (gender == "male") {
-				name2 = ["Cucumber", "Bean", "Potato", "Tomato", "Onion"]
+				name2 = ["Cucumber", "Bean", "Potato", "Tomato", "Onion", "Broccoli", "Brussels Sprout", "Fennel", "Herb", "Basil", "Marjoram", "Chamomile", "Sage", "Thyme", "Coriander", "Lettuce", "Cabbage", "Garlic", "Paprika", "Leek", "Beetroot", "Carrot", "Ginger", "Turnip", "Spinach", "Squash", "Sweetcorn", "Corn", "Apple", "Pear", "Orange", "Grapefruit", "Mandarin", "Lime", "Nectarine", "Apricot", "Peach", "Plum", "Banana", "Mango", "Strawberry", "Raspberry", "Blueberry", "Kiwifruit", "Passionfruit", "Watermelon", "Rockmelon", "Honeydew Melon", "Zucchini"];
 			} else {
-				name2 = ["Rose", "Orchid", "Lilly"]
+				name2 = ["Rose", "Orchid", "Lily", "Angelica", "Balloon Flower", "Bellflower", "Bloodroot", "Buttercup", "Cardinal Flower", "Celosia", "Catmint", "Coneflower", "Dahlia", "Fennel", "Heliotrope", "Lavender", "Lantana", "Lupine", "Moonflower", "Petunia", "Rue", "Snapdragon", "Snowdrop", "Snowflake", "Sunflower", "Trillium", "Tulip", "Violet", "Windflower", "Yarrow", "Zinnia"];
 			}
 		}
 
