@@ -23,16 +23,50 @@ function calculateDisciple() {
 }
 
 function calculateCraft() {
-    recipeName = document.getElementById("recipeName").value;
-    recipeLevel = Number(document.getElementById("recipeLevel").value);
-    recipeDifficulty = Number(document.getElementById("recipeDifficulty").value);
-    recipeMaterials = Number(document.getElementById("recipeMaterials").value);
-    materialsHQ = Number(document.getElementById("materialsHQ").value);
-    recipeOutput = Number(document.getElementById("recipeOutput").value);
-    charName = document.getElementById("charName").value;
-    charCrafterLevel = Number(document.getElementById("charCrafterLevel").value);
-    charCraftsmanship = Number(document.getElementById("charCraftsmanship").value);
-    charControl = Number(document.getElementById("charControl").value);
+    let recipeName = document.getElementById("recipeName").value;
+    let recipeLevel = Number(document.getElementById("recipeLevel").value);
+    let recipeDifficulty = Number(document.getElementById("recipeDifficulty").value);
+    let recipeMaterials = Number(document.getElementById("recipeMaterials").value);
+    let materialsHQ = Number(document.getElementById("materialsHQ").value);
+    let recipeOutput = Number(document.getElementById("recipeOutput").value);
+    let charName = document.getElementById("charName").value;
+    let charCrafterLevel = Number(document.getElementById("charCrafterLevel").value);
+    let charCraftsmanship = Number(document.getElementById("charCraftsmanship").value);
+    let charControl = Number(document.getElementById("charControl").value);
+
+    recipeChance = (charCraftsmanship + (charCrafterLevel*5) ) / recipeDifficulty // 1st recipe is diff 9
+
+    if (recipeChance > 1) recipeChance = 1;
+
+    let matHQchance = materialsHQ / recipeMaterials; // 1 / 5: 20%
+
+    let recipeHQchance = (((charControl/2 + (charCrafterLevel*3)) / recipeDifficulty) + matHQchance)/2; // always maximum of 50% HQ chance.
+
+    let randomModifier = Math.random() + 0.5;
+
+    let trcMinutes = recipeDifficulty / recipeChance / randomModifier / (recipeLevel-charCrafterLevel) // time required in minutes
+    let trcSeconds = Math.floor((trcMinutes - Math.floor(trcMinutes))*100)/100;
+    let trcHours = 0;
+    let trcDays = 0;
+
+    while (trcMinutes > 60) {
+        trcHours += 1;
+        trcMinutes -= 60;
+    }
+    while (trcHours > 16) {
+        trcDays += 1;
+        trcHours -= 16;
+    }
+
+    let chanceRoll = Math.random();
+    let hqChanceRoll = Math.random();
+
+    let craftSuccess = (chanceRoll < recipeChance) ? "<b>succeed</b>" : "<b>fail</b>";
+    let hqSuccess = (hqChanceRoll < recipeHQchance) ? "<b>HQ</b>" : "<b>NQ</b>";
+
+    result = `After spending <b>${trcDays} days, ${trcHours} hours, ${Math.floor(trcMinutes)} minutes and ${Math.floor(trcSeconds)} seconds</b>, trying to craft ${recipeOutput} x ${recipeName}, at ${Math.floor(recipeChance * 100)}% to craft it and at ${Math.floor(recipeHQchance * 100)}% to HQ it, ${charName} manages to ${craftSuccess} at crafting the ${hqSuccess} variant.`;
+
+    document.getElementById("result").innerHTML = result;
 }
 
 function calculateGather() {
