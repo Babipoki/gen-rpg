@@ -102,7 +102,7 @@
 	
 
 	function generateNamazuName() {
-		var namazu_suffixes = ["fu", "fuku", "ka", "kei", "ku", "rei", "rin", "ro", "ryu", "san", "shin", "sho", "shu", "sui", "tai", "taku", "fun", "zu", "di", "du", "dyu", "fa", "fi", "fo", "fyu", "che", "je", "she", "tsa", "tsi", "tse", "tso", "ti", "tu", "tyu", "va", "vi", "ve", "vo", "vya", "wi", "wo", "mo", "no", "so", "tsu", "ra", "re"]
+		var namazu_suffixes = ["fu", "fuku", "ka", "kei", "ku", "rei", "rin", "ro", "ryu", "san", "shin", "sho", "shu", "sui", "tai", "taku", "fun", "zu", "di", "du", "dyu", "fa", "fi", "fo", "fyu", "che", "je", "she", "tsa", "tsi", "tse", "tso", "ti", "tu", "tyu", "va", "vi", "ve", "vo", "vya", "wi", "wo", "mo", "no", "so", "tsu", "ra", "re", "shuu", "ki", "tsuki", "nou", "chi", "nen", "to", "ni", "jo", "ko", "ze", "naze", "dare", "nata", "koko", "soko", "nojo", "kko", "nashi", "mu", "yamu", "ru", "jiru", "koshii", "nasou", "shi", "go", "nana", "tsumo"]
 		var suffix = namazu_suffixes[MathRInt(0, namazu_suffixes.length-1)];
 		return "Gyo" + suffix;
 	}
