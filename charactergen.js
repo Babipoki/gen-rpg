@@ -15,9 +15,9 @@ var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", 
 var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable", "observant", "artistic", "creative"];
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
-var races = ["human", "youdel", "lafahl", "namazu", "mandirigorri"];
+var races = ["human", "yundel", "lafahl", "namazu", "mandirigorri"];
 var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali", "pentiga", "santeno", "abrax", "cora", "salimi"];
-var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian", "Salimian", "Santenian", "Pentigan", "Abian", "Borbonian", "Corian", "Eglenathian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
+var commonLanguages = ["Yundelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian", "Salimian", "Santenian", "Pentigan", "Abian", "Borbonian", "Corian", "Eglenathian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
 var sexualities = ["straight", "gay", "bisexual"];
 var bodyParts = ["left leg", "right leg", "left foot", "right foot", "spine", "left arm", "right arm", "forehead", "groin"];
@@ -163,7 +163,7 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         raceID = 0;
         strength += 1;
 
-    } else if (race == "youdel") {
+    } else if (race == "yundel") {
         raceID = 1;
         dexterity += 1;
         constitution += 2;
@@ -470,10 +470,10 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         charisma += 1;
     }
 
-    youdelNonprofessionTitles = ["Unknown", "Warhammer", "Longnose", "Keeper", "Smith", "Rocket Launcher", "Skullcarver", "Affiliator", "Balloonpopper", "Digmaster", "Evil", "Firemaker", "Grasshopper", "Humanhelper", "Inspector", "Jungler", "Killer", "Logmaster", "Materializer", "Nutcracker", "Observer", "Perfectionist", "Quiet", "Rocksmasher", "Shieldmaster", "Timetraveler", "Undercutter", "Vendor", "Xenocide", "Abstracted", "Balloonhugger", "Chickenwings", "Downer", "Eavesdropper", "Goatkeeper", "Herald", "Innkeeper", "Jokester", "Kilted", "Loser", "Master", "Naked", "Omitted", "Principious", "Ridiculous", "Smoocher", "Uninvited", "Vengeful", "Zealous", "Winner"]
+    yundelNonprofessionTitles = ["Unknown", "Warhammer", "Longnose", "Keeper", "Smith", "Rocket Launcher", "Skullcarver", "Affiliator", "Balloonpopper", "Digmaster", "Evil", "Firemaker", "Grasshopper", "Humanhelper", "Inspector", "Jungler", "Killer", "Logmaster", "Materializer", "Nutcracker", "Observer", "Perfectionist", "Quiet", "Rocksmasher", "Shieldmaster", "Timetraveler", "Undercutter", "Vendor", "Xenocide", "Abstracted", "Balloonhugger", "Chickenwings", "Downer", "Eavesdropper", "Goatkeeper", "Herald", "Innkeeper", "Jokester", "Kilted", "Loser", "Master", "Naked", "Omitted", "Principious", "Ridiculous", "Smoocher", "Uninvited", "Vengeful", "Zealous", "Winner"]
     // Check if yordle name contains a profession
     if (characterName.includes(" the ")){
-        if (!youdelNonprofessionTitles.includes(characterName.split(" the ")[1])) {
+        if (!yundelNonprofessionTitles.includes(characterName.split(" the ")[1])) {
             currentOccupation = characterName.split(" the ")[1].toLowerCase();
         }
     }

@@ -108,7 +108,7 @@ function generateArtIdea(complexity, category) {
     // Design
     var characters = [
         ["boy", 1],
-        ["youdel", 2],
+        ["yundel", 2],
         ["lafahl", 3],
         ["animal", 4],
         ["robot", 4]
