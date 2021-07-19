@@ -1,7 +1,7 @@
 // Generator stuff...
 var toddlerOccupations = ["toddler", "urchin", "orphan"];
 var childhoodOccupations = ["private school student", "public school student", "privately mentored student", "adventurer", "urchin", "travelling musician", "travelling circus performer",
-    "little squire", "newspaper kid", "orphan", "magician's apprentice", "wizard's apprentice"];
+    "little squire", "newspaper kid", "orphan", "magician's apprentice", "wizard's apprentice", "tavern sweeper", "blacksmith's apprentice"];
 var studentTypes = ["bully", "class clown", "teachers' friend", "nerd", "quiet kid", "well-mannered kid", "balloon enthusiast", "explosives expert", "school merchant",
     "dancer", "artist", "friend of all the teachers", "religious kid", "rebel"];
 var adultOccupations = ["blacksmith", "infantry soldier", "knight", "paladin", "shoemaker", "balloon shopkeeper", "mercenary", "assassin", "shinobi", "innkeeper", 
