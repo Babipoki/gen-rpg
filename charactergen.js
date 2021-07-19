@@ -15,7 +15,7 @@ var primaryPersonalityTraits = ["naughty", "kind", "optimistic", "pessimistic", 
 var secondaryPersonalityTraits = ["smart", "cruel", "brave", "cowardly", "careless", "alcoholic", "racist", "shy", "fearful", "nervous", "proud", "unstable", "observant", "artistic", "creative"];
 var physicalTraits = ["fat", "obese", "good-looking", "athletic", "buff", "muscular", "slender", "slim", "short", "tall", "overweight", "skinny"]
 var genders = ["male", "female"];
-var races = ["human", "youdel", "lafahl", "namazu", "mandirigorri"];
+var races = ["human", "youdel", "lafahl", "namazu", "mandirigorri", "dwarf", "elvaan"];
 var nations = ["feretti", "ekkionlor", "junjian", "toras", "besizottia", "rotali", "pentiga", "santeno", "abrax", "cora", "salimi"];
 var commonLanguages = ["Youdelish", "Orc", "Elvish", "Torasian", "Besizottian", "Rotalian", "Salimian", "Santenian", "Pentigan", "Abian", "Borbonian", "Corian", "Eglenathian"]; // except Abraxian, which is known to anyone who is generated here. To be implemented later.
 var exoticLanguages = ["Abyssal", "Celestial", "Draconic", "Infernal", "Sylvan", "Undercommon"];
@@ -181,6 +181,17 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
         constitution -= 2;
         dexterity += 2;
         wisdom -= 1;
+    } else if (race == "dwarf") {
+        raceID = 5;
+        constitution += 1;
+        wisdom += 1;
+        strength += 1;
+        dexterity -= 1;
+    } else if (race == "elvaan") {
+        raceID = 6;
+        dexterity += 2;
+        strength -= 1;
+        constitution += 1;
     }
     childhoodAge = childhoodAges[raceID];
     maturityAge = maturityAges[raceID];
