@@ -18,7 +18,7 @@ function generateGameIdea(timeline) {
 
     // Setup
     var protagonist = "";
-    var races = ["a human", "a yundel", "a lafahl", "an animal"]
+    var races = ["a human", "a youdel", "a lafahl", "an animal"]
     var protagonistRace = races[MathRInt(0, races.length - 1)];
     var genres = ["An arcade", "An RPG", "A racing", "An action-adventure", "A shooter", "A real-time strategy", "A turn-based strategy"];
     var genre = genres[MathRInt(0, genres.length - 1)];

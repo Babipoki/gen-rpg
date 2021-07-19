@@ -10,7 +10,7 @@
     }
     function generateName(gender = null, race = null) {
 		var genders = ["male", "female"];
-		var races = ["human", "yundel", "lafahl", "namazu", "mandirigorri"];
+		var races = ["human", "youdel", "lafahl", "namazu", "mandirigorri"];
 
 		if (gender == null) {
             gender = document.getElementById("gender").value;
@@ -35,7 +35,7 @@
 				];
                     
                 }
-                if (race == "yundel") {
+                if (race == "youdel") {
                     name1 = ["Aelhand",	"Brundon", "Brunton", "Aeltifi", "Carrus", "Carney", "Ferrin", "Ferkie", "Greemus", "Grippy", "Halbie", "Halbert", "Jacoby", "Jaklie", "Leland", "Livie", "Marko", "Mirrie", "Pelias", "Pellie", "Raurus", "Riri", "Talliannid", "Tallie", "Tainy", "Xavier", "Xetrick", "Zeke", "Zaiky", "Divie", "Dapli", "Ensi", "Erfi", "Bakli", "Rikki", "Pappo", "Fovli", "Otto", "Sullo", "Gino", "Flafty", "Duno", "Celgy", "Rubo", "Agil", "Bravil", "Jelvix", "Koko", "Usodan", "Okatan", "Kifuto", "Rex", "Sunal", "Foxy", "Argy", "Enton", "Ki", "Chopper", "Notan", "Ikkitan", "Gitan", "Tavalan", "Filsh", "Karbat", "Sultan", "Kreun", "Sharik", "Andy", "Bookins", "Chocoboy", "Diggy", "Evilboy", "Foxtrot", "Gogo", "Higgy", "Huggy", "Index", "Jethro", "Katikatis", "Lumpo", "Meowser", "Nonix", "Otho", "Pinkster", "Quiverboy", "Ridigulous", "Silvin", "Tuko", "Ugnir", "Vavi", "Xerbert", "Youngster", "Zakkie"
 ];
                 }
@@ -44,7 +44,7 @@
                     name1 = ["Savute", "Hogile", "Razhusi", "Lindri", "Vesa", "Sorah", "Lisvasrolla", "Luldrala", "Biana", "Soza", "Nola", "Shua", "Yavlava", "Senta", "Calsuna", "Elix", "Aerild", "Ausan", "Inell", "Ingati", "Dovili", "Ausrana", "Abel", "Cyna", "Godga", "Godia", "Aveda", "Bathuka", "Colina", "Daria", "Esara", "Folipora", "Gativa", "Harumi", "Jefolia", "Kanusa", "Latuva", "Makula", "Natuli", "Oratia", "Pelia", "Rapava", "Tola", "Unova", "Zerria", "Aethelgyth", "Adelana", "Rianne", "Onna", "Anava", "Bona", "Cecilia", "Dagna", "Efinia", "Fierna", "Gerona", "Havna", "Junjia", "Kota", "Limia", "Maxia", "Nunia", "Ovanna", "Ruta", "Sonuva", "Tekka", "Unna", "Viennia", "Zema", "Iruma", "Aldaila", "Itachia", "Isophia", "Naida", "Aila", "Aili", "Airisti", "Seuda", "Euna", "Heula", "Iana", "Ilae", "Irisura", "Yanariara", "Ainadilia", "Euthellia", "Sadaina", "Lirtista", "Asastlia", "Lasittia", "Essotia", "Radeatia", "Braubia", "Aughetia", "Anya", "Emmia", "Brilda", "Bredda", "Erildia", "Polavia", "Zevunia", "Tezamia", "Filinia", "Nydia", "Rahelia", "Elenna", "Folia", "Malavia", "Leandra", "Gelandra", "Hanivia", "Lavia", "Toniella", "Gotana", "Mona", "Ilivia", "Conavia", "Shania", "Givania", "Regia", "Okala", "Silicia", "Pimaria", "Inelia", "Tarania", "Elanta", "Monatta", "Poulevia", "Pinavolia", "Sevona", "Villiana", "Saminakka", "Ekstinia", "Patie", "Rodia", "Dakania", "Vetasia", "Kai'juna", "Gilagota", "Sarana", "Olanga", "Penama", "Tivadinia", "Amelia", "Kadasarra", "Sarizia", "Darza", "Vivia", "Kavia", "Ziera", "Uoppa", "Deiva", "Jimanka", "Domga", "Aganna", "Ellia", "Putilia", "Samada", "Rayda", "Nesia", "Anoga", "Afelia", "Becalla", "Cefie", "Dacelia", "Ecia", "Geltonia", "Hecara", "Icera", "Jacfelia", "Kefolia", "Mecassa", "Necafia", "Pacelia", "Qacia", "Quasia", "Recafia", "Sefala", "Tefilia", "Ufelia", "Vedusia", "Xatrina", "Zacsia", "Agatelia", "Bikala", "Cikata", "Egilia", "Fijita", "Gilia", "Hikala", "Igita", "Jikuma", "Kima", "Lita", "Mika", "Nitara", "Okala", "Pajala", "Qita", "Rita", "Sigala", "Tikita", "Ukata", "Vikula", "Xia", "Zivala", "Anokka", "Bovila", "Dovita", "Enotta", "Fominatta", "Gomita", "Hovita", "Ivita", "Jitata", "Lomina", "Monita", "Nonata", "Omatta", "Pavatta", "Qovara", "Rikista", "Somanta", "Tonata", "Uvola", "Vonvita", "Yota", "Zova", "Acendra", "Adalind", "Adryn", "Agatha", "Aideen", "Alwyn", "Alyvia", "Arabeth", "Ardra", "Arella", "Astalella", "Belindra", "Brenna", "Bress", "Brielle", "Brithael", "Bruswen", "Cadaewen", "Cambree", "Caryne", "Caylin", "Chanti", "Chevonne", "Dagda", "Dagwyn", "Dallandra", "Derris", "Diadra", "Dydia", "Egeria", "Ellette", "Eryke", "Fatina", "Flouerana", "Galatea", "Galewen", "Gavina", "Helinda", "Iana", "Ibearwen", "Icava", "Ishara", "Jaden", "Jasara", "Jayna", "Jonaya", "Kaelyn", "Kahina", "Karran", "Kathan", "Kira", "Koali", "Kona", "Kota", "Ladia", "Landailyn", "Landrea", "Laurana", "Lodica", "Lyphilla", "Madora", "Mauriana", "Megara", "Megenlind", "Melia", "Mora", "Muriel", "Nagvar", "Narisa", "Nerama", "Nerine", "Nidawi", "Nordrada", "Odlenda", "Odriana", "Ogma", "Olinda", "Onua", "Oriel", "Pala", "Pari", "Radella", "Regana", "Riberta", "Sadi", "Sarea", "Shaundra", "Siveth", "Sunita", "Talia", "Terentia", "Thana", "Thedela", "Thieda", "Tradith", "Tylwyth", "Umindra", "Vaossi", "Vesta", "Zawen"
 ];
                 }
-                if (race == "yundel") {
+                if (race == "youdel") {
                     name1 = [ "Brandy", "Catarine", "Eala", "Galli", "Helena", "Kellie", "Kittie", "Margo", "Quiver", "Sabrina", "Terri", "Zaka", "Tava", "Rama", "Zavina", "Bartosia", "Povia", "Trussia", "Pivona", "Regine", "Bella", "Chika", "Elakka", "Alina", "Ybilia", "Elena", "Agata", "Diana", "Kava", "Oriane", "Fiona", "Dovilia", "Gretha", "Bulta", "Akolta", "Divannia", "Agata", "Adata", "Beatrice", "Cidra", "Dovila", "Evelinn", "Fernanda", "Galivia", "Holga", "Irena", "Javia", "Kate", "Lipsmoochia", "Manta", "Navia", "Olga", "Patricia", "Quanda", "Ruta", "Sudava", "Tarnia", "Upa", "Vivia", "Xendricia", "Zukia", "Asata", "Bizeva", "Charna", "Dela", "Eka", "Fansa", "Gala", "Hala", "Irma", "Jakla", "Krata", "Lamina", "Maksa", "Noksa", "Oksa", "Parsa", "Tata", "Varna", "Ziva"
 ];                 
                 }
@@ -55,7 +55,7 @@
 ];
         }
 
-        if (race == "yundel") {
+        if (race == "youdel") {
             name2 = [
 	"",
 	"",
