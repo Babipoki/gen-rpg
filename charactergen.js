@@ -57,10 +57,10 @@ function generateCharacter(birthNation = null, race = null, agePref = null, gend
     var adultOccupation = "";
     var currentOccupation = "";
     var studentType = "";
-    var childhoodAges = [6, 8, 12, 2, 4];
-    var maturityAges = [16, 30, 18, 4, 25];
-    var retirementAges = [60, 348, 68, 8, 36];
-    var lifeSpans = [80, 420, 95, 60, 42];
+    var childhoodAges = [6, 8, 12, 2, 4, 11, 15];
+    var maturityAges = [16, 30, 18, 4, 25, 22, 35];
+    var retirementAges = [60, 348, 68, 8, 36, 225, 200];
+    var lifeSpans = [80, 420, 95, 60, 42, 255, 215];
     var raceID = -1;
     var childhoodAge = 0; // age when you go to school or are able to walk and communicate
     var maturityAge = 0; // age when you are legally responsible for yourself
