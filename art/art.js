@@ -25,9 +25,9 @@ function generateArtIdea(complexity, category) {
         // Series / Fanart
         // Series complexity: 0 - super easy, 1 - easy, 2 - medium, 3 - hard, 4 - super hard (complexity can be impacted by how much i like the series or/and how complex the characters are)
         var allSeries = [
-            ["Pokémon", 1, ["Ash Ketchum", "Pikachu", "Scorbunny", "Raboot", "Oshawott", "Toxel", "Psyduck", "Drifloon", "Politoed", "Aipom", "Sableye", "Chimchar", "Pansage", "Panpour", "Sobble", "Pancham", "Dedenne", "Togedemaru", "Drizzile", "Morpeko", "Scraggy"]],
+            ["Pokémon", 1, ["Ash Ketchum", "Pikachu", "Scorbunny", "Raboot", "Oshawott", "Toxel", "Psyduck", "Drifloon", "Politoed", "Aipom", "Sableye", "Chimchar", "Pansage", "Panpour", "Sobble", "Pancham", "Dedenne", "Togedemaru", "Drizzile", "Morpeko", "Scraggy", "Charmander"]],
             ["Mystery Kids", 2, ["Dipper Pines", "Norman Babcock", "Razputin Aquato", "Wirt", "Greg", "Wirt and Greg", "Danny Phantom", "Invader Zim"]],
-            ["League of Legends", 2, ["Gnar", "Teemo", "Kennen", "Nunu", "Heimerdinger"]],
+            ["League of Legends", 2, ["Gnar", "Teemo", "Kennen", "Nunu", "Heimerdinger", "Rumble", "Veigar", "Amumu", "Poro"]],
             ["Bloons", 2, ["Dart Monkey", "Boomerang Monkey", "Ninja Monkey"]],
             ["Camp Camp", 3, ["Max", "Dolph Houston", "Harrison", "Neil"]],
             ["South Park", 3, ["Stan Marsh", "Kyle Broflovski", "Eric Cartman", "Kenny McCormic", "Butters Stotch", "Clyde Donovan", "Craig Tucker"]],
@@ -60,6 +60,11 @@ function generateArtIdea(complexity, category) {
             ["Solo Series", 2, ["Croket (Croket! game)", "Sadwick (The Whispered World)", "Oliver (Ni No Kuni)", "Boy from Legend of River King 2", "Pajama Sam", "Fuusuke (Ninku)"]],
             ["Solo Series", 3, ["Alvin (Chipmunks)", "Rex (Xenoblade)", "Nup Martini (Summon Night 3)", "Halé (Halé+Guu)", "Prince Ezran (Dragon Prince)", "Len Kagamine"]],
             ["Harvest Moon", 3, ["Mark", "Chelsea", "Barett", "Basil", "Gaius", "Gray", "Jack", "Kyle", "Zaid"]],
+            ["Turning Red", 4, ["Robaire (4* Town)", "Jesse (4* Town)", "Aaron Z (4* Town)", "Aaron T (4* Town)", "Tae Young (4* Town)"]],
+            ["Sam & Max", 3, ["Sam", "Max", "Max", "Max"]],
+            ["Babi's Universe", 1, ["Gobbo", "Impie", "Kiplip"]],
+            ["Happy Tree Friends", 2, ["Flaky", "Lifty", "Flippy", "Shifty", "Cuddles", "Splendid", "Mime"]],
+            ["Bloons TD6", 2, ["Alchemist Monkey", "Ninja Monkey", "Dart Monkey", "Benjamin", "Etienne", "Glue Gunner", "Sniper Monkey", "Super Monkey", "Druid Monkey"]],
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
@@ -68,11 +73,15 @@ function generateArtIdea(complexity, category) {
         }
 
         var selectedCharacter = selectedSeries[2][MathRInt(0, selectedSeries[2].length - 1)];
-        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings", "tying up shoes", "buying balloons", "composing battle plans", "leading an army", "petting a pet", "throwing rocks", "racing", "drawing", "sitting in the classroom", "being stealthy", "keeping law in order", "bathing or showering", "selling balloons", "hiding from someone", "having a snowball fight", "exploring the wasteland", "drinking tea", "joining boy scouts", "swimming in the pool", "walking a puppy", "walking a dog", "drawing or painting on a balloon(-s)", "laying in bed", "waking up", "reading a book in bed", "celebrating a lonely birthday", "hunting", "poking a balloon with a stick", "navigating with a map", "being a pirate", "combing their hair", "doing science experiments", "doing homework", "trying clothes at the clothes store", "taking a selfie", "aiming with a slingshot", "bouncing on a trampoline", "cleaning a mess", "diving into a pool", "diving underwater", "foraging", "feeding someone", "guarding treasure", "hanging decorations", "icing the cake", "judging you", "judging someone", "kicking something", "kicking the ball", "kicking the balloon", "lecturing the class", "meeting a pokémon", "nibbling on a balloon", "overprotecting the balloon", "pumping up a balloon", "questioning someone", "being badass", "running with a balloon", "running with a kite", "running with a friend", "saluting someone", "tidying up", "unloading a truck" ]
-        var action = MathRInt(0, 100) >= 15 ? action = (", " + actions[MathRInt(0, actions.length - 1)] ) : "";
+        var actions = ["enjoying a balloon", "trying to pop a balloon", "hugging a balloon", "celebrating birthday", "protecting self against COVID-19", "spending time at the beach", "trying to be a ninja", "making a silly face", "being a derp", "eating food", "eating something tasty", "drinking something", "inflating a balloon", "being exhausted", "popping balloons", "playing around", "reading a book", "cooking a meal", "pranking someone", "drinking milk", "exploring the lands", "looking through the window", "defending against intruders", "posing for the camera", "sleeping", "pillow fighting", "being sad", "swinging on the swings", "playing an instrument", "holding an umbrella", "knitting", "casting magic", "holding a blanket over themselves", "organizing books", "looking at the mirror", "shopping at the mall", "making a sand castle", "running at the school corridor", "flying a kite", "using the swings", "tying up shoes", "buying balloons", "composing battle plans", "leading an army", "petting a pet", "throwing rocks", "racing", "drawing", "sitting in the classroom", "being stealthy", "keeping law in order", "bathing or showering", "selling balloons", "hiding from someone", "having a snowball fight", "exploring the wasteland", "drinking tea", "joining boy scouts", "swimming in the pool", "walking a puppy", "walking a dog", "drawing or painting on a balloon(-s)", "laying in bed", "waking up", "reading a book in bed", "celebrating a lonely birthday", "hunting", "poking a balloon with a stick", "navigating with a map", "being a pirate", "combing their hair", "doing science experiments", "doing homework", "trying clothes at the clothes store", "taking a selfie", "aiming with a slingshot", "bouncing on a trampoline", "cleaning a mess", "diving into a pool", "diving underwater", "foraging", "feeding someone", "guarding treasure", "hanging decorations", "icing the cake", "judging you", "judging someone", "kicking something", "kicking the ball", "kicking the balloon", "lecturing the class", "meeting a pokémon", "nibbling on a balloon", "overprotecting the balloon", "pumping up a balloon", "questioning someone", "being badass", "running with a balloon", "running with a kite", "running with a friend", "saluting someone", "tidying up", "unloading a truck", "riding a bicycle/tricycle" ]
+        var action = MathRInt(0, 100) >= 15 ? action = (", " + actions[MathRInt(0, actions.length - 1)]) : "";
+        var action2 = MathRInt(0, 100) > 45 ? action2 = (" and " + actions[MathRInt(0, actions.length - 1)]) : "";
+        if (action == "") {
+            action2 = "";
+        }
 
         if (selectedSeries[0] != "Solo Series") {
-            result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}.`;
+            result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "+" + selectedSeries[0].replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b> from <b>${selectedSeries[0]}</b> series${action}${action2}.`;
         } else {
             result = `Draw <b><a href="https://google.com/search?q=${selectedCharacter.replace(" ", "+") + "&tbm=isch"}">${selectedCharacter}</a></b>${action}.`;
         }
@@ -82,8 +91,8 @@ function generateArtIdea(complexity, category) {
     if (category == "Study") {
         var allStudies = [
             ["environments", 3, ["a lake", "sea", "forest", "plains", "hell", "clouds", "mountains", "ruins", "rainy weather", "snowy weather", "deserts", "a beach", "an arctic environment"]],
-            ["interiors", 4, ["a kid's room", "a kitchen", "a bedroom", "a shop", "a living room", "a dining room", "a balloon shop", "a jewelry store", "a blacksmith's shop", "a church", "a shack", "a mansion", "a bathroom", "a research station"]],
-            ["urban environment", 3, ["a city", "a town", "a village", "a park", "a city plaza"]],
+            ["interiors", 4, ["a kid's room", "a kitchen", "a bedroom", "a shop", "a living room", "a dining room", "a balloon shop", "a jewelry store", "a blacksmith's shop", "a church", "a shack", "a mansion", "a bathroom", "a research station", "an abandoned hospital"]],
+            ["urban environment", 3, ["a city", "a town", "a village", "a park", "a city plaza", "an amusement park"]],
             ["anatomy", 2, ["body", "legs", "eyes", "arms", "hands", "feet", "ears", "noses", "mouths", "chests", "hips", "adults", "facial expressions"]],
             ["gestures", 1, ["animals", "humans"]],
             ["color", 2, ["Disney color keys", "Google Street Maps", "game screenshots"]],
@@ -119,14 +128,14 @@ function generateArtIdea(complexity, category) {
         char = characters[MathRInt(0, characters.length - 1)];
     }
 
-    var animals = ["dog", "cat", "tiger", "kitten", "puppy", "bat", "monkey", "panda", "frog", "turtle", "dinosaur", "parrot", "crocodile", "fennec fox", "furret", "mouse", "wolf", "lizard", "hedgehog", "fox", "rabbit", "bunny", "sloth", "koala", "raccoon", "otter", "seal"];
+    var animals = ["dog", "cat", "tiger", "kitten", "puppy", "bat", "monkey", "panda", "frog", "turtle", "dinosaur", "parrot", "crocodile", "fennec fox", "furret", "mouse", "wolf", "lizard", "hedgehog", "fox", "rabbit", "bunny", "sloth", "koala", "raccoon", "otter", "seal", "ferret", "puppy"];
     if (char[0] == "animal") char[0] = animals[MathRInt(0, animals.length - 1)] + (MathRInt(0, 2) == 2 ? "(or a creature that looks like it)" : "");
 
-    var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy", "friendly", "shy", "stupid", "athletic"]; // personality or mood
+    var personalityTraits = ["confident", "nervous", "scared", "angry", "tired", "careless", "wacky", "derpy", "adventurous", "creepy", "friendly", "shy", "stupid", "athletic", "colorful", "brave", "insane", "strict", "dirty", "clean", "messy", "selfish"]; // personality or mood
     var personalityTrait = personalityTraits[MathRInt(0, personalityTraits.length - 1)];
     var traits1 = ["loves balloons", "loves camping", "hates balloons", "likes to bully others", "loves danger", "loves flowers", "hates outdoors", "likes to draw", "is a poet", "loves to fly", "is scared of heights", "loves the life of the countryside", "is a musician", "loves to dress fancy", "lives in the slums", "lives in the sewers", "is helpful", "wears eyeglasses", "wears an eyepatch", "is a scientist", "is a knight", "is a scientist", "is depressed", "is a clown", "likes to eat a lot", "knows dark magic", "is a theatre actor"];
     var trait1 = traits1[MathRInt(0, traits1.length - 1)];
-    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer", "is very dramatic", "loves to dress up in costumes", "loves bowties", "dislikes girls", "fights with swords", "fights with magic", "loves to explore dungeons"]
+    var traits2 = ["is a great fighter", "is a nerd", "is an archer", "always gets in trouble", "has rich parents", "is an orphan", "loves to sing", "loves to play with dolls", "loves to play with cards", "is a great swimmer", "eats only vegetables", "is a dragon slayer", "is very dramatic", "loves to dress up in costumes", "loves bowties", "dislikes girls", "fights with swords", "fights with magic", "loves to explore dungeons", "is a proud scout", "loves hugging everything", "loves hugging balloons"]
     var trait2 = traits2[MathRInt(0, traits2.length - 1)];
      
     
