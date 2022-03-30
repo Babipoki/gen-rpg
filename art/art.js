@@ -142,6 +142,11 @@ function generateArtIdea(complexity, category) {
         var associatedWord = associatedWords[MathRInt(0, associatedWords.length - 1)];
         var associatedClothings = ["wears tribal clothes", "wears a hood", "wears winter clothes", "doesn't wear any clothes", "doesn't wear any clothes", "is naked", "is naked", "wears undies", "wears eyeglasses", "wears an eyepatch", "wears suspenders", "wears overalls", "wears a onesie", "wears a hoodie", "wears leather armor", "wears plate armor", "wears a school uniform", "wears a tuxedo", "wears a bowtie", "wears a tie", "wears a ninja outfit", "wears something unique", "wears a T-Shirt", "wears a cap", "wears a cap and a bowtie", "wears a hoodie and a cap", "wears very heavy winter clothes", "wears colorful clothes", "wears dull clothes", "wears a backpack", "wears undies and eyeglasses", "wears undies and an eyepatch", "wears undies and a hoodie", "wears a onesie and eyeglasses", "wears a bowtie and eyeglasses", "wears a sweater", "wears a scarf", "wears eyeglasses and a scarf", "wears a pilot outfit", "wears a balloon hat"];
         var associatedClothing = associatedClothings[MathRInt(0, associatedClothings.length - 1)];
+        if (char[0] == "boy" || char[0] == "kid" || char[0] == "lalafell") {
+            while (associatedClothing == "is naked" || associatedClothing == "doesn't wear any clothes") {
+                associatedClothing = associatedClothings[MathRInt(0, associatedClothings.length - 1)];
+            }
+        }
         var d100 = MathRInt(0, 100);
         var combinedTraits = "";
         if (d100 > 60) {
