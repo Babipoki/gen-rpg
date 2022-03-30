@@ -8,6 +8,7 @@ function generateArtIdea(complexity, category) {
         allCategories.push(document.getElementById("category").options[i].value);
     }
     if (category == "Random") category = allCategories[MathRInt(0, allCategories.length - 1)];
+    if (category == "Non-Study") category = ["Fanart", "Character Design"][MathRInt(0, 1)];
     if (complexity == "Random") complexity = ["Low", "Medium", "High"][MathRInt(0, 2)];
     var minComplexity = 0;
     var maxComplexity = 0;
@@ -141,9 +142,18 @@ function generateArtIdea(complexity, category) {
         var associatedWord = associatedWords[MathRInt(0, associatedWords.length - 1)];
         var associatedClothings = ["wears tribal clothes", "wears a hood", "wears winter clothes", "doesn't wear any clothes", "doesn't wear any clothes", "is naked", "is naked", "wears undies", "wears eyeglasses", "wears an eyepatch", "wears suspenders", "wears overalls", "wears a onesie", "wears a hoodie", "wears leather armor", "wears plate armor", "wears a school uniform", "wears a tuxedo", "wears a bowtie", "wears a tie", "wears a ninja outfit", "wears something unique", "wears a T-Shirt", "wears a cap", "wears a cap and a bowtie", "wears a hoodie and a cap", "wears very heavy winter clothes", "wears colorful clothes", "wears dull clothes", "wears a backpack", "wears undies and eyeglasses", "wears undies and an eyepatch", "wears undies and a hoodie", "wears a onesie and eyeglasses", "wears a bowtie and eyeglasses", "wears a sweater", "wears a scarf", "wears eyeglasses and a scarf", "wears a pilot outfit", "wears a balloon hat"];
         var associatedClothing = associatedClothings[MathRInt(0, associatedClothings.length - 1)];
+        var d100 = MathRInt(0, 100);
+        var combinedTraits = "";
+        if (d100 > 60) {
+            combinedTraits = trait1 + ", " + trait2;
+        } else if (d100 > 30) {
+            combinedTraits = trait1;
+        } else {
+            combinedTraits = trait2;
+        }
     
         // Design a [personality] [character], who [trait1] and [trait2].
-        result = `Design ${indefinite_article(personalityTrait)} <b>${personalityTrait} ${char[0]}</b>, who ${trait1}, ${trait2} and ${associatedClothing}. Associated word: ${ associatedWord }.`;
+        result = `Design ${indefinite_article(personalityTrait)} <b>${personalityTrait} ${char[0]}</b>, who ${combinedTraits} and ${associatedClothing}. Associated word: ${associatedWord}.`;
 }
     document.getElementById("result").innerHTML = result;
 
