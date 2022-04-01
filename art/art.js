@@ -68,7 +68,8 @@ function generateArtIdea(complexity, category) {
             ["Bloons TD6", 2, ["Alchemist Monkey", "Ninja Monkey", "Dart Monkey", "Benjamin", "Etienne", "Glue Gunner", "Sniper Monkey", "Super Monkey", "Druid Monkey"]],
             ["Slime Rancher", 3, ["Pink Slime", "Tabby Slime", "Phosphor Slime", "Honey Slime", "Puddle Slime", "Hunter Slime", "Quantum Slime", "Dervish Slime", "Tangle Slime", "Saber Slime", "Rock Slime", "Rad Slime", "Boom Slime", "Crystal Slime", "Fire Slime", "Mosaic Slime", "Quicksilver Slime", "Glitch Slime", "Gold Slime", "Lucky Slime", "Largo Slimes", "Gordo Slimes", "Party Gordo", "Twinkle Slime", "Feral Slime", "The Tarr", "Cotton Slime", "Ringtail Slime"]],
             ["Max and the Curse of Brotherhood", 4, ["Max", "Felix"]],
-            ["Super Animal Royale", 4, ["Fox", "Bear", "Skullcat", "Tiger", "Cat", "Dog", "Songbird", "Deer", "Raccoon", "Blue Jay", "Duck", "Ferret", "Squirrel", "Pigeon", "Bunny", "Monkey", "Donkey", "Pig", "Skunk", "Rat", "Chicken", "Panda", "Sloth", "Sheep", "Owl", "Otter", "Penguin", "Frog", "Wolf", "Lion", "Boar", "Raven", "Hedgehog", "Cow", "Beaver", "Capybara", "Hawk", "Leopard", "Possum", "Goat", "Seal", "Red Panda", "Horse", "Parrot", "Badger", "Turtle", "Hyena", "Hippo", "Bat"]]
+            ["Super Animal Royale", 4, ["Fox", "Bear", "Skullcat", "Tiger", "Cat", "Dog", "Songbird", "Deer", "Raccoon", "Blue Jay", "Duck", "Ferret", "Squirrel", "Pigeon", "Bunny", "Monkey", "Donkey", "Pig", "Skunk", "Rat", "Chicken", "Panda", "Sloth", "Sheep", "Owl", "Otter", "Penguin", "Frog", "Wolf", "Lion", "Boar", "Raven", "Hedgehog", "Cow", "Beaver", "Capybara", "Hawk", "Leopard", "Possum", "Goat", "Seal", "Red Panda", "Horse", "Parrot", "Badger", "Turtle", "Hyena", "Hippo", "Bat"]],
+            ["Solo Series", 4, ["Mappy (Mappy-Land)", "Mappy Junior (Mappy-Land)"]]
         ];
 
         var selectedSeries = allSeries[MathRInt(0, allSeries.length - 1)];
