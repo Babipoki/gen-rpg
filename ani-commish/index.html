@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <title>Animation Commission Calculator</title>
+        <style>
+
+            body,html {
+                min-width: 320px;
+                margin: auto;
+                font-weight: 400;
+                overflow-x: hidden;
+                max-width: 1850px;
+                margin-top: 35px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            html {
+                box-shadow: 2px 2px 12px #0c0c0c
+            }
+
+            .secondsSlider {
+                min-width: 500px;
+            }
+        </style>
+
+        
+    </head>
+    <body onload="updateCost();">
+        <label for="#_characters">Number of Characters:</label>
+        <select name="#_characters" id="quantity" onchange="updateCost()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br />
+        <label for="characterComplexity">Character Complexity:</label>
+        <select name="characterComplexity" id="complexity" onchange="updateCost()">
+            <option value="5">Very Simple</option>
+            <option value="10">Simple</option>
+            <option value="15">Detailed</option>
+            <option value="20">Very Complex</option>
+            <option value="25">Extremely Detailed</option>
+        </select>
+        <br />
+        <label for="backgroundComplexity">Background Complexity:</label>
+        <select name="backgroundComplexity" id="backgroundComplexity" onchange="updateCost()">
+            <option value="1.190">No Background</option>
+            <option value="1.31">Static Simple</option>
+            <option value="1.62">Static Detailed</option>
+            <option value="2.13">Dynamic Simple</option>
+            <option value="3.51">Dynamic Detailed</option>
+        </select>
+        <br />
+        <label for="seconds">Animation Time:</label>
+        <div class="slideContainer">
+            <input type="range" min="2" max="500" value="20" class="secondsSlider" id="secondsSlider" onchange="updateCost();" />
+            <span id="animTime">Wah</span>
+        </div>
+
+        <br />
+        <input type="checkbox" id="thumbnails" name="thumbnails" value="thumbnails" onchange="updateCost();" />
+        <label for="thumbnails">Thumbnails</label><br />
+        <input type="checkbox" id="storyboards" name="storyboards" value="storyboards" onchange="updateCost();" />
+        <label for="storyboards">Storyboards</label><br />
+        <input type="checkbox" id="animatic" name="animatic" value="animatic" onchange="updateCost();" />
+        <label for="animatic">Animatic</label><br />
+
+
+        <p>Total Price: <span id="totalPrice">0 EUR</span></p>
+
+
+
+        <script>
+            var animationTime = 25.1;
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' });
+            function updateCost() {
+                var quantityElement = document.getElementById("quantity");
+                var quantity = quantityElement.options[quantityElement.selectedIndex].value;
+                var complexityElement = document.getElementById("complexity");
+                var complexity = complexityElement.options[complexityElement.selectedIndex].value;
+                var backgroundElement = document.getElementById("backgroundComplexity");
+                var backgroundComplexity = backgroundElement.options[backgroundElement.selectedIndex].value;
+                var thumbnails = document.getElementById("thumbnails").checked ? 1.083 : 1;
+                var storyboards = document.getElementById("storyboards").checked ? 1.151 : 1;
+                var animatic = document.getElementById("animatic").checked ? 1.268 : 1;
+
+                console.log(thumbnails);
+
+                document.getElementById("totalPrice").innerHTML = formatter.format(quantity * complexity * (animationTime * 10) * thumbnails * storyboards * animatic * 0.9981 * backgroundComplexity);
+            }
+
+            var timeSlider = document.getElementById("secondsSlider");
+            var timeOutput = document.getElementById("animTime");
+            timeOutput.innerHTML = timeSlider.value / 10 + " second(-s)";
+            animationTime = timeSlider.value / 10;
+
+            timeSlider.oninput = function () {
+                timeOutput.innerHTML = this.value / 10 + " second(-s)";
+                animationTime = timeSlider.value / 10;
+            }
+
+        </script>
+    </body>
+</html>
